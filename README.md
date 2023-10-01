@@ -21,6 +21,6 @@ Feel free to connect with me and explore my GitHub repositories to see my work a
 
 ## Contact Me
 
-You can reach out to me via [Email](mailto:mmahbub@kent.edu) or connect with me on [LinkedIn][(https://www.linkedin.com/in/yourlinkedinprofile/](https://www.linkedin.com/in/kawsher-mahbub/)) to discuss collaborations, share ideas, or just have a friendly chat.
+You can reach out to me via [Email](mailto:mmahbub@kent.edu) or connect with me on [LinkedIn](https://www.linkedin.com/in/yourlinkedinprofile/](https://www.linkedin.com/in/kawsher-mahbub/)) to discuss collaborations, share ideas, or just have a friendly chat.
 
 Let's together explore the fascinating world of technology and innovation! 🚀
