@@ -1,17 +1,26 @@
-# Data Scientist
+# About Me
 
-#### Technical Skills: Python, SQL, AWS, Snowflake, MATLAB
+Hello there! 👋 I'm [Your Name], a [Your Role/Title] with a passion for all things tech. Here's a bit about me:
 
-## Education
-- Ph.D., Physics | The University of Texas at Dallas (_May 2022_)								       		
-- M.S., Physics	| The University of Texas at Dallas (_December 2019_)	 			        		
-- B.S., Physics | The University of Texas at Dallas (_May 2017_)
+- 📚 Currently pursuing my PhD in Computer Science at Kent State University.
+- 👨‍🏫 Former lecturer in the Department of Computer Science and Engineering at Bangladesh University of Business and Technology (BUBT).
+- 🎓 Hold a Bachelor of Engineering degree from Bangladesh University of Business and Technology (BUBT).
+- 💡 On a mission to drive innovation and enhance education.
+- 🌟 Enthusiastic about staying updated with the latest advancements in technology.
 
-## Work Experience
-**Data Scientist @ Toyota Financial Services (_June 2022 - Present_)**
-- Uncovered and corrected missing step in production data pipeline which impacted over 70% of active accounts
-- Redeveloped loan originations model which resulted in 50% improvement in model performance and saving 1 million dollars in potential losses
+## Interests
 
-**Data Science Consultant @ Shawhin Talebi Ventures LLC (_December 2020 - Present_)**
-- Conducted data collection, processing, and analysis for novel study evaluating the impact of over 300 biometrics variables on human performance in hyper-realistic, live-fire training scenarios
-- Applied unsupervised deep learning approaches to longitudinal ICU data to discover novel sepsis sub-phenotypes
+My deep interests lie in the following fields:
+
+- 🤖 **Artificial Intelligence (AI)**
+- 🧠 **Machine Learning (ML)**
+- 🌐 **Deep Learning (DL)**
+- 👁️ **Computer Vision (CV)**
+
+Feel free to connect with me and explore my GitHub repositories to see my work and contributions in these areas!
+
+## Contact Me
+
+You can reach out to me via [Email](mailto:mmahbub@kent.edu) or connect with me on [LinkedIn][(https://www.linkedin.com/in/yourlinkedinprofile/](https://www.linkedin.com/in/kawsher-mahbub/)) to discuss collaborations, share ideas, or just have a friendly chat.
+
+Let's together explore the fascinating world of technology and innovation! 🚀
