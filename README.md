@@ -1,6 +1,6 @@
 # About Me
 
-Hello there! 👋 I'm [Your Name], a [Your Role/Title] with a passion for all things tech. Here's a bit about me:
+Hello there! 👋 I'm Md Kawsher Mahbub, a Phd student with a passion for all things tech. Here's a bit about me:
 
 - 📚 Currently pursuing my PhD in Computer Science at Kent State University.
 - 👨‍🏫 Former lecturer in the Department of Computer Science and Engineering at Bangladesh University of Business and Technology (BUBT).
