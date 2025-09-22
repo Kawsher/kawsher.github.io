@@ -4,26 +4,48 @@ from datetime import date
 PROFILE_ID = os.environ.get("PROFILE_ID", "fQ_TTFsAAAAJ")
 OUT_PATH   = os.environ.get("OUT_PATH", "data/scholar.json")
 
-def classify_type(bib, venue: str) -> str:
-    """Best-effort category: Journal / Conference / Book Chapter / Book / Other"""
-    t = (bib.get("ENTRYTYPE") or bib.get("pub_type") or "").lower()
-    v = (venue or "").lower()
+def classify_type(bib) -> str:
+    """
+    Robust category inference using BibTeX-style fields first, then venue text.
+    Returns one of: Journal / Conference / Book Chapter / Book / Other
+    """
+    entry = (bib.get("ENTRYTYPE") or bib.get("pub_type") or "").lower()
+    journal = (bib.get("journal") or "").strip().lower()
+    booktitle = (bib.get("booktitle") or "").strip().lower()
+    venue = (bib.get("venue") or "").strip().lower()
+    publisher = (bib.get("publisher") or "").strip().lower()
 
-    # direct bib types first
-    if t in {"article"}: return "Journal"
-    if t in {"inproceedings", "conference", "proceedings"}: return "Conference"
-    if t in {"incollection", "inbook", "chapter"}: return "Book Chapter"
-    if t in {"book"}: return "Book"
+    # 1) Trust explicit structure first
+    if entry in {"article"} or journal:
+        return "Journal"
+    if entry in {"inproceedings", "conference", "proceedings"} or booktitle:
+        return "Conference"
+    if entry in {"incollection", "inbook", "chapter"}:
+        return "Book Chapter"
+    if entry in {"book"}:
+        return "Book"
 
-    # venue-based heuristics
-    journal_words = ["journal", "trans.", "transactions", "letters", "bulletin"]
-    conf_words    = ["conf", "conference", "proceedings", "workshop", "symposium", "ic", "acm", "ieee"]
-    chapter_words = ["chapter", "handbook", "springer series"]
+    # 2) Then infer from venue/publisher text
+    v = " ".join(x for x in [venue, journal, booktitle] if x)
 
-    if any(w in v for w in journal_words):   return "Journal"
-    if any(w in v for w in conf_words):      return "Conference"
-    if any(w in v for w in chapter_words):   return "Book Chapter"
-    if "press" in v and "university" in v:   return "Book"
+    journal_words = [
+        "journal", "transactions", "trans.", "letters", "bulletin", "frontiers in",
+        "nature ", "science ", "ieee ", "acm transactions", "springer nature"
+    ]
+    conf_words = [
+        "proceedings", "proc.", "conference", "workshop", "symposium", "meeting",
+        "ic", "aaai", "neurips", "cvpr", "icml", "eccv", "kdd", "sigmod", "iclr"
+    ]
+    chapter_words = ["chapter", "in ", "handbook", "springer series"]
+
+    if any(w in v for w in journal_words):
+        return "Journal"
+    if any(w in v for w in conf_words):
+        return "Conference"
+    if any(w in v for w in chapter_words) or ("chapter" in (bib.get("title","").lower())):
+        return "Book Chapter"
+    if ("press" in publisher and "university" in publisher) or ("press" in v and "university" in v):
+        return "Book"
 
     return "Other"
 
@@ -57,11 +79,13 @@ def main():
         try:
             bib = p.get("bib", {})
             try:
-                p = scholarly.fill(p)  # enrich with cit count, urls
+                p = scholarly.fill(p)  # enrich (citations, urls)
             except Exception:
                 pass
-            venue = bib.get("venue", "") or bib.get("journal", "") or ""
-            pub_type = classify_type(bib, venue)
+
+            # Prefer structured fields for venue display
+            venue = bib.get("journal") or bib.get("booktitle") or bib.get("venue") or ""
+            pub_type = classify_type(bib)
 
             pubs.append({
                 "title": bib.get("title",""),
