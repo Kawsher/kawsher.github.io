@@ -14,6 +14,9 @@ nav ul{list-style:none;display:flex;gap:14px;margin:0;padding:0;flex-wrap:wrap}n
 .btn{display:inline-block;padding:10px 14px;border-radius:12px;border:1px solid rgba(15,23,42,.08);text-decoration:none;background:#fff;color:var(--text);box-shadow:var(--shadow)}
 .btn.primary{background:var(--primary);color:#fff;border-color:transparent}.btn:hover{transform:translateY(-1px)}
 /* Metrics (4 tiles) */
+.tabs { display:flex; gap:8px; flex-wrap:wrap; }
+.tab { padding:8px 12px; border-radius:10px; border:1px solid rgba(15,23,42,.12); background:#fff; cursor:pointer; }
+.tab.active, .tab:hover { background:#EAF2FF; border-color:#c7d7fe; color:#1D4ED8; }
 .metrics{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:26px}
 .metric{background:var(--card);border-radius:var(--radius);padding:18px;box-shadow:var(--shadow);border:1px solid rgba(15,23,42,.05)}
 .metric .kpi{font-size:30px;font-weight:800}.metric .label{color:var(--muted);font-size:14px}
