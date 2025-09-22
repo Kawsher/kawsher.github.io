@@ -13,7 +13,7 @@
       "year": 2025,
       "link": "https://www.sciencedirect.com/science/article/pii/S0957417424027957",
       "citedBy": 9,
-      "type": "Conference"
+      "type": "Journal"
     },
     {
       "title": "Deep features to detect pulmonary abnormalities in chest X-rays due to infectious diseaseX: Covid-19, pneumonia, and tuberculosis",
@@ -22,7 +22,7 @@
       "year": 2022,
       "link": "https://www.sciencedirect.com/science/article/pii/S0020025522001001",
       "citedBy": 113,
-      "type": "Other"
+      "type": "Journal"
     },
     {
       "title": "Detecting COVID-19 infection status from chest X-ray and CT scan via single transfer learning-driven approach",
@@ -31,7 +31,7 @@
       "year": 2022,
       "link": "https://www.frontiersin.org/articles/10.3389/fgene.2022.980338/full",
       "citedBy": 28,
-      "type": "Conference"
+      "type": "Journal"
     },
     {
       "title": "Mobapp4infectiousdisease: Classify covid-19, pneumonia, and tuberculosis",
