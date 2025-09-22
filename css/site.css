@@ -306,19 +306,28 @@ select:focus {
   transition: background 0.2s ease, transform 0.15s ease;
 }
 
-.pub-actions .btn:hover {
-  background: #dcfce7;          /* slightly darker green hover */
-  transform: translateY(-2px);
+.pub-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 6px;
 }
 
 .badge {
-  display: inline-block;
-  font-size: 12px;
-  padding: 4px 8px;
-  background: #EFF6FF;
-  color: #1D4ED8;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 6px 12px;
+  min-width: 80px;
   border-radius: 999px;
+  background: #dcfce7;   /* light green background */
+  color: #166534;        /* dark green text */
+  border: 1px solid #bbf7d0;
+  box-shadow: 0 0 4px rgba(0, 0, 0, .05);
 }
+
 
 /* Footer */
 .small {
