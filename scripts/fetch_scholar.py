@@ -23,12 +23,10 @@ def main():
             json.dump({"metrics":{},"publications":[]}, f, indent=2)
         sys.exit(0)
 
-    metrics = {
-        "citations": int(author.get("citedby", 0) or 0),
-        "hindex":   int(author.get("hindex", 0) or 0),
-        "i10":      int(author.get("i10index", 0) or 0),
-        "lastUpdated": date.today().isoformat()
-    }
+    metrics = {"citations": int(author.get("citedby", 0) or 0),
+               "hindex":   int(author.get("hindex", 0) or 0),
+               "i10":      int(author.get("i10index", 0) or 0),
+               "lastUpdated": date.today().isoformat()}
 
     pubs = []
     for p in author.get("publications", []):
