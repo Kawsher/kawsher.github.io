@@ -1,53 +1,69 @@
-import json, os, sys
+import json, os, sys, re
 from datetime import date
 
 PROFILE_ID = os.environ.get("PROFILE_ID", "fQ_TTFsAAAAJ")
 OUT_PATH   = os.environ.get("OUT_PATH", "data/scholar.json")
 
-def classify_type(bib) -> str:
-    """
-    Robust category inference using BibTeX-style fields first, then venue text.
-    Returns one of: Journal / Conference / Book Chapter / Book / Other
-    """
-    entry = (bib.get("ENTRYTYPE") or bib.get("pub_type") or "").lower()
-    journal = (bib.get("journal") or "").strip().lower()
-    booktitle = (bib.get("booktitle") or "").strip().lower()
-    venue = (bib.get("venue") or "").strip().lower()
-    publisher = (bib.get("publisher") or "").strip().lower()
+# ---- Helper: robust type detection ----
+CONF_ACRONYMS = [
+    # add/trim as needed
+    "aaai","ijcai","neurips","nips","icml","iclr","cvpr","eccv","iccv","miccai",
+    "kdd","sigmod","sigir","cikm","wsdm","www","chi","ubicomp","uist","icra","iros",
+    "emnlp","acl","naacl","coling","icassp","euvip","isbi","ismb","siggraph",
+]
+CONF_WORDS = r"(proceedings|conference|workshop|symposium|meeting|companion|demo|posters)"
+JOURNAL_WORDS = r"(journal|transactions|trans\.|letters|bulletin|annals|frontiers in|ieee access)"
 
-    # 1) Trust explicit structure first
-    if entry in {"article"} or journal:
+def classify_type(bib: dict) -> str:
+    """
+    Returns: Journal / Conference / Book Chapter / Book / Other
+    Priority: structured fields -> venue text -> publisher/title hints
+    """
+    entry = (bib.get("ENTRYTYPE") or bib.get("pub_type") or "").strip().lower()
+    journal = (bib.get("journal") or "").strip()
+    booktitle = (bib.get("booktitle") or "").strip()
+    venue = (bib.get("venue") or "").strip()
+    publisher = (bib.get("publisher") or "").strip()
+    title = (bib.get("title") or "").strip()
+
+    # 1) Trust explicit entry types first
+    if entry == "article":
         return "Journal"
-    if entry in {"inproceedings", "conference", "proceedings"} or booktitle:
+    if entry in {"inproceedings", "conference", "proceedings"}:
         return "Conference"
     if entry in {"incollection", "inbook", "chapter"}:
         return "Book Chapter"
-    if entry in {"book"}:
+    if entry == "book":
         return "Book"
 
-    # 2) Then infer from venue/publisher text
-    v = " ".join(x for x in [venue, journal, booktitle] if x)
-
-    journal_words = [
-        "journal", "transactions", "trans.", "letters", "bulletin", "frontiers in",
-        "nature ", "science ", "ieee ", "acm transactions", "springer nature"
-    ]
-    conf_words = [
-        "proceedings", "proc.", "conference", "workshop", "symposium", "meeting",
-        "ic", "aaai", "neurips", "cvpr", "icml", "eccv", "kdd", "sigmod", "iclr"
-    ]
-    chapter_words = ["chapter", "in ", "handbook", "springer series"]
-
-    if any(w in v for w in journal_words):
-        return "Journal"
-    if any(w in v for w in conf_words):
+    # 2) Structured fields
+    if booktitle:
         return "Conference"
-    if any(w in v for w in chapter_words) or ("chapter" in (bib.get("title","").lower())):
+    if journal and not booktitle:
+        return "Journal"
+
+    # 3) Venue / publisher / title heuristics
+    v = " ".join(x for x in [venue, journal, booktitle, publisher] if x).lower()
+    # conference if venue says conference-like terms OR common acronyms
+    if re.search(rf"\b{CONF_WORDS}\b", v):
+        return "Conference"
+    if any(re.search(rf"\b{acronym}\b", v) for acronym in CONF_ACRONYMS):
+        return "Conference"
+
+    # book chapter cues
+    if re.search(r"\bchapter\b", title.lower()) or re.search(r"\b(handbook|springer series)\b", v):
         return "Book Chapter"
-    if ("press" in publisher and "university" in publisher) or ("press" in v and "university" in v):
+
+    # book cues
+    if "press" in v and "university" in v:
         return "Book"
+
+    # journal fallback ONLY if strong journal words and no conference cues found
+    if re.search(rf"\b{JOURNAL_WORDS}\b", v):
+        return "Journal"
 
     return "Other"
+
 
 def main():
     try:
@@ -79,18 +95,18 @@ def main():
         try:
             bib = p.get("bib", {})
             try:
-                p = scholarly.fill(p)  # enrich (citations, urls)
+                p = scholarly.fill(p)  # enrich with citations / urls
             except Exception:
                 pass
 
-            # Prefer structured fields for venue display
-            venue = bib.get("journal") or bib.get("booktitle") or bib.get("venue") or ""
+            # Prefer structured fields for display
+            venue_display = bib.get("journal") or bib.get("booktitle") or bib.get("venue") or ""
             pub_type = classify_type(bib)
 
             pubs.append({
                 "title": bib.get("title",""),
                 "authors": bib.get("author",""),
-                "venue": venue,
+                "venue": venue_display,
                 "year": int(bib.get("pub_year")) if bib.get("pub_year") else None,
                 "link": p.get("eprint_url") or p.get("pub_url") or "",
                 "citedBy": int(p.get("num_citations", 0) or 0),
