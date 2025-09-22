@@ -105,3 +105,35 @@ document.querySelectorAll("nav a").forEach(link => {
     link.classList.add("active");
   }
 });
+
+// Inject header/footer partials, then highlight active nav
+async function injectPartial(targetId, url) {
+  const host = document.getElementById(targetId);
+  if (!host) return;
+  try {
+    const res = await fetch(url, { cache: "no-cache" });
+    host.innerHTML = await res.text();
+  } catch {
+    // swallow fetch errors in static hosting
+  }
+}
+
+function highlightActiveNav() {
+  const current = (location.pathname.split("/").pop() || "index.html").toLowerCase();
+  document.querySelectorAll("nav a").forEach(a => {
+    const href = (a.getAttribute("href") || "").toLowerCase();
+    if (href === current) a.classList.add("active");
+  });
+}
+
+// load header & footer, then run highlight + year
+(async function () {
+  await injectPartial("header", "partials/header.html");
+  await injectPartial("footer", "partials/footer.html");
+  highlightActiveNav();
+
+  // footer year (works after footer is injected)
+  const y = document.getElementById("year");
+  if (y) y.textContent = new Date().getFullYear();
+})();
+
