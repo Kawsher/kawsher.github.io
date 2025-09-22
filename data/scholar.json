@@ -9,26 +9,29 @@
     {
       "title": "Explainable AI assisted heart disease diagnosis through effective feature engineering and stacked ensemble learning",
       "authors": "Partho Ghose and Khondokar Oliullah and Md Kawsher Mahbub and Milon Biswas and Kazi Nur Uddin and Hasan M Jamil",
-      "venue": "",
+      "venue": "Expert Systems with Applications",
       "year": 2025,
       "link": "https://www.sciencedirect.com/science/article/pii/S0957417424027957",
-      "citedBy": 9
+      "citedBy": 9,
+      "type": "Conference"
     },
     {
       "title": "Deep features to detect pulmonary abnormalities in chest X-rays due to infectious diseaseX: Covid-19, pneumonia, and tuberculosis",
       "authors": "Md Kawsher Mahbub and Milon Biswas and Loveleen Gaur and Fayadh Alenezi and KC Santosh",
-      "venue": "",
+      "venue": "Information Sciences",
       "year": 2022,
       "link": "https://www.sciencedirect.com/science/article/pii/S0020025522001001",
-      "citedBy": 113
+      "citedBy": 113,
+      "type": "Other"
     },
     {
       "title": "Detecting COVID-19 infection status from chest X-ray and CT scan via single transfer learning-driven approach",
       "authors": "Partho Ghose and Muhaddid Alavi and Mehnaz Tabassum and Md Ashraf Uddin and Milon Biswas and Kawsher Mahbub and Loveleen Gaur and Saurav Mallik and Zhongming Zhao",
-      "venue": "",
+      "venue": "Frontiers in Genetics",
       "year": 2022,
       "link": "https://www.frontiersin.org/articles/10.3389/fgene.2022.980338/full",
-      "citedBy": 28
+      "citedBy": 28,
+      "type": "Conference"
     },
     {
       "title": "Mobapp4infectiousdisease: Classify covid-19, pneumonia, and tuberculosis",
@@ -36,7 +39,8 @@
       "venue": "",
       "year": 2022,
       "link": "https://ieeexplore.ieee.org/abstract/document/9866961/",
-      "citedBy": 22
+      "citedBy": 22,
+      "type": "Other"
     },
     {
       "title": "Autism spectrum disorder detection using transfer learning with VGG 19, inception V3 and DenseNet 201",
@@ -44,7 +48,8 @@
       "venue": "",
       "year": 2022,
       "link": "https://link.springer.com/chapter/10.1007/978-3-031-23599-3_14",
-      "citedBy": 20
+      "citedBy": 20,
+      "type": "Other"
     },
     {
       "title": "Deep neural networks for brain tumor detection from MRI images",
@@ -52,7 +57,8 @@
       "venue": "",
       "year": 2022,
       "link": "https://link.springer.com/chapter/10.1007/978-981-16-7597-3_39",
-      "citedBy": 7
+      "citedBy": 7,
+      "type": "Other"
     },
     {
       "title": "Covid-19 detection using chest x-ray images with a regnet structured deep learning model",
@@ -60,7 +66,8 @@
       "venue": "",
       "year": 2021,
       "link": "https://link.springer.com/chapter/10.1007/978-3-030-82269-9_28",
-      "citedBy": 22
+      "citedBy": 22,
+      "type": "Other"
     },
     {
       "title": "Best eleven forecast for bangladesh cricket team with machine learning techniques",
@@ -68,7 +75,8 @@
       "venue": "",
       "year": 2021,
       "link": "https://ieeexplore.ieee.org/abstract/document/9667862/",
-      "citedBy": 18
+      "citedBy": 18,
+      "type": "Other"
     },
     {
       "title": "A survey on predicting player\u2019s performance and team recommendation in game of cricket using machine learning",
@@ -76,7 +84,8 @@
       "venue": "",
       "year": 2021,
       "link": "https://link.springer.com/chapter/10.1007/978-981-16-0739-4_22",
-      "citedBy": 12
+      "citedBy": 12,
+      "type": "Other"
     },
     {
       "title": "Stock market prediction: A survey and evaluation",
@@ -84,7 +93,8 @@
       "venue": "",
       "year": 2021,
       "link": "https://ieeexplore.ieee.org/abstract/document/9642681/",
-      "citedBy": 11
+      "citedBy": 11,
+      "type": "Other"
     },
     {
       "title": "An enhanced deep convolution neural network model to diagnose alzheimer\u2019s disease using brain magnetic resonance imaging",
@@ -92,7 +102,8 @@
       "venue": "",
       "year": 2021,
       "link": "https://link.springer.com/chapter/10.1007/978-3-031-07005-1_5",
-      "citedBy": 9
+      "citedBy": 9,
+      "type": "Other"
     }
   ]
 }
