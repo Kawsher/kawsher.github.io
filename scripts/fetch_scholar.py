@@ -1,9 +1,31 @@
-
 import json, os, sys
 from datetime import date
 
 PROFILE_ID = os.environ.get("PROFILE_ID", "fQ_TTFsAAAAJ")
 OUT_PATH   = os.environ.get("OUT_PATH", "data/scholar.json")
+
+def classify_type(bib, venue: str) -> str:
+    """Best-effort category: Journal / Conference / Book Chapter / Book / Other"""
+    t = (bib.get("ENTRYTYPE") or bib.get("pub_type") or "").lower()
+    v = (venue or "").lower()
+
+    # direct bib types first
+    if t in {"article"}: return "Journal"
+    if t in {"inproceedings", "conference", "proceedings"}: return "Conference"
+    if t in {"incollection", "inbook", "chapter"}: return "Book Chapter"
+    if t in {"book"}: return "Book"
+
+    # venue-based heuristics
+    journal_words = ["journal", "trans.", "transactions", "letters", "bulletin"]
+    conf_words    = ["conf", "conference", "proceedings", "workshop", "symposium", "ic", "acm", "ieee"]
+    chapter_words = ["chapter", "handbook", "springer series"]
+
+    if any(w in v for w in journal_words):   return "Journal"
+    if any(w in v for w in conf_words):      return "Conference"
+    if any(w in v for w in chapter_words):   return "Book Chapter"
+    if "press" in v and "university" in v:   return "Book"
+
+    return "Other"
 
 def main():
     try:
@@ -34,17 +56,24 @@ def main():
     for p in author.get("publications", []):
         try:
             bib = p.get("bib", {})
-            try: p = scholarly.fill(p)
-            except Exception: pass
+            try:
+                p = scholarly.fill(p)  # enrich with cit count, urls
+            except Exception:
+                pass
+            venue = bib.get("venue", "") or bib.get("journal", "") or ""
+            pub_type = classify_type(bib, venue)
+
             pubs.append({
                 "title": bib.get("title",""),
                 "authors": bib.get("author",""),
-                "venue": bib.get("venue",""),
+                "venue": venue,
                 "year": int(bib.get("pub_year")) if bib.get("pub_year") else None,
                 "link": p.get("eprint_url") or p.get("pub_url") or "",
-                "citedBy": int(p.get("num_citations", 0) or 0)
+                "citedBy": int(p.get("num_citations", 0) or 0),
+                "type": pub_type
             })
-        except Exception: continue
+        except Exception:
+            continue
 
     pubs.sort(key=lambda x: (x.get("year") or 0, x.get("citedBy") or 0), reverse=True)
 
