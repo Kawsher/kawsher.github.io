@@ -221,8 +221,9 @@ nav a:hover {
 
 /* Sections & Cards */
 .section {
-  padding: 40px 0;
+  padding: 28px 0; /* was probably 40px+ before */
 }
+
 
 .section h2 {
   font-family: "Source Serif Pro", Georgia, "Times New Roman", serif;
@@ -289,13 +290,6 @@ select:focus {
   font-size: 14px;
 }
 
-.pub-actions {
-  margin-top: 6px;
-  display: flex;
-  gap: 10px;
-  flex-wrap: wrap;
-  align-items: center;
-}
 
 .pub-actions .btn {
   background: #f0fdf4;          /* very light green background */
@@ -381,4 +375,41 @@ footer.site-footer {
   .hero .hero-body {
     padding-left: 0;
   }
+}
+
+
+/* Reduce hero bottom padding so next section sits closer */
+.hero { padding: 60px 0 30px; }
+
+/* Pull sections closer together */
+.section { padding: 18px 0; }              /* was 28–40px */
+.section h2 { margin-bottom: 10px; }       /* was 14px */
+.section .lead { margin-bottom: 10px; }
+
+/* Tighter spacing between stacked cards */
+.section .card { margin-top: 8px; }
+.section .card + .card { margin-top: 8px; }
+
+/* Nicer list rhythm inside cards (your experience/education bullets) */
+.card ul { margin: 8px 0 0; padding-left: 18px; }
+.card ul li { margin: 4px 0; }
+
+/* Footer closer to content */
+footer.site-footer { margin-top: 28px; padding: 18px 0; }
+
+/* --- Extra spacing fix between sections --- */
+
+/* Remove extra margin at top of first card in each section */
+.section .card:first-child {
+  margin-top: 4px; /* was 12px or more */
+}
+
+/* Reduce top margin for h2 that follows a section */
+.section + .section {
+  margin-top: -8px; /* pulls next section slightly upward */
+}
+
+/* Also ensure headings don't add too much space above them */
+.section h2:first-child {
+  margin-top: 0;
 }
