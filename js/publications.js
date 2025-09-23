@@ -12,31 +12,18 @@ function years(pubs) {
   return [...new Set(pubs.map(x => x.year).filter(Boolean))].sort((a, b) => b - a);
 }
 
-function render(list) {
-  const el = document.getElementById("pub-list");
-  el.innerHTML = list
-    .map(
-      p => `
-      <div class="pub-item">
-        <div class="pub-title">${p.title || "Untitled"}</div>
-        <div class="pub-meta">
-          ${p.authors || ""} · ${p.venue || ""} · ${p.year || ""}
-        </div>
-        <div class="pub-actions">
-          ${
-            p.link
-              ? `<a class="btn" href="${p.link}" target="_blank" rel="noopener">Publisher</a>`
-              : ""
-          }
-          ${
-            typeof p.citedBy === "number"
-              ? `<span class="badge">Cited by ${p.citedBy}</span>`
-              : ""
-          }
-        </div>
-      </div>`
-    )
-    .join("");
+function render(list){
+  const el = document.getElementById('pub-list');
+  el.innerHTML = list.map(p => `
+    <div class='pub-item'>
+      <div class='pub-title'>${p.title || 'Untitled'}</div>
+      <div class='pub-meta'>${p.authors || ''} · ${p.venue || ''} · ${p.year || ''}</div>
+      <div class='pub-actions'>
+        ${p.link ? `<a class='btn' href='${p.link}' target='_blank' rel='noopener'>Publisher</a>` : ''}
+        ${typeof p.citedBy === 'number' ? `<span class='badge'>Cited by ${p.citedBy}</span>` : ''}
+      </div>
+    </div>
+  `).join('');
 }
 
 (async function () {
