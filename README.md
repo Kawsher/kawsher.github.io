@@ -2,7 +2,10 @@
 
 This is my **personal academic portfolio** website — a modern, responsive, and cleanly designed single-page site that highlights my professional profile, research interests, publications, teaching experience, and achievements.
 
-![Website Preview](./screenshot.png)
+![Website Preview]
+
+<img width="1481" height="848" alt="image" src="https://github.com/user-attachments/assets/f0204e91-c231-4488-8530-7095e0fd6c97" />
+
 
 ---
 
