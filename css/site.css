@@ -288,73 +288,54 @@ footer.site-footer {
 }
 
 /* ================================
-   HERO — mobile-first, no absolute positioning
-================================== */
-.hero { padding: 60px 0 30px; background: linear-gradient(to bottom, var(--bg), var(--bg-alt)); }
-.hero .hero-wrap {
-  display: grid;
-  grid-template-columns: 1fr;          /* mobile: stack */
-  gap: 20px;
-  align-items: start;
-}
-
-/* Left column block (headshot + topics + icons) */
-.hero-aside {
-  display: grid;
-  justify-items: center;
-  gap: 10px;
-}
-
-/* Headshot: never absolute */
-.hero .headshot {
-  width: 140px;
-  height: 140px;
-  border-radius: 9999px;
-  object-fit: cover;
-  border: 3px solid #fff;
-  box-shadow: var(--shadow);
-}
-
-/* Tagline under the photo */
-.hero .tagline {
-  margin: 6px 0 2px;
-  color: var(--muted);
-  font-size: 16px;
-  text-align: center;
-}
-
-/* Social icons: 3 per row on mobile */
-.hero .social-icons {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 10px;
-  width: 100%;
-  max-width: 360px;
-  justify-items: center;
-}
-.hero .social-icons a { display: inline-flex; }
-.hero .social-icons img { width: 36px; height: 36px; }
-
-/* Right column block */
-.hero-main { display: grid; gap: 12px; }
-.hero .title { margin: 0; font-family: "Source Serif Pro", Georgia, serif; font-size: clamp(28px, 5.2vw, 48px); line-height: 1.1; }
-.hero .subtitle { color: var(--muted); margin: 0; }
-.hero .cta { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 6px; }
-
-/* Desktop: two columns */
-@media (min-width: 900px) {
-  .hero .hero-wrap {
-    grid-template-columns: 280px 1fr;  /* left column width + main */
-    gap: 32px;
+   MOBILE EMERGENCY FIX
+   Completely reset layout inside .hero on small screens
+================================= */
+@media (max-width: 768px) {
+  /* 1) Reset *everything* inside hero */
+  .hero * {
+    position: static !important;
+    float: none !important;
+    display: block !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    max-width: 95% !important;
+    text-align: center !important;
   }
-  .hero .social-icons {
-    grid-template-columns: repeat(4, 40px); /* tighter grid on desktop */
-    justify-content: start;
-  }
-  .hero-aside { justify-items: start; }
-  .hero .tagline { text-align: left; }
-}
 
-/* Safety: zero out any leftover absolute positioning from older CSS */
-.hero * { position: static !important; }
+  /* 2) Headshot centered */
+  .hero .headshot,
+  .hero img {
+    border-radius: 9999px;
+    width: 120px !important;
+    height: 120px !important;
+    margin-bottom: 10px !important;
+  }
+
+  /* 3) Tagline spacing */
+  .hero .tagline,
+  .hero .subtitle {
+    font-size: 16px !important;
+    margin: 8px auto !important;
+    text-align: center !important;
+  }
+
+  /* 4) Social icons: grid layout 3 per row */
+  .hero .social-icons,
+  .hero .socials,
+  .hero [class*="social"] {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 10px !important;
+    margin-top: 10px !important;
+    justify-items: center !important;
+  }
+
+  /* 5) Biography paragraph cleared */
+  .hero p {
+    clear: both !important;
+    margin-top: 12px !important;
+    text-align: justify !important;
+  }
+}
 
