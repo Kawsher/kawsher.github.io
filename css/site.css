@@ -144,20 +144,29 @@ nav a:hover {
 .pub-title { font-weight: 700; }
 .pub-meta { color: var(--muted); font-size: 14px; }
 .pub-actions { display: flex; align-items: center; gap: 10px; margin-top: 6px; }
+/* --- Match Read Paper to Cited by --- */
 .pub-actions .btn {
-  background: #DCFCE7;
-  color: #166534 !important;
-  border: 1px solid #BBF7D0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
   font-weight: 600;
-  box-shadow: none;
+  padding: 6px 12px; /* match badge size */
+  min-width: 80px;
+  border-radius: 999px;
+  background: #dcfce7; /* same as cited by */
+  color: #166534;      /* same text color */
+  border: 1px solid #bbf7d0;
+  box-shadow: 0 0 4px rgba(0, 0, 0, .05);
+  text-decoration: none;
+  transition: background 0.2s ease, transform 0.15s ease;
 }
-.pub-actions .btn:hover { background: #BBF7D0; color: #0B4A2B !important; }
-.badge {
-  display: inline-flex; align-items: center; justify-content: center;
-  font-size: 13px; font-weight: 600; padding: 6px 12px; min-width: 80px;
-  border-radius: 999px; background: #DCFCE7; color: #166534;
-  border: 1px solid #BBF7D0; box-shadow: 0 0 4px rgba(0, 0, 0, .05);
+
+.pub-actions .btn:hover {
+  background: #bbf7d0; /* slightly darker on hover */
+  transform: translateY(-1px);
 }
+
 
 /* --- Footer --- */
 footer.site-footer { margin-top: 28px; padding: 18px 0; border-top: 1px solid rgba(15, 23, 42, .06); color: var(--muted); }
