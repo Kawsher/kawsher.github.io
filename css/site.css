@@ -364,86 +364,112 @@ footer.site-footer {
   max-width: 130px; /* match headshot width */
 }
 
-/* -------------------------------------------------------
-   MOBILE FIX: stop overlap of headshot / tagline / icons
-   and stack everything cleanly (<= 768px)
-------------------------------------------------------- */
+/* ===================================================================
+   MOBILE HARD FIX (<= 768px):
+   Stop overlaps in the hero: remove absolute/floats, stack vertically,
+   grid the social icons, and clear the body text.
+=================================================================== */
 @media (max-width: 768px) {
 
-  /* Make hero area a simple vertical stack and center it */
-  .hero .container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
+  /* 1) Make the hero a simple vertical stack */
+  .hero,
+  .hero .container,
+  .hero .hero-body {
+    display: block !important;
+    position: static !important;
+    float: none !important;
+    width: 100% !important;
+    text-align: center !important;
   }
 
-  /* The headshot should not be absolutely positioned */
-  .hero .headshot-wrap {
+  /* 2) Headshot: no absolute positioning on mobile */
+  .hero .headshot-wrap,
+  .hero [class*="headshot"],
+  .hero img.headshot {
+    position: static !important;
+    float: none !important;
+    margin: 0 auto 10px auto !important;
+    display: block !important;
+  }
+
+  /* 3) Tagline (AI · ML · …): force into normal flow */
+  .hero .tagline,
+  .hero .subtitle,
+  .hero [class*="tagline"],
+  .hero [class*="subtitle"] {
+    position: static !important;
+    float: none !important;
+    display: block !important;
+    margin: 6px auto 10px auto !important;
+    font-size: 16px !important;
+    line-height: 1.35 !important;
+    max-width: 90ch;
+  }
+
+  /* 4) Title spacing (avoid bumps) */
+  .hero .title {
+    line-height: 1.15 !important;
+    margin: 8px 0 6px 0 !important;
+  }
+
+  /* 5) SOCIAL ICONS:
+        – match lots of possible class/id names,
+        – kill absolute/fixed, floats,
+        – lay out as a small grid (3 per row) and center it. */
+  .hero .social-icons,
+  .hero .icons,
+  .hero .socials,
+  .hero .social,
+  .hero [class*="social"],
+  .hero [id*="social"] {
     position: static !important;
     inset: auto !important;
-    margin: 0 auto 10px auto !important;
     float: none !important;
-  }
+    z-index: auto !important;
 
-  /* Remove the desktop left padding that was pushing
-     text under the headshot (caused the collision) */
-  .hero .hero-body {
-    padding-left: 0 !important;
-    width: 100%;
-    clear: both;           /* ensure nothing floats into it */
-  }
+    display: grid !important;
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    gap: 12px !important;
+    justify-items: center !important;
 
-  /* Tagline (AI · ML · DL …) under the headshot */
-  .hero .subtitle,
-  .hero .tagline {
-    display: block !important;
-    margin: 6px 0 10px 0 !important;
-    font-size: 16px !important;
-    line-height: 1.4;
-    text-align: center;
-  }
-
-  /* Center the main title */
-  .hero .title {
-    text-align: center !important;
-    margin: 8px 0 6px 0 !important;
-    line-height: 1.15;
-  }
-
-  /* Social icons: turn the vertical bar into a small grid
-     and make sure it is not positioned over the text */
-  .social-icons {
-    position: static !important;    /* kill any absolute/fixed */
-    inset: auto !important;
-    float: none !important;
-    width: 100%;
-    max-width: 360px;
+    width: 100% !important;
+    max-width: 340px !important;
     margin: 10px auto 14px auto !important;
-
-    display: grid !important;       /* 3 per row */
-    grid-template-columns: repeat(3, 1fr);
-    gap: 12px;
-    justify-items: center;
   }
 
-  .social-icons a,
-  .social-icons a img {
-    display: inline-block;
+  .hero .social-icons a,
+  .hero .social-icons img,
+  .hero [class*="social"] a,
+  .hero [class*="social"] img {
+    display: inline-block !important;
   }
 
-  /* Ensure anything else that was floating near the top is reset */
-  .hero * {
-    float: none !important;
+  /* 6) Ensure the first body paragraph cannot be overlapped */
+  .hero p,
+  .hero .bio,
+  .hero [class*="bio"] {
+    clear: both !important;
+    position: relative !important;
+    z-index: 1 !important; /* sits above anything that might still have z-index */
+    text-align: start;      /* keep paragraphs left-aligned for readability */
+  }
+
+  /* 7) Kill any absolutes inside .hero that slipped through */
+  .hero [style*="position:absolute"],
+  .hero .is-absolute {
+    position: static !important;
   }
 }
 
-/* Slightly larger phones / phablets can use a bit more width */
-@media (max-width: 600px) {
-  .social-icons {
-    max-width: 320px;
-  }
+/* Optional ultra-safe fallback: if you still see overlap on very small phones,
+   uncomment to hide the side rail entirely (icons will disappear on phones). */
+/*
+@media (max-width: 480px) {
+  .hero .social-icons,
+  .hero [class*="social"],
+  .hero [id*="social"] { display: none !important; }
 }
+*/
 
 
 
