@@ -365,21 +365,17 @@ footer.site-footer {
 }
 
 
-/* Make Read Paper and Cited By same as "See all publications" */
+/* Force Read Paper + Cited By to match See All Publications button */
 .pub-actions .badge,
 .pub-actions .pub-link,
 .pub-actions .btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 14px;
-  font-weight: 600;
-  padding: 6px 14px;
-  min-width: 100px;
-  border-radius: 9999px;
-  background: var(--primary); /* same as See all publications */
-  color: #fff !important;
-  border: none;
+  background: var(--primary) !important; /* dark green background */
+  color: #fff !important;               /* white text */
+  border: none !important;
+  font-weight: 700 !important;
+  font-size: 14px !important;
+  padding: 8px 16px !important;
+  border-radius: 9999px !important;
   text-decoration: none !important;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
   transition: background 0.2s ease, transform 0.15s ease;
@@ -388,7 +384,7 @@ footer.site-footer {
 .pub-actions .badge:hover,
 .pub-actions .pub-link:hover,
 .pub-actions .btn:hover {
-  background: var(--primary-dark);
+  background: var(--primary-dark) !important; /* same hover as See All Publications */
   transform: translateY(-1px);
 }
 
