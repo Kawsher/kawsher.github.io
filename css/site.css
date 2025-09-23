@@ -364,4 +364,27 @@ footer.site-footer {
   max-width: 130px; /* match headshot width */
 }
 
+/* Read Paper + Cited By — unified style but slightly smaller than main CTA */
+.pub-actions .badge,
+.pub-actions .pub-link,
+.pub-actions .btn {
+  background: var(--primary) !important; /* same green as main CTA */
+  color: #fff !important;
+  border: none !important;
+  font-weight: 600 !important;
+  font-size: 13px !important;            /* slightly smaller text */
+  padding: 8px 16px !important;          /* 15% smaller padding */
+  border-radius: 9999px !important;
+  text-decoration: none !important;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05) !important; /* slightly softer shadow */
+  display: inline-block !important;
+  transition: background 0.2s ease, transform 0.15s ease;
+}
+
+.pub-actions .badge:hover,
+.pub-actions .pub-link:hover,
+.pub-actions .btn:hover {
+  background: var(--primary-dark) !important;
+  transform: translateY(-2px);
+}
 
