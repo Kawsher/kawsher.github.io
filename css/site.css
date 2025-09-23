@@ -172,3 +172,25 @@ footer.site-footer { margin-top: 28px; padding: 18px 0; border-top: 1px solid rg
   .hero .headshot-wrap { position: static; margin-bottom: 12px; }
   .hero .hero-body { padding-left: 0; }
 }
+
+.pub-actions .pub-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 6px 12px;
+  min-width: 80px;
+  border-radius: 999px;
+  background: #dcfce7;  /* same as cited badge */
+  color: #166534;       /* dark green */
+  border: 1px solid #bbf7d0;
+  box-shadow: 0 0 4px rgba(0, 0, 0, .05);
+  text-decoration: none;   /* removes underline */
+  transition: background 0.2s ease;
+}
+
+.pub-actions .pub-link:hover {
+  background: #bbf7d0;  /* slightly darker green on hover */
+}
+
