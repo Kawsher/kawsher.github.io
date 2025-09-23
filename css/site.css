@@ -364,10 +364,13 @@ footer.site-footer {
   max-width: 130px; /* match headshot width */
 }
 
-/* ================================
-   Mobile Fix for Headshot & Bio
-==================================*/
+/* -------------------------------------------------------
+   MOBILE FIX: stop overlap of headshot / tagline / icons
+   and stack everything cleanly (<= 768px)
+------------------------------------------------------- */
 @media (max-width: 768px) {
+
+  /* Make hero area a simple vertical stack and center it */
   .hero .container {
     display: flex;
     flex-direction: column;
@@ -375,30 +378,70 @@ footer.site-footer {
     text-align: center;
   }
 
+  /* The headshot should not be absolutely positioned */
   .hero .headshot-wrap {
-    position: static;
-    margin: 0 auto 12px auto;
+    position: static !important;
+    inset: auto !important;
+    margin: 0 auto 10px auto !important;
+    float: none !important;
   }
 
+  /* Remove the desktop left padding that was pushing
+     text under the headshot (caused the collision) */
   .hero .hero-body {
-    padding-left: 0; /* removes overlap */
+    padding-left: 0 !important;
     width: 100%;
+    clear: both;           /* ensure nothing floats into it */
   }
 
-  /* Stack social icons below headshot with spacing */
-  .social-icons {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 icons per row */
-    gap: 10px;
-    justify-items: center;
-    margin: 10px 0 20px 0;
-  }
-
-  /* Center tagline under headshot */
+  /* Tagline (AI · ML · DL …) under the headshot */
+  .hero .subtitle,
   .hero .tagline {
-    margin: 8px 0 12px 0;
-    font-size: 16px;
-    display: block;
+    display: block !important;
+    margin: 6px 0 10px 0 !important;
+    font-size: 16px !important;
+    line-height: 1.4;
+    text-align: center;
+  }
+
+  /* Center the main title */
+  .hero .title {
+    text-align: center !important;
+    margin: 8px 0 6px 0 !important;
+    line-height: 1.15;
+  }
+
+  /* Social icons: turn the vertical bar into a small grid
+     and make sure it is not positioned over the text */
+  .social-icons {
+    position: static !important;    /* kill any absolute/fixed */
+    inset: auto !important;
+    float: none !important;
+    width: 100%;
+    max-width: 360px;
+    margin: 10px auto 14px auto !important;
+
+    display: grid !important;       /* 3 per row */
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    justify-items: center;
+  }
+
+  .social-icons a,
+  .social-icons a img {
+    display: inline-block;
+  }
+
+  /* Ensure anything else that was floating near the top is reset */
+  .hero * {
+    float: none !important;
+  }
+}
+
+/* Slightly larger phones / phablets can use a bit more width */
+@media (max-width: 600px) {
+  .social-icons {
+    max-width: 320px;
   }
 }
 
