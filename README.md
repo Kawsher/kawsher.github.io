@@ -26,6 +26,21 @@ python3 -m http.server 8000
 # open http://localhost:8000/
 ```
 
+Open Locally
+Open index.html in your browser.
+
+Deploy to GitHub Pages
+
+Push your code to GitHub
+
+Go to Settings → Pages
+
+Select main branch and / (root) folder
+
+Your site will be live at:
+https://your-username.github.io/
+
+
 ## Structure
 kawsher.github.io/
 ├── README.md
@@ -61,3 +76,13 @@ kawsher.github.io/
 └── .github/
     └── workflows/
         └── scholar.yml
+
+## Customization
+
+Profile Photo: Replace assets/headshot.jpg
+
+Name, Bio & Links: Update in index.html
+
+Publications: Add or edit publication cards (title, authors, links)
+
+Theme Colors: Change in site.css
