@@ -19,9 +19,10 @@ function render(list){
       <div class='pub-title'>${p.title || 'Untitled'}</div>
       <div class='pub-meta'>${p.authors || ''} · ${p.venue || ''} · ${p.year || ''}</div>
       <div class='pub-actions'>
-        ${p.link ? `<a class='btn' href='${p.link}' target='_blank' rel='noopener'>Read Paper</a>` : ''}
+        ${p.link ? `<a class='badge pub-link' href='${p.link}' target='_blank' rel='noopener'>Read Paper</a>` : ''}
         ${typeof p.citedBy === 'number' ? `<span class='badge'>Cited by ${p.citedBy}</span>` : ''}
       </div>
+
     </div>
   `).join('');
 }
