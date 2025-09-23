@@ -25,7 +25,7 @@ function render(list) {
         <div class="pub-actions">
           ${
             p.link
-              ? `<a class="btn" href="${p.link}" target="_blank" rel="noopener">Publisher</a>`
+              ? `<a class="btn" href="${p.link}" target="_blank" rel="noopener">Read Paper</a>`
               : ""
           }
           ${
