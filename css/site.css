@@ -364,4 +364,43 @@ footer.site-footer {
   max-width: 130px; /* match headshot width */
 }
 
+/* ================================
+   Mobile Fix for Headshot & Bio
+==================================*/
+@media (max-width: 768px) {
+  .hero .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .hero .headshot-wrap {
+    position: static;
+    margin: 0 auto 12px auto;
+  }
+
+  .hero .hero-body {
+    padding-left: 0; /* removes overlap */
+    width: 100%;
+  }
+
+  /* Stack social icons below headshot with spacing */
+  .social-icons {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 icons per row */
+    gap: 10px;
+    justify-items: center;
+    margin: 10px 0 20px 0;
+  }
+
+  /* Center tagline under headshot */
+  .hero .tagline {
+    margin: 8px 0 12px 0;
+    font-size: 16px;
+    display: block;
+  }
+}
+
+
 
