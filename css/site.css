@@ -413,3 +413,45 @@ footer.site-footer { margin-top: 28px; padding: 18px 0; }
 .section h2:first-child {
   margin-top: 0;
 }
+
+/* === Unified Green Button Style === */
+
+/* Buttons */
+.btn,
+.btn.primary {
+  background: var(--primary);
+  color: #fff !important;
+  border: none;
+  font-weight: 600;
+  border-radius: 9999px;
+  padding: 12px 20px;
+  box-shadow: var(--shadow);
+  transition: background 0.2s ease, transform 0.15s ease;
+}
+.btn:hover,
+.btn.primary:hover {
+  background: var(--primary-dark);
+  transform: translateY(-2px);
+}
+
+/* Navbar active & hover links */
+nav a.active,
+nav a:hover {
+  background: #ecfdf5;  /* very light green background */
+  color: var(--primary-dark);
+}
+
+/* Tabs & filters */
+.tab.active,
+.tab:hover {
+  background: #ecfdf5;
+  border-color: #bbf7d0;
+  color: var(--primary-dark);
+}
+
+/* Inputs focus ring */
+input[type="text"]:focus,
+select:focus {
+  box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.25);
+  border-color: var(--primary-dark);
+}
