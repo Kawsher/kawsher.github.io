@@ -363,3 +363,32 @@ footer.site-footer {
   color: var(--muted);
   max-width: 130px; /* match headshot width */
 }
+
+
+/* Make Read Paper and Cited By same as "See all publications" */
+.pub-actions .badge,
+.pub-actions .pub-link,
+.pub-actions .btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 6px 14px;
+  min-width: 100px;
+  border-radius: 9999px;
+  background: var(--primary); /* same as See all publications */
+  color: #fff !important;
+  border: none;
+  text-decoration: none !important;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+  transition: background 0.2s ease, transform 0.15s ease;
+}
+
+.pub-actions .badge:hover,
+.pub-actions .pub-link:hover,
+.pub-actions .btn:hover {
+  background: var(--primary-dark);
+  transform: translateY(-1px);
+}
+
