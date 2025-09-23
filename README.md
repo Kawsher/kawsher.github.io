@@ -1,35 +1,60 @@
+# 🌐 Personal Academic Portfolio Website
 
-# Md. Kawsher Mahbub — Academic Portfolio (Fresh Start)
+This is my **personal academic portfolio** website — a modern, responsive, and cleanly designed single-page site that highlights my professional profile, research interests, publications, teaching experience, and achievements.
 
-Responsive, soothing academic website with headshot slot on Home, consistent header/footer, and auto-updating Google Scholar metrics & publications. Deploy to **GitHub Pages** as `kawsher.github.io`.
+![Website Preview](./screenshot.png)
 
-## Deploy (fast)
-1) Create a GitHub repo named **kawsher.github.io**.
-2) Upload all files from this folder (or push via git).
-3) In **Settings → Pages**, serve from **main** branch.
+---
 
-## Scholar Sync
-- `.github/workflows/scholar.yml` runs on push and weekly.
-- `scripts/fetch_scholar.py` (via `scholarly`) writes `data/scholar.json` with citations, h-index, i10, and publications.
-- Home page shows animated counters; Publications page lists with filters.
+## ✨ Features
 
-## Headshot
-Place your photo at: `assets/headshot.jpg` (square looks best).
+- **Modern, Clean Design**  
+  - Light background with dark navigation and green accent theme  
+  - Fully responsive (desktop, tablet, mobile support)
 
-## Icons
-Do **not** embed icons in HTML; upload to `/assets/`:
-- `icon-google-scholar.svg`, `icon-github.svg`, `icon-email.svg`, `icon-linkedin.svg`
+- **Professional Sections**
+  - **Hero Section:** Profile picture, tagline, and quick action buttons  
+  - **Professional Experience:** Academic & industry experience in a clean list  
+  - **Education:** Degrees, institutions, and CGPA  
+  - **Technical Skills:** Programming languages, frameworks, and tools  
+  - **Publications:** Featured papers with direct links to read  
+  - **Service & Awards:** Leadership roles, memberships, achievements  
 
-## Local preview
-```bash
-python3 -m http.server 8000
-# open http://localhost:8000/
-```
+- **Interactive Elements**
+  - Hover animations on buttons and links  
+  - External links open in new tabs  
+  - Consistent color scheme for all action elements (green accent theme)
 
-Open Locally
+- **Easy Deployment**
+  - Ready to host on **GitHub Pages** or any static site host  
+  - Minimal dependencies — pure HTML, CSS, and lightweight JavaScript
+
+---
+
+## 🛠 Tech Stack
+
+| Component        | Technology Used |
+|-----------------|----------------|
+| Frontend        | **HTML5**, **CSS3** (custom responsive design) |
+| Styling         | Custom `site.css` with green theme & dark nav |
+| Deployment      | GitHub Pages / Netlify / Vercel |
+| Icons           | SVG/PNG icons for social & academic links |
+
+---
+
+## 🚀 Getting Started
+
+1. **Clone the Repository**
+   ```bash
+   git clone https://github.com/your-username/your-portfolio.git
+   cd your-portfolio
+
+
+
+2. **Open Locally**
 Open index.html in your browser.
 
-Deploy to GitHub Pages
+3. **Deploy to GitHub Pages**
 
 Push your code to GitHub
 
@@ -39,7 +64,6 @@ Select main branch and / (root) folder
 
 Your site will be live at:
 https://your-username.github.io/
-
 
 ## Structure
 kawsher.github.io/
@@ -86,3 +110,26 @@ Name, Bio & Links: Update in index.html
 Publications: Add or edit publication cards (title, authors, links)
 
 Theme Colors: Change in site.css
+
+
+## 🌟 Future Improvements
+
+🌙 Dark Mode Toggle
+
+🔄 Dynamic Publication Loading (Google Scholar API)
+
+📬 Contact Form Integration (EmailJS / Netlify Forms)
+
+🎨 Smooth Scroll Animations
+
+
+## 📄 License
+
+This project is licensed under the MIT License.
+You’re free to use, modify, and share — attribution appreciated.
+
+## 🙌 Acknowledgements
+
+Inspired by modern academic portfolio templates
+
+Developed with ❤️ to share my research, teaching, and contributions with the world
