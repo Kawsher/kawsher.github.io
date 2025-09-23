@@ -328,5 +328,38 @@ footer.site-footer {
   font-weight: 600;
   padding: 6px 12px;
   border-radius: 9999px;
+  
+}/* Vertical social icons next to headshot */
+.social-vertical {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 12px;
+  gap: 8px;
 }
 
+.social-vertical img {
+  width: 28px;
+  height: 28px;
+  opacity: 0.85;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.social-vertical img:hover {
+  opacity: 1;
+  transform: scale(1.1);
+}
+.hero .headshot-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+/* Tagline below headshot */
+.headshot-wrap .tagline {
+  margin: 10px 0;
+  font-size: 14px;
+  line-height: 1.4;
+  text-align: center;
+  color: var(--muted);
+  max-width: 130px; /* match headshot width */
+}
