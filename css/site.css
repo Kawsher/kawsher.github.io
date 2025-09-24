@@ -239,30 +239,13 @@ footer.site-footer{
   .hero .title{ font-size:clamp(28px,6vw,40px) }
 }
 
-<!-- Minimal styles: keep inline here or move to your site CSS -->
 <style>
-#bubt-courses { margin: 2rem 0; }
-#bubt-courses .subtitle { color: #64748b; margin-top: .25rem; }
-#bubt-courses .course-grid {
-list-style: none; padding: 0; margin: 1rem 0 0;
-display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: .75rem;
+#bubt-courses ul {
+list-style-type: disc;
+padding-left: 1.5rem;
+line-height: 1.8;
 }
-#bubt-courses .course-grid li {
-background: #ffffff; border: 1px solid #e5e7eb; border-radius: 12px;
-padding: .75rem .9rem; display: flex; align-items: baseline; gap: .6rem;
-box-shadow: 0 6px 18px rgba(2,6,23,.05);
-}
-#bubt-courses .code {
-font-variant-numeric: tabular-nums; font-weight: 700; color: #0f172a;
-background: #eef2ff; border: 1px solid #c7d2fe; border-radius: 8px; padding: .15rem .45rem;
-flex: 0 0 auto;
-}
-#bubt-courses .title { color: #1f2937; }
-/* Dark-mode friendly tweaks if your site uses prefers-color-scheme */
-@media (prefers-color-scheme: dark) {
-#bubt-courses .subtitle { color: #9aa4b2; }
-#bubt-courses .course-grid li { background: #0b1220; border-color: #1f2937; }
-#bubt-courses .code { background: #111827; border-color: #374151; color: #e5e7eb; }
-#bubt-courses .title { color: #e5e7eb; }
+#bubt-courses li {
+margin-bottom: 0.3rem;
 }
 </style>
