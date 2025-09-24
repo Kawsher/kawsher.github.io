@@ -238,32 +238,3 @@ footer.site-footer{
   .hero .headshot-wrap{ width:100%; align-items:center; margin-bottom:0 }
   .hero .title{ font-size:clamp(28px,6vw,40px) }
 }
-
-<!-- Styles tailored to match your Current Courses card spacing/typography -->
-<style>
-/* card container (mirrors the "Current Courses" look) */
-.teaching-card{
-background:#fff; padding:1.25rem 1.5rem; border-radius:18px;
-box-shadow:0 18px 40px rgba(2,6,23,.06);
-border:1px solid #e9eef5; margin:1.25rem 0 2rem;
-}
-.teaching-card h3{ margin:0 0 .25rem; font-size:1.5rem; line-height:1.25; }
-.teaching-card .sub{ margin:.25rem 0 1rem; color:#61708a; }
-
-
-/* bullet list aligned & readable */
-.course-list{ list-style:disc; padding-left:1.25rem; margin:0; }
-.course-list li{
-margin:.35rem 0; line-height:1.7; color:#0f172a;
-}
-.course-list li span{ color:#111827; }
-
-
-/* dark mode safe */
-@media (prefers-color-scheme: dark){
-.teaching-card{ background:#0b1220; border-color:#1f2937; }
-.teaching-card .sub{ color:#9aa4b2; }
-.course-list li{ color:#e5e7eb; }
-.course-list li span{ color:#f3f4f6; }
-}
-</style>
