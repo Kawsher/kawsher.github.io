@@ -43,7 +43,7 @@ This is my **personal academic portfolio** website — a modern, responsive, and
 | Deployment      | GitHub Pages / Netlify / Vercel |
 | Icons           | SVG/PNG icons for social & academic links |
 
----
+----
 
 ## 🚀 Getting Started
 
@@ -124,6 +124,7 @@ Theme Colors: Change in site.css
 📬 Contact Form Integration (EmailJS / Netlify Forms)
 
 🎨 Smooth Scroll Animations
+
 
 
 ## 📄 License
