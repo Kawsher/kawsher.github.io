@@ -1,9 +1,9 @@
 {
   "metrics": {
-    "citations": 271,
+    "citations": 275,
     "hindex": 9,
     "i10": 8,
-    "lastUpdated": "2025-09-24"
+    "lastUpdated": "2025-09-29"
   },
   "publications": [
     {
@@ -20,7 +20,7 @@
       "venue": "",
       "year": 2022,
       "link": "https://www.sciencedirect.com/science/article/pii/S0020025522001001",
-      "citedBy": 113
+      "citedBy": 116
     },
     {
       "title": "Detecting COVID-19 infection status from chest X-ray and CT scan via single transfer learning-driven approach",
@@ -68,7 +68,7 @@
       "venue": "",
       "year": 2021,
       "link": "https://ieeexplore.ieee.org/abstract/document/9667862/",
-      "citedBy": 18
+      "citedBy": 19
     },
     {
       "title": "A survey on predicting player\u2019s performance and team recommendation in game of cricket using machine learning",
