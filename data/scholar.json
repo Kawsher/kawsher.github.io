@@ -1,9 +1,9 @@
 {
   "metrics": {
-    "citations": 275,
+    "citations": 280,
     "hindex": 9,
     "i10": 8,
-    "lastUpdated": "2025-09-29"
+    "lastUpdated": "2025-10-13"
   },
   "publications": [
     {
@@ -20,7 +20,7 @@
       "venue": "",
       "year": 2022,
       "link": "https://www.sciencedirect.com/science/article/pii/S0020025522001001",
-      "citedBy": 116
+      "citedBy": 117
     },
     {
       "title": "Detecting COVID-19 infection status from chest X-ray and CT scan via single transfer learning-driven approach",
@@ -31,20 +31,20 @@
       "citedBy": 28
     },
     {
+      "title": "Autism spectrum disorder detection using transfer learning with VGG 19, inception V3 and DenseNet 201",
+      "authors": "Md Fazlay Rabbi and Fatema Tuz Zohra and Farhana Hossain and Naznin Nahar Akhi and Shakil Khan and Kawsher Mahbub and Milon Biswas",
+      "venue": "",
+      "year": 2022,
+      "link": "https://link.springer.com/chapter/10.1007/978-3-031-23599-3_14",
+      "citedBy": 23
+    },
+    {
       "title": "Mobapp4infectiousdisease: Classify covid-19, pneumonia, and tuberculosis",
       "authors": "Md Kawsher Mahbub and Md Zakir Hossain Zamil and Md Abdul Mozid Miah and Partho Ghose and Milon Biswas and KC Santosh",
       "venue": "",
       "year": 2022,
       "link": "https://ieeexplore.ieee.org/abstract/document/9866961/",
       "citedBy": 22
-    },
-    {
-      "title": "Autism spectrum disorder detection using transfer learning with VGG 19, inception V3 and DenseNet 201",
-      "authors": "Md Fazlay Rabbi and Fatema Tuz Zohra and Farhana Hossain and Naznin Nahar Akhi and Shakil Khan and Kawsher Mahbub and Milon Biswas",
-      "venue": "",
-      "year": 2022,
-      "link": "https://link.springer.com/chapter/10.1007/978-3-031-23599-3_14",
-      "citedBy": 20
     },
     {
       "title": "Deep neural networks for brain tumor detection from MRI images",
@@ -68,7 +68,7 @@
       "venue": "",
       "year": 2021,
       "link": "https://ieeexplore.ieee.org/abstract/document/9667862/",
-      "citedBy": 19
+      "citedBy": 20
     },
     {
       "title": "A survey on predicting player\u2019s performance and team recommendation in game of cricket using machine learning",
