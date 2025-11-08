@@ -1,9 +1,9 @@
 {
   "metrics": {
-    "citations": 280,
+    "citations": 286,
     "hindex": 9,
-    "i10": 8,
-    "lastUpdated": "2025-10-13"
+    "i10": 9,
+    "lastUpdated": "2025-11-08"
   },
   "publications": [
     {
@@ -12,7 +12,7 @@
       "venue": "",
       "year": 2025,
       "link": "https://www.sciencedirect.com/science/article/pii/S0957417424027957",
-      "citedBy": 9
+      "citedBy": 12
     },
     {
       "title": "Deep features to detect pulmonary abnormalities in chest X-rays due to infectious diseaseX: Covid-19, pneumonia, and tuberculosis",
@@ -20,7 +20,7 @@
       "venue": "",
       "year": 2022,
       "link": "https://www.sciencedirect.com/science/article/pii/S0020025522001001",
-      "citedBy": 117
+      "citedBy": 118
     },
     {
       "title": "Detecting COVID-19 infection status from chest X-ray and CT scan via single transfer learning-driven approach",
@@ -36,7 +36,7 @@
       "venue": "",
       "year": 2022,
       "link": "https://link.springer.com/chapter/10.1007/978-3-031-23599-3_14",
-      "citedBy": 23
+      "citedBy": 24
     },
     {
       "title": "Mobapp4infectiousdisease: Classify covid-19, pneumonia, and tuberculosis",
@@ -68,7 +68,7 @@
       "venue": "",
       "year": 2021,
       "link": "https://ieeexplore.ieee.org/abstract/document/9667862/",
-      "citedBy": 20
+      "citedBy": 21
     },
     {
       "title": "A survey on predicting player\u2019s performance and team recommendation in game of cricket using machine learning",
