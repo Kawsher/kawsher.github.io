@@ -1,9 +1,9 @@
 {
   "metrics": {
-    "citations": 286,
+    "citations": 287,
     "hindex": 9,
     "i10": 9,
-    "lastUpdated": "2025-11-08"
+    "lastUpdated": "2025-11-10"
   },
   "publications": [
     {
@@ -20,7 +20,7 @@
       "venue": "",
       "year": 2022,
       "link": "https://www.sciencedirect.com/science/article/pii/S0020025522001001",
-      "citedBy": 118
+      "citedBy": 119
     },
     {
       "title": "Detecting COVID-19 infection status from chest X-ray and CT scan via single transfer learning-driven approach",
