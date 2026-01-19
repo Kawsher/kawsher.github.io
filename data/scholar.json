@@ -3,7 +3,7 @@
     "citations": 294,
     "hindex": 9,
     "i10": 9,
-    "lastUpdated": "2025-12-22"
+    "lastUpdated": "2026-01-19"
   },
   "publications": [
     {
@@ -12,7 +12,7 @@
       "venue": "",
       "year": 2025,
       "link": "https://www.sciencedirect.com/science/article/pii/S0957417424027957",
-      "citedBy": 15
+      "citedBy": 16
     },
     {
       "title": "Deep features to detect pulmonary abnormalities in chest X-rays due to infectious diseaseX: Covid-19, pneumonia, and tuberculosis",
@@ -68,7 +68,7 @@
       "venue": "",
       "year": 2021,
       "link": "https://ieeexplore.ieee.org/abstract/document/9667862/",
-      "citedBy": 21
+      "citedBy": 20
     },
     {
       "title": "A survey on predicting player\u2019s performance and team recommendation in game of cricket using machine learning",
