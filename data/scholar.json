@@ -1,9 +1,9 @@
 {
   "metrics": {
-    "citations": 294,
+    "citations": 297,
     "hindex": 9,
     "i10": 9,
-    "lastUpdated": "2026-01-19"
+    "lastUpdated": "2026-01-26"
   },
   "publications": [
     {
@@ -12,7 +12,7 @@
       "venue": "",
       "year": 2025,
       "link": "https://www.sciencedirect.com/science/article/pii/S0957417424027957",
-      "citedBy": 16
+      "citedBy": 17
     },
     {
       "title": "Deep features to detect pulmonary abnormalities in chest X-rays due to infectious diseaseX: Covid-19, pneumonia, and tuberculosis",
@@ -20,7 +20,7 @@
       "venue": "",
       "year": 2022,
       "link": "https://www.sciencedirect.com/science/article/pii/S0020025522001001",
-      "citedBy": 120
+      "citedBy": 122
     },
     {
       "title": "Detecting COVID-19 infection status from chest X-ray and CT scan via single transfer learning-driven approach",
