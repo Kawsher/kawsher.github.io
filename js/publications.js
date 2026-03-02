@@ -4,7 +4,8 @@ async function getData() {
     if (!r.ok) throw 0;
     return await r.json();
   } catch {
-    return null;
+    return null; 
+  
   }
 }
 
