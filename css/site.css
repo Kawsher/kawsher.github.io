@@ -39,7 +39,7 @@ html, body{
   -moz-osx-font-smoothing: grayscale;
 }
 img{ max-width:100%; display:block }
-.container{ width:min(1100px,92%); margin:0 auto }
+.container{ width: min(1200px, 95%); margin:0 auto }
 
 /* Make ALL text on the site inherit the single font (belts & suspenders) */
 body, body *{
