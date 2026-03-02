@@ -55,12 +55,11 @@ header.site-header{
 }
 header.site-header.scrolled{ box-shadow:0 6px 18px rgba(2,6,23,.18) }
 
-.navbar{
-  display:flex;
-  align-items:flex-start;   /* ✅ fix */
-  justify-content:space-between;
-  padding:16px 0;           /* optional: slightly more space */
-}
+.navbar{ display:flex;
+        align-items:center; 
+        justify-content:space-between; 
+        padding:12px 0; 
+       }
 
 .brand{ font-weight:800; letter-spacing:.2px }
 .brand a{ text-decoration:none; color:#fff }
