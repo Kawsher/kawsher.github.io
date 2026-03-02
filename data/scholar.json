@@ -1,9 +1,9 @@
 {
   "metrics": {
-    "citations": 297,
+    "citations": 310,
     "hindex": 9,
     "i10": 9,
-    "lastUpdated": "2026-01-26"
+    "lastUpdated": "2026-03-02"
   },
   "publications": [
     {
@@ -12,7 +12,7 @@
       "venue": "",
       "year": 2025,
       "link": "https://www.sciencedirect.com/science/article/pii/S0957417424027957",
-      "citedBy": 17
+      "citedBy": 20
     },
     {
       "title": "Deep features to detect pulmonary abnormalities in chest X-rays due to infectious diseaseX: Covid-19, pneumonia, and tuberculosis",
@@ -20,15 +20,15 @@
       "venue": "",
       "year": 2022,
       "link": "https://www.sciencedirect.com/science/article/pii/S0020025522001001",
-      "citedBy": 122
+      "citedBy": 127
     },
     {
       "title": "Detecting COVID-19 infection status from chest X-ray and CT scan via single transfer learning-driven approach",
       "authors": "Partho Ghose and Muhaddid Alavi and Mehnaz Tabassum and Md Ashraf Uddin and Milon Biswas and Kawsher Mahbub and Loveleen Gaur and Saurav Mallik and Zhongming Zhao",
       "venue": "",
       "year": 2022,
-      "link": "https://www.frontiersin.org/articles/10.3389/fgene.2022.980338/full",
-      "citedBy": 29
+      "link": "https://www.frontiersin.org/journals/genetics/articles/10.3389/fgene.2022.980338/full",
+      "citedBy": 31
     },
     {
       "title": "Autism spectrum disorder detection using transfer learning with VGG 19, inception V3 and DenseNet 201",
@@ -36,7 +36,7 @@
       "venue": "",
       "year": 2022,
       "link": "https://link.springer.com/chapter/10.1007/978-3-031-23599-3_14",
-      "citedBy": 25
+      "citedBy": 26
     },
     {
       "title": "Mobapp4infectiousdisease: Classify covid-19, pneumonia, and tuberculosis",
@@ -52,7 +52,7 @@
       "venue": "",
       "year": 2022,
       "link": "https://link.springer.com/chapter/10.1007/978-981-16-7597-3_39",
-      "citedBy": 8
+      "citedBy": 9
     },
     {
       "title": "Covid-19 detection using chest x-ray images with a regnet structured deep learning model",
@@ -60,7 +60,7 @@
       "venue": "",
       "year": 2021,
       "link": "https://link.springer.com/chapter/10.1007/978-3-030-82269-9_28",
-      "citedBy": 22
+      "citedBy": 23
     },
     {
       "title": "Best eleven forecast for bangladesh cricket team with machine learning techniques",
