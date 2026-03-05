@@ -55,23 +55,28 @@ header.site-header{
 }
 header.site-header.scrolled{ box-shadow:0 6px 18px rgba(2,6,23,.18) }
 
-.navbar{ display:flex;
-        align-items:center; 
-        justify-content:space-between; 
-        padding:12px 0; 
-       }
+.navbar {
+  display: flex;
+  flex-direction: column; /* Stack vertically on mobile */
+  align-items: center;
+  text-align: center;
+  padding: 15px 0;
+}
 
 .brand{ font-weight:800; letter-spacing:.2px }
 .brand a{ text-decoration:none; color:#fff }
 .brand small{ display:block; color:#cbd5e1; font-weight:500 }
 
-nav ul{ list-style:none; display:flex; gap:14px; margin:0; padding:0; flex-wrap:wrap }
-nav a{
-  text-decoration:none; color:#E2E8F0;
-  padding:8px 14px; border-radius:12px;
-  font-weight:700;
-  transition:background .2s ease, color .2s ease;
+nav ul {
+  justify-content: center;
+  gap: 8px;
+  margin-top: 15px; /* Add space between your name and the links */
 }
+nav a {
+  font-size: 13px; /* Slightly smaller for mobile */
+  padding: 5px 8px;
+}
+
 nav a.active,
 nav a:hover{
   background:rgba(22,163,74,.18);
@@ -271,6 +276,28 @@ footer.site-footer{
   .hero .container{ grid-template-columns:1fr; gap:16px; text-align:center }
   .hero .headshot-wrap{ width:100%; align-items:center; margin-bottom:0 }
   .hero .title{ font-size:clamp(28px,6vw,40px) }
+}
+
+/* 3. Use a Media Query for Desktop (Screens wider than 900px) */
+@media (min-width: 900px) {
+  .navbar {
+    flex-direction: row; /* Go back to horizontal on desktop */
+    justify-content: space-between;
+    text-align: left;
+  }
+  
+  .brand {
+    text-align: left;
+  }
+
+  nav ul {
+    margin-top: 0;
+    gap: 12px;
+  }
+
+  nav a {
+    font-size: 15px;
+  }
 }
 
 /* ---------- Dark Mode (optional) ---------- */
