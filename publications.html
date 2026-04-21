@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Publications — Md. Kawsher Mahbub</title>
+  <link rel="stylesheet" href="css/site.css">
+</head>
+<body>
+  <div id="header"></div>
+
+  <main class="section">
+    <div class="container">
+      <span class="section-label">Scholarly Output</span>
+      <h2 class="section-title">Publications</h2>
+      <p class="lead">Auto-synced from Google Scholar. Search, filter by year, or sort below.</p>
+
+      <div class="pub-controls">
+        <input type="text" id="search" placeholder="🔍 Search title, author, venue…" aria-label="Search publications">
+        <select id="yearFilter" aria-label="Filter by year">
+          <option value="">All years</option>
+        </select>
+        <select id="sortBy" aria-label="Sort publications">
+          <option value="year">Sort: Year (newest)</option>
+          <option value="citations">Sort: Citations (most)</option>
+          <option value="title">Sort: Title (A–Z)</option>
+        </select>
+        <span id="pub-count" style="font-size:13px; color:var(--text-muted); white-space:nowrap;"></span>
+      </div>
+
+      <div id="pub-list"></div>
+      <p class="metrics-note" id="pub-updated" style="color:var(--text-muted); margin-top:16px;"></p>
+    </div>
+  </main>
+
+  <div id="footer"></div>
+  <script src="js/publications.js"></script>
+  <script src="js/site.js"></script>
+</body>
+</html>

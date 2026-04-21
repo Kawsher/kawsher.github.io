@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>404 — Page Not Found</title>
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <link rel="stylesheet" href="css/site.css">
+  <style>
+    .not-found {
+      min-height: 80vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 60px 20px;
+    }
+    .nf-code {
+      font-family: var(--font-mono);
+      font-size: 7rem;
+      font-weight: 700;
+      color: var(--teal);
+      line-height: 1;
+      margin-bottom: 16px;
+      opacity: .15;
+    }
+    .nf-title {
+      font-family: var(--font-display);
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+    .nf-text {
+      color: var(--text-muted);
+      margin-bottom: 32px;
+      max-width: 400px;
+    }
+  </style>
+</head>
+<body>
+  <div id="header"></div>
+  <main class="not-found">
+    <div>
+      <div class="nf-code">404</div>
+      <h1 class="nf-title">Page Not Found</h1>
+      <p class="nf-text">The page you're looking for doesn't exist or may have been moved.</p>
+      <a href="index.html" class="btn btn-primary">← Back to Home</a>
+    </div>
+  </main>
+  <div id="footer"></div>
+  <script src="js/site.js"></script>
+</body>
+</html>

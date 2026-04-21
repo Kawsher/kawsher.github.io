@@ -1,0 +1,98 @@
+{
+  "metrics": {
+    "citations": 0,
+    "hindex": 0,
+    "i10": 0,
+    "lastUpdated": "Pending first Scholar sync — run scripts/fetch_scholar.py"
+  },
+  "publications": [
+    {
+      "title": "Deep features to detect pulmonary abnormalities in chest X-rays due to infectious disease: Covid-19, pneumonia, and tuberculosis",
+      "authors": "Mahbub, M. K., Biswas, M., Gaur, L., Alenezi, F., & Santosh, K. C.",
+      "venue": "Information Sciences",
+      "year": 2022,
+      "link": "https://www.sciencedirect.com/science/article/pii/S0020025522001232",
+      "citedBy": 0
+    },
+    {
+      "title": "Detecting COVID-19 infection status from chest X-ray and CT scan via single transfer learning driven approach",
+      "authors": "Ghose, P., Alavi, M., Tabassum, M., Uddin, M. A., Biswas, M., Mahbub, K., & Zhao, Z.",
+      "venue": "Frontiers in Genetics",
+      "year": 2022,
+      "link": "https://www.frontiersin.org/articles/10.3389/fgene.2022.843436/full",
+      "citedBy": 0
+    },
+    {
+      "title": "Explainable AI assisted heart disease diagnosis through effective feature engineering and stacked ensemble learning",
+      "authors": "Ghose, P., Oliullah, K., Mahbub, M. K., Biswas, M., Uddin, K. N., & Jamil, H. M.",
+      "venue": "Expert Systems with Applications",
+      "year": 2024,
+      "link": "https://www.sciencedirect.com/science/article/pii/S0957417424022188",
+      "citedBy": 0
+    },
+    {
+      "title": "Mobapp4infectiousdisease: Classify Covid-19, Pneumonia, and Tuberculosis",
+      "authors": "Mahbub, M. K., Zamil, M. Z. H., Miah, M. A. M., Ghose, P., Biswas, M., & Santosh, K. C.",
+      "venue": "IEEE 35th International Symposium on Computer-Based Medical Systems (CBMS)",
+      "year": 2022,
+      "link": "https://ieeexplore.ieee.org/document/9860049",
+      "citedBy": 0
+    },
+    {
+      "title": "Covid-19 detection using chest X-ray images with a RegNet structured deep learning model",
+      "authors": "Mahbub, M., Biswas, M., Miah, A. M., Shahabaz, A., & Kaiser, M. S.",
+      "venue": "International Conference on Applied Intelligence and Informatics (AII), Springer",
+      "year": 2021,
+      "link": "",
+      "citedBy": 0
+    },
+    {
+      "title": "Deep Neural Networks for Brain Tumor Detection from MRI Images",
+      "authors": "Mahbub, M., Biswas, M., Miah, M., Mozid, A., & Kaiser, M. S.",
+      "venue": "Proceedings of the Third International Conference on Trends in Computational and Cognitive Engineering, Springer",
+      "year": 2022,
+      "link": "",
+      "citedBy": 0
+    },
+    {
+      "title": "An Enhanced Deep Convolution Neural Network Model to Diagnose Alzheimer's Disease Using Brain Magnetic Resonance Imaging",
+      "authors": "Biswas, M., Mahbub, M., Miah, M., & Mozid, A.",
+      "venue": "International Conference on Recent Trends in Image Processing and Pattern Recognition, Springer",
+      "year": 2022,
+      "link": "",
+      "citedBy": 0
+    },
+    {
+      "title": "Best Eleven Forecast for Bangladesh Cricket Team with Machine Learning Techniques",
+      "authors": "Mahbub, M. K., Miah, M. A. M., Islam, S. M. S., Sorna, S., Hossain, S., & Biswas, M.",
+      "venue": "5th International Conference on Electrical Engineering and Information & Communication Technology (ICEEICT), IEEE",
+      "year": 2021,
+      "link": "https://ieeexplore.ieee.org/document/9704534",
+      "citedBy": 0
+    },
+    {
+      "title": "Autism Spectrum Disorder Detection using Transfer Learning with VGG-19, Inception V3 and DenseNet-201",
+      "authors": "Rabbi, M. F., Zohra, F. T., Hossain, F., Akhi, N. N., Khan, S., Mahbub, K., & Biswas, M.",
+      "venue": "International Conference on Recent Trends in Image Processing and Pattern Recognition, Springer Nature Switzerland",
+      "year": 2022,
+      "link": "",
+      "citedBy": 0
+    },
+    {
+      "title": "Stock Market Prediction: A Survey and Evaluation",
+      "authors": "Biswas, M., Nova, A. J., Mahbub, M. K., Chaki, S., Ahmed, S., & Islam, M. A.",
+      "venue": "International Conference on Science & Contemporary Technologies (ICSCT), IEEE",
+      "year": 2021,
+      "link": "https://ieeexplore.ieee.org/document/9550016",
+      "citedBy": 0
+    },
+    {
+      "title": "A survey on predicting player's performance and team recommendation in game of cricket using machine learning",
+      "authors": "Biswas, M., Akhund, N. U., Md, T., Mahbub, M., Islam, S., & Kaiser, M. S.",
+      "venue": "Information and Communication Technology for Competitive Strategies (ICTCS 2020), Springer",
+      "year": 2022,
+      "link": "",
+      "citedBy": 0
+    }
+  ]
+}
