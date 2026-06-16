@@ -15,7 +15,7 @@ const SITE_DATA = {
   phone: "+8801719145411",
   bio: "I build AI systems at the intersection of deep learning, computer vision, and clinical healthcare. My work focuses on uncertainty quantification, explainable AI for medical image analysis, and out-of-distribution generalization — with the goal of making AI trustworthy enough to matter at the bedside. I hold an M.S. from Kent State University (GPA 3.80) and a B.Sc. from BUBT.",
   availability: "Open to research collaboration and PhD opportunities",
-  photo: "assets/image.jpg",  // place your photo here
+  photo: "assets/Picture.JPG",  // place your photo here
 
   // ---- Social links ----
   links: {
