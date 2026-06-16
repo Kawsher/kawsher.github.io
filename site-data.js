@@ -25,7 +25,7 @@ const SITE_DATA = {
     twitter: "https://x.com/kawsher_mahbub",
     orcid: "https://orcid.org/0000-0002-4200-542X",
     researchgate: "https://www.researchgate.net/profile/Md-Kawsher-Mahbub",
-    cv: "assets/CV_MdKawsherMahbub.pdf"
+    cv: "assets/CV_Md_Kawsher_Mahbub.pdf"
   },
 
   // ---- Scholar stats (update manually or auto-fetch) ----
