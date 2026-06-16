@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Md. Kawsher Mahbub — Assistant Professor, CSE. Research in AI, Medical Image Analysis, XAI, Uncertainty Quantification.">
+<title>Md. Kawsher Mahbub — Assistant Professor, CSE</title>
+
+<!-- Data + fetch must load before render -->
+<script src="site-data.js"></script>
+<script src="scholar-fetch.js" defer></script>
+<script src="render.js" defer></script>
+
+<!-- Tabler icons CDN -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@2.44.0/tabler-icons.min.css">
+
+<style>
+  :root {
+    --ink:        #1a1a1a;
+    --ink-light:  #555;
+    --ink-faint:  #999;
+    --rule:       #e0e0e0;
+    --bg:         #ffffff;
+    --bg-warm:    #f7f6f4;
+    --accent:     #1a3a5c;
+    --accent-mid: #2a5a8c;
+    --accent-pale:#e8eef5;
+    --tag-bg:     #eef2f7;
+    --tag-ink:    #1a3a5c;
+    --green:      #1e5c3a;
+    --green-bg:   #e8f5ed;
+    --amber:      #7a4a00;
+    --amber-bg:   #fef3e2;
+    --red-bg:     #fceaea;
+    --red:        #8b1a1a;
+    --font-serif: 'Georgia', 'Times New Roman', serif;
+    --font-sans:  -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --mono:       'Courier New', monospace;
+    --max:        820px;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: var(--font-sans);
+    font-size: 15px;
+    line-height: 1.7;
+    color: var(--ink);
+    background: var(--bg);
+  }
+
+  /* ---- NAV ---- */
+  nav {
+    position: sticky;
+    top: 0;
+    background: var(--bg);
+    border-bottom: 1px solid var(--rule);
+    z-index: 100;
+    padding: 0 1.5rem;
+  }
+  .nav-inner {
+    max-width: var(--max);
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 52px;
+  }
+  .nav-name {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--accent);
+    text-decoration: none;
+    letter-spacing: 0.01em;
+  }
+  .nav-links {
+    display: flex;
+    gap: 1.25rem;
+    list-style: none;
+    flex-wrap: wrap;
+  }
+  .nav-links a {
+    font-size: 13px;
+    color: var(--ink-light);
+    text-decoration: none;
+    transition: color 0.15s;
+  }
+  .nav-links a:hover { color: var(--accent); }
+
+  /* ---- LAYOUT ---- */
+  main { max-width: var(--max); margin: 0 auto; padding: 0 1.5rem; }
+
+  section { padding: 3rem 0; border-bottom: 1px solid var(--rule); }
+  section:last-of-type { border-bottom: none; }
+
+  h1 { font-family: var(--font-serif); font-size: 2rem; font-weight: normal; color: var(--ink); line-height: 1.2; }
+  h2 { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-faint); margin-bottom: 1.5rem; }
+  h3 { font-size: 1rem; font-weight: 600; color: var(--ink); }
+
+  p { color: var(--ink-light); margin-top: 0.5rem; }
+
+  a { color: var(--accent-mid); }
+  a:hover { color: var(--accent); }
+
+  /* ---- HERO ---- */
+  #hero {
+    padding: 3.5rem 0 3rem;
+    border-bottom: 1px solid var(--rule);
+  }
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1fr 140px;
+    gap: 2rem;
+    align-items: start;
+  }
+  .hero-photo {
+    width: 130px;
+    height: 130px;
+    border-radius: 4px;
+    object-fit: cover;
+    border: 1px solid var(--rule);
+    background: var(--bg-warm);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5rem;
+    color: var(--ink-faint);
+  }
+  .hero-photo img { width: 100%; height: 100%; object-fit: cover; border-radius: 4px; }
+  .hero-meta {
+    font-size: 13px;
+    color: var(--ink-light);
+    margin-top: 0.4rem;
+    line-height: 1.8;
+  }
+  .hero-bio { margin-top: 1rem; font-size: 14.5px; color: var(--ink-light); max-width: 600px; }
+  .hero-avail {
+    display: inline-block;
+    margin-top: 1rem;
+    font-size: 12px;
+    background: var(--green-bg);
+    color: var(--green);
+    padding: 3px 10px;
+    border-radius: 2px;
+    font-weight: 500;
+  }
+
+  /* ---- STAT STRIP ---- */
+  .stat-strip {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    background: var(--rule);
+    border: 1px solid var(--rule);
+    border-radius: 4px;
+    margin-top: 1.5rem;
+    overflow: hidden;
+  }
+  .stat-cell {
+    background: var(--bg-warm);
+    padding: 0.8rem 1rem;
+    text-align: center;
+  }
+  .stat-num {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--accent);
+    font-family: var(--font-serif);
+    display: block;
+  }
+  .stat-label {
+    font-size: 11px;
+    color: var(--ink-faint);
+    display: block;
+    margin-top: 2px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+
+  /* ---- HERO CTA LINKS ---- */
+  .hero-ctas {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    margin-top: 1.25rem;
+  }
+  .cta-btn {
+    font-size: 13px;
+    padding: 6px 14px;
+    border: 1px solid var(--accent);
+    border-radius: 3px;
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 500;
+    transition: background 0.15s, color 0.15s;
+  }
+  .cta-btn:hover { background: var(--accent); color: #fff; }
+  .cta-btn.primary { background: var(--accent); color: #fff; }
+  .cta-btn.primary:hover { background: var(--accent-mid); }
+
+  .social-row { display: flex; gap: 1rem; margin-top: 1rem; flex-wrap: wrap; }
+  .social-link {
+    font-size: 12px;
+    color: var(--ink-faint);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    transition: color 0.15s;
+  }
+  .social-link:hover { color: var(--accent); }
+
+  /* ---- NEWS ---- */
+  .news-list { display: flex; flex-direction: column; gap: 0; }
+  .news-item {
+    display: grid;
+    grid-template-columns: 90px 1fr;
+    gap: 1rem;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid var(--rule);
+    align-items: baseline;
+  }
+  .news-item:last-child { border-bottom: none; }
+  .news-date { font-size: 12px; color: var(--ink-faint); font-family: var(--mono); }
+  .news-text { font-size: 14px; color: var(--ink-light); }
+  .news-tag {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 1px 6px;
+    border-radius: 2px;
+    margin-right: 6px;
+    background: var(--tag-bg);
+    color: var(--tag-ink);
+  }
+  .news-tag.paper     { background: var(--accent-pale); color: var(--accent); }
+  .news-tag.award     { background: var(--amber-bg);    color: var(--amber); }
+  .news-tag.position  { background: var(--green-bg);    color: var(--green); }
+  .news-tag.milestone { background: #f0e8f5;            color: #4a1a7a; }
+  .news-tag.preprint  { background: #fce8e8;            color: #7a1a1a; }
+
+  /* ---- RESEARCH INTERESTS ---- */
+  .interests-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1px;
+    background: var(--rule);
+    border: 1px solid var(--rule);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+  .interest-cell {
+    background: var(--bg);
+    padding: 1.25rem;
+  }
+  .interest-icon {
+    font-size: 1.2rem;
+    color: var(--accent-mid);
+    margin-bottom: 0.5rem;
+  }
+  .interest-label { font-size: 14px; font-weight: 600; color: var(--ink); }
+  .interest-desc  { font-size: 13px; color: var(--ink-faint); margin-top: 0.3rem; line-height: 1.5; }
+
+  /* ---- PUBLICATIONS ---- */
+  .pub-filter {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+  }
+  .filter-btn {
+    font-size: 12px;
+    padding: 4px 12px;
+    border: 1px solid var(--rule);
+    border-radius: 2px;
+    background: var(--bg);
+    color: var(--ink-light);
+    cursor: pointer;
+    transition: all 0.15s;
+  }
+  .filter-btn:hover, .filter-btn.active {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: #fff;
+  }
+
+  .pub-list { display: flex; flex-direction: column; gap: 0; }
+  .pub-item {
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--rule);
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  .pub-item:last-child { border-bottom: none; }
+  .pub-title {
+    font-size: 14.5px;
+    font-weight: 500;
+    color: var(--ink);
+    line-height: 1.4;
+  }
+  .pub-title a { color: var(--ink); text-decoration: none; }
+  .pub-title a:hover { color: var(--accent-mid); text-decoration: underline; }
+  .pub-authors { font-size: 13px; color: var(--ink-faint); margin-top: 0.2rem; }
+  .pub-venue   { font-size: 13px; color: var(--ink-light); font-style: italic; margin-top: 0.15rem; }
+  .pub-cited   { font-style: normal; color: var(--accent-mid); }
+  .pub-badge {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    padding: 2px 7px;
+    border-radius: 2px;
+    margin-right: 8px;
+    vertical-align: middle;
+  }
+  .pub-badge.journal         { background: var(--accent-pale); color: var(--accent); }
+  .pub-badge.conference      { background: var(--tag-bg);      color: var(--tag-ink); }
+  .pub-badge.review          { background: var(--amber-bg);    color: var(--amber); }
+  .pub-badge.preprint-badge  { background: var(--red-bg);      color: var(--red); }
+
+  /* ---- EXPERIENCE / EDUCATION / LEADERSHIP ---- */
+  .timeline { display: flex; flex-direction: column; gap: 0; }
+  .timeline-item {
+    display: grid;
+    grid-template-columns: 160px 1fr;
+    gap: 1rem;
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--rule);
+  }
+  .timeline-item:last-child { border-bottom: none; }
+  .timeline-period { font-size: 12px; color: var(--ink-faint); font-family: var(--mono); padding-top: 2px; }
+  .timeline-role   { font-size: 14.5px; font-weight: 600; color: var(--ink); }
+  .timeline-org    { font-size: 13px; color: var(--ink-light); }
+  .timeline-desc   { font-size: 13px; color: var(--ink-faint); margin-top: 0.3rem; }
+  .timeline-gpa    { font-size: 12px; color: var(--green); font-weight: 500; margin-top: 2px; }
+
+  /* ---- SERVICE / AWARDS ---- */
+  .service-list { display: flex; flex-direction: column; gap: 0; }
+  .service-item {
+    display: grid;
+    grid-template-columns: 1fr 100px;
+    gap: 1rem;
+    padding: 0.65rem 0;
+    border-bottom: 1px solid var(--rule);
+    align-items: baseline;
+  }
+  .service-item:last-child { border-bottom: none; }
+  .service-role  { font-size: 14px; font-weight: 500; color: var(--ink); }
+  .service-org   { font-size: 13px; color: var(--ink-faint); }
+  .service-years { font-size: 12px; color: var(--ink-faint); font-family: var(--mono); text-align: right; }
+
+  /* ---- SKILLS ---- */
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1rem;
+  }
+  .skills-cat { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: var(--ink-faint); margin-bottom: 0.5rem; }
+  .skill-tags { display: flex; flex-wrap: wrap; gap: 4px; }
+  .skill-tag {
+    font-size: 12px;
+    padding: 3px 8px;
+    background: var(--bg-warm);
+    border: 1px solid var(--rule);
+    border-radius: 2px;
+    color: var(--ink-light);
+  }
+
+  /* ---- CONTACT ---- */
+  .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+  .contact-field { font-size: 14px; color: var(--ink-light); margin-bottom: 0.8rem; }
+  .contact-label { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: var(--ink-faint); display: block; margin-bottom: 2px; }
+
+  /* ---- FOOTER ---- */
+  footer {
+    background: var(--bg-warm);
+    border-top: 1px solid var(--rule);
+    padding: 2rem 1.5rem;
+    text-align: center;
+    font-size: 12px;
+    color: var(--ink-faint);
+  }
+  footer a { color: var(--ink-faint); }
+
+  /* ---- RESPONSIVE ---- */
+  @media (max-width: 600px) {
+    .hero-grid     { grid-template-columns: 1fr; }
+    .hero-photo    { width: 80px; height: 80px; order: -1; }
+    .timeline-item { grid-template-columns: 1fr; }
+    .timeline-period { padding: 0; }
+    .stat-strip    { grid-template-columns: repeat(2, 1fr); }
+    .contact-grid  { grid-template-columns: 1fr; }
+    .nav-links     { gap: 0.75rem; }
+    h1             { font-size: 1.5rem; }
+    .service-item  { grid-template-columns: 1fr; }
+    .service-years { text-align: left; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="#hero" class="nav-name" id="nav-name-el">M. K. Mahbub</a>
+    <ul class="nav-links">
+      <li><a href="#news">News</a></li>
+      <li><a href="#research">Research</a></li>
+      <li><a href="#publications">Publications</a></li>
+      <li><a href="#cv">CV</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main>
+
+  <!-- HERO -->
+  <section id="hero">
+    <div class="hero-grid">
+      <div>
+        <h1 id="hero-name"></h1>
+        <div class="hero-meta" id="hero-meta"></div>
+        <div class="hero-bio" id="hero-bio"></div>
+        <span class="hero-avail" id="hero-avail"></span>
+        <div class="hero-ctas" id="hero-ctas"></div>
+        <div class="social-row" id="social-row"></div>
+      </div>
+      <div>
+        <div class="hero-photo" id="hero-photo-wrap">
+          <img id="hero-img" alt="Md. Kawsher Mahbub"
+               onerror="this.style.display='none';document.getElementById('hero-photo-wrap').textContent='MK'">
+        </div>
+      </div>
+    </div>
+    <div class="stat-strip" id="stat-strip"></div>
+  </section>
+
+  <!-- NEWS -->
+  <section id="news">
+    <h2>Latest Updates</h2>
+    <div class="news-list" id="news-list"></div>
+  </section>
+
+  <!-- RESEARCH INTERESTS -->
+  <section id="research">
+    <h2>Research Interests</h2>
+    <div class="interests-grid" id="interests-grid"></div>
+  </section>
+
+  <!-- PUBLICATIONS -->
+  <section id="publications">
+    <h2>Publications</h2>
+    <p style="font-size:13px;color:var(--ink-faint);margin-bottom:1rem;margin-top:-0.5rem;">
+      Live stats auto-synced from
+      <a href="https://scholar.google.com/citations?user=fQ_TTFsAAAAJ" target="_blank" rel="noopener">Google Scholar</a>.
+    </p>
+    <div class="pub-filter" id="pub-filter"></div>
+    <div class="pub-list"   id="pub-list"></div>
+  </section>
+
+  <!-- CV: EXPERIENCE + EDUCATION + AWARDS + LEADERSHIP + SERVICE + SKILLS -->
+  <section id="cv">
+    <h2>Experience</h2>
+    <div class="timeline" id="exp-list"></div>
+
+    <h2 style="margin-top:2.5rem;">Education</h2>
+    <div class="timeline" id="edu-list"></div>
+
+    <h2 style="margin-top:2.5rem;">Awards &amp; Honors</h2>
+    <div class="service-list" id="awards-list"></div>
+
+    <h2 style="margin-top:2.5rem;">Leadership</h2>
+    <div class="timeline" id="leadership-list"></div>
+
+    <h2 style="margin-top:2.5rem;">Academic Service</h2>
+    <div class="service-list" id="service-list"></div>
+
+    <h2 style="margin-top:2.5rem;">Technical Skills</h2>
+    <div class="skills-grid" id="skills-grid"></div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <h2>Contact</h2>
+    <div class="contact-grid" id="contact-grid"></div>
+  </section>
+
+</main>
+
+<footer>
+  <span id="footer-text"></span>
+  &nbsp;·&nbsp; Built with plain HTML · <a href="site-data.js">site-data.js</a> · <a href="render.js">render.js</a> &nbsp;·&nbsp; Hosted on GitHub Pages
+</footer>
+
+</body>
+</html>
