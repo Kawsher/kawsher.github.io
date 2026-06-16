@@ -42,18 +42,19 @@ const SITE_DATA = {
     { icon: "ti-shield-check", label: "Uncertainty Quantification", desc: "Post-hoc UQ for frozen black-box vision models; spatial consistency and calibration under distribution shift." },
     { icon: "ti-zoom-question", label: "Explainable AI (XAI)", desc: "Human-centered explanations and forensic auditing of ensemble classifiers for clinical decision support." },
     { icon: "ti-arrows-transfer-up", label: "OOD Generalization", desc: "Semantic temporal augmentation and predictors of accuracy degradation when models meet real-world deployment." },
-    { icon: "ti-lock", label: "Trustworthy ML", desc: "Membership inference auditing, privacy risk stratification, and pretraining objective analysis across large model ecosystems." }
+    { icon: "ti-lock", label: "Trustworthy ML", desc: "Membership inference auditing, privacy risk stratification, and pretraining objective analysis across large model ecosystems." },
+    { icon: "ti-pulse", label: "Health Informatics", desc: "Integration of predictive analytics and multimodal ML into clinical decision support systems, optimizing EHR workflows, and bridging the gap between algorithms and point-of-care utility." }
   ],
 
   // ---- News items — newest first ----
   news: [
-    { date: "Jun 2026", tag: "preprint", text: "STAMP paper nearing CVPR 2027 submission — Spearman ρ=0.891 on VinDr OOD benchmark." },
+    { date: "Jun 2026", tag: "preprint", text: "STAMP nearing Completion" },
     { date: "May 2026", tag: "paper", text: "'Beyond Benchmark Accuracy' (ESED framework) submitted to Medical Image Analysis." },
     { date: "Mar 2026", tag: "position", text: "Joined NPI University of Bangladesh as Assistant Professor, Dept. of CSE." },
     { date: "May 2025", tag: "milestone", text: "Completed M.S. in Computer Science at Kent State University with CGPA 3.80." },
+    { date: "Jan 2025", tag: "paper", text: "Paper accepted — Expert Systems with Applications (heart disease diagnosis via stacked ensemble)." },
     { date: "Sep 2024", tag: "award", text: "First Place and People's Choice Award — International Cook-Off 2024, Kent State University." },
-    { date: "2024", tag: "service", text: "Program Committee Member, IEEE CBMS 2024 (37th edition)." },
-    { date: "2025", tag: "paper", text: "Paper accepted — Expert Systems with Applications (heart disease diagnosis via stacked ensemble)." }
+    { date: "Oct 2024", tag: "service", text: "Program Committee Member, IEEE CBMS 2024 (37th edition)." }
   ],
 
   // ---- Publications ----
@@ -64,14 +65,6 @@ const SITE_DATA = {
       title: "Beyond Benchmark Accuracy: Forensic Explainability Auditing for Ensemble Chest Radiograph Classifiers",
       venue: "Medical Image Analysis (MedIA)",
       year: 2025,
-      status: "Under Review"
-    },
-    {
-      type: "under-review",
-      authors: "M. K. Mahbub, M. Biswas, M. N. Morshed, and W. Yu",
-      title: "SpatialUQ: Post-Hoc Uncertainty Quantification from Spatial Consistency in Black-Box Vision Models",
-      venue: "NeurIPS 2026",
-      year: 2026,
       status: "Under Review"
     },
     {
