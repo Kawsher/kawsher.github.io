@@ -149,18 +149,6 @@
   }
   .hero-photo-frame img { width: 100%; height: 100%; object-fit: cover; display: block; }
 
-  /* ============ STATS ============ */
-  .stats-band { margin-top: -2.6rem; position: relative; z-index: 5; }
-  .stats-grid {
-    display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem;
-  }
-  .stat-card {
-    background: var(--card); border: 1px solid var(--line); border-radius: var(--radius);
-    padding: 1.3rem 1rem; text-align: center; box-shadow: var(--shadow);
-  }
-  .stat-num { font-family: var(--serif); font-size: 2rem; font-weight: 600; color: var(--navy); display: block; line-height: 1.1; }
-  .stat-label { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--faint); display: block; margin-top: 0.35rem; }
-
   /* ============ ABOUT ============ */
   .about-grid { display: grid; grid-template-columns: 1.6fr 1fr; gap: 2.5rem; align-items: start; }
   .about-text p { color: var(--muted); margin-bottom: 1rem; font-size: 15.5px; }
@@ -234,8 +222,6 @@
   .pub-authors { font-size: 13.5px; color: var(--muted); margin-top: 0.25rem; }
   .pub-venue { font-size: 13.5px; color: var(--muted); font-style: italic; margin-top: 0.1rem; }
   .pub-status { font-size: 12.5px; font-weight: 600; color: #8a6d1f; font-style: normal; }
-  .scholar-note { margin-top: 1.6rem; font-size: 13px; color: var(--faint); }
-
   /* ============ LAB BAND ============ */
   .lab-band {
     background: linear-gradient(135deg, var(--navy) 0%, var(--navy-2) 100%);
@@ -353,7 +339,6 @@
     .hero-grid { grid-template-columns: 1fr; gap: 2rem; }
     .hero-photo-frame { justify-self: start; width: 170px; height: 210px; }
     .hero-name { font-size: 2.2rem; }
-    .stats-grid { grid-template-columns: repeat(2, 1fr); }
     .about-grid, .pillars, .teach-grid, .cv-grid, .contact-grid { grid-template-columns: 1fr; }
     .lab-band { padding: 2rem 1.5rem; }
     section { padding: 3rem 0; }
@@ -402,10 +387,6 @@
 </div>
 
 <main>
-  <div class="stats-band">
-    <div class="stats-grid" id="stats-grid"></div>
-  </div>
-
   <!-- ABOUT -->
   <section id="about">
     <div class="eyebrow">About</div>
@@ -437,7 +418,6 @@
     <p class="sec-sub">Full list below — filter by type, or see everything on <a id="pubs-scholar-link" href="#" target="_blank" rel="noopener">Google Scholar</a>.</p>
     <div class="pub-filter" id="pub-filter"></div>
     <div id="pub-list"></div>
-    <div class="scholar-note">Citation counts update automatically from Google Scholar when available.</div>
   </section>
 
   <!-- LAB -->
@@ -552,21 +532,6 @@ $('hero-social').innerHTML = socialDefs
   .map(s => '<a href="' + D.links[s.key] + '" target="_blank" rel="noopener" title="' + esc(s.label) + '" aria-label="' + esc(s.label) + '"><i class="ti ' + s.icon + '"></i></a>')
   .join('') +
   '<a href="mailto:' + esc(D.email) + '" title="Email" aria-label="Email"><i class="ti ti-mail"></i></a>';
-
-// ---- Stats ----
-function renderStats(stats) {
-  const items = [
-    { num: stats.publications, label: 'Publications' },
-    { num: stats.citations,    label: 'Citations' },
-    { num: stats.hIndex,       label: 'h-index' },
-    { num: stats.i10Index,     label: 'i10-index' }
-  ];
-  $('stats-grid').innerHTML = items.map(s =>
-    '<div class="stat-card"><span class="stat-num">' + s.num + '</span><span class="stat-label">' + esc(s.label) + '</span></div>'
-  ).join('');
-}
-renderStats(D.stats);
-window.addEventListener('scholarLoaded', e => { if (e.detail && e.detail.stats) renderStats(e.detail.stats); });
 
 // ---- About ----
 $('about-text').innerHTML = D.bio.map(p => '<p>' + esc(p) + '</p>').join('');
