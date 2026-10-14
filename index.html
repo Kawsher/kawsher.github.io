@@ -3,377 +3,44 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Md. Kawsher Mahbub — Assistant Professor of Computer Science and Engineering. Research in trustworthy AI for clinical decisions: uncertainty quantification, explainable AI, and out-of-distribution generalization.">
+<meta name="description" content="Md. Kawsher Mahbub — Assistant Professor of Computer Science and Engineering. Research in trustworthy AI for clinical decisions: uncertainty quantification, explainable AI, and out-of-distribution generalization. Founder of the CARMA AI Lab.">
 <title>Md. Kawsher Mahbub — Assistant Professor, CSE</title>
+<link rel="stylesheet" href="styles.css">
 <script src="site-data.js"></script>
 <script src="scholar-fetch.js"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@2.44.0/tabler-icons.min.css">
-<style>
-  :root {
-    --navy:      #0e2a47;
-    --navy-2:    #14395e;
-    --navy-3:    #1d4c7c;
-    --gold:      #c8a24b;
-    --gold-soft: #f4ead2;
-    --bg:        #ffffff;
-    --bg-soft:   #f7f5f1;
-    --ink:       #1b2430;
-    --muted:     #5d6d80;
-    --faint:     #93a1b3;
-    --line:      #e7e2d9;
-    --card:      #ffffff;
-    --serif:     'Newsreader', Georgia, 'Times New Roman', serif;
-    --sans:      'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    --mono:      'SFMono-Regular', 'Courier New', monospace;
-    --max:       980px;
-    --radius:    14px;
-    --shadow:    0 10px 30px rgba(14, 42, 71, 0.08);
-  }
-
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  html { scroll-behavior: smooth; scroll-padding-top: 84px; }
-
-  body {
-    font-family: var(--sans);
-    font-size: 15.5px;
-    line-height: 1.75;
-    color: var(--ink);
-    background: var(--bg);
-    -webkit-font-smoothing: antialiased;
-  }
-
-  a { color: var(--navy-3); text-decoration: none; }
-  a:hover { text-decoration: underline; }
-
-  /* ============ NAV ============ */
-  nav {
-    position: sticky; top: 0; z-index: 100;
-    background: rgba(255, 255, 255, 0.92);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border-bottom: 1px solid var(--line);
-  }
-  .nav-inner {
-    max-width: var(--max); margin: 0 auto; padding: 0 1.5rem;
-    display: flex; align-items: center; justify-content: space-between;
-    height: 64px;
-  }
-  .nav-name { font-family: var(--serif); font-size: 1.15rem; font-weight: 600; color: var(--navy); }
-  .nav-name:hover { text-decoration: none; }
-  .nav-links { display: flex; gap: 1.6rem; list-style: none; align-items: center; }
-  .nav-links a { font-size: 13.5px; font-weight: 500; color: var(--muted); }
-  .nav-links a:hover, .nav-links a.active { color: var(--navy); text-decoration: none; }
-  .nav-cv {
-    border: 1.5px solid var(--navy); border-radius: 999px;
-    padding: 5px 16px !important; color: var(--navy) !important; font-weight: 600 !important;
-    transition: background 0.15s, color 0.15s;
-  }
-  .nav-cv:hover { background: var(--navy); color: #fff !important; }
-  .nav-toggle { display: none; background: none; border: none; font-size: 1.4rem; color: var(--navy); cursor: pointer; }
-
-  main { max-width: var(--max); margin: 0 auto; padding: 0 1.5rem; }
-
-  section { padding: 4rem 0; }
-  section + section { border-top: 1px solid var(--line); }
-
-  .eyebrow {
-    font-size: 0.72rem; font-weight: 700; letter-spacing: 0.18em;
-    text-transform: uppercase; color: var(--gold); margin-bottom: 0.6rem;
-    display: flex; align-items: center; gap: 0.6rem;
-  }
-  .eyebrow::before { content: ""; width: 26px; height: 2px; background: var(--gold); display: inline-block; }
-  h2.sec-title {
-    font-family: var(--serif); font-size: 1.9rem; font-weight: 600;
-    color: var(--navy); margin-bottom: 0.4rem; line-height: 1.25;
-  }
-  .sec-sub { color: var(--muted); font-size: 15px; margin-bottom: 2rem; max-width: 640px; }
-
-  /* ============ HERO ============ */
-  .hero-band {
-    background:
-      radial-gradient(1100px 420px at 85% -60px, rgba(200, 162, 75, 0.16), transparent 60%),
-      radial-gradient(900px 500px at -10% 110%, rgba(29, 76, 124, 0.55), transparent 55%),
-      linear-gradient(135deg, var(--navy) 0%, var(--navy-2) 70%, #0b2036 100%);
-    color: #fff;
-    margin: 0 calc(50% - 50vw);
-    padding: 4.5rem calc(50vw - 50% + 1.5rem);
-  }
-  .hero-inner { max-width: var(--max); margin: 0 auto; }
-  .hero-grid { display: grid; grid-template-columns: 1fr 215px; gap: 3rem; align-items: center; }
-  .hero-eyebrow {
-    font-size: 0.72rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase;
-    color: var(--gold); margin-bottom: 1rem;
-  }
-  .hero-name {
-    font-family: var(--serif); font-weight: 600; font-size: 3rem; line-height: 1.08;
-    letter-spacing: -0.01em; margin-bottom: 0.6rem;
-  }
-  .hero-role { font-size: 1.05rem; color: rgba(255,255,255,0.88); font-weight: 500; }
-  .hero-affil { font-size: 0.95rem; color: rgba(255,255,255,0.62); margin-top: 0.15rem; }
-  .hero-mission {
-    font-family: var(--serif); font-style: italic; font-size: 1.25rem;
-    color: var(--gold-soft); margin-top: 1.4rem; max-width: 520px; line-height: 1.5;
-  }
-  .hero-ctas { display: flex; gap: 0.8rem; flex-wrap: wrap; margin-top: 1.8rem; }
-  .btn {
-    display: inline-flex; align-items: center; gap: 0.5rem;
-    font-size: 14px; font-weight: 600; padding: 10px 22px; border-radius: 999px;
-    transition: transform 0.15s, box-shadow 0.15s, background 0.15s, color 0.15s;
-    text-decoration: none !important;
-  }
-  .btn-gold { background: var(--gold); color: #1a1405; box-shadow: 0 6px 18px rgba(200,162,75,0.35); }
-  .btn-gold:hover { transform: translateY(-1px); box-shadow: 0 10px 24px rgba(200,162,75,0.45); }
-  .btn-outline { border: 1.5px solid rgba(255,255,255,0.45); color: #fff; }
-  .btn-outline:hover { border-color: #fff; background: rgba(255,255,255,0.08); transform: translateY(-1px); }
-  .hero-social { display: flex; gap: 0.4rem; margin-top: 1.6rem; flex-wrap: wrap; }
-  .hero-social a {
-    width: 38px; height: 38px; border-radius: 50%;
-    display: inline-flex; align-items: center; justify-content: center;
-    border: 1px solid rgba(255,255,255,0.25); color: rgba(255,255,255,0.85);
-    font-size: 1.05rem; transition: all 0.15s;
-  }
-  .hero-social a:hover { background: rgba(255,255,255,0.12); border-color: #fff; color: #fff; text-decoration: none; transform: translateY(-1px); }
-  .hero-photo-frame {
-    width: 215px; height: 265px; border-radius: var(--radius);
-    padding: 6px; background: linear-gradient(160deg, var(--gold), rgba(200,162,75,0.15));
-    box-shadow: 0 24px 60px rgba(0,0,0,0.35);
-    justify-self: end;
-  }
-  .hero-photo-frame .ph {
-    width: 100%; height: 100%; border-radius: 10px; overflow: hidden;
-    background: var(--navy-3); display: flex; align-items: center; justify-content: center;
-    font-family: var(--serif); font-size: 3rem; color: rgba(255,255,255,0.5);
-  }
-  .hero-photo-frame img { width: 100%; height: 100%; object-fit: cover; display: block; }
-
-  /* ============ ABOUT ============ */
-  .about-grid { display: grid; grid-template-columns: 1.6fr 1fr; gap: 2.5rem; align-items: start; }
-  .about-text p { color: var(--muted); margin-bottom: 1rem; font-size: 15.5px; }
-  .about-text p strong { color: var(--ink); }
-  .mission-card {
-    background: var(--bg-soft); border: 1px solid var(--line); border-left: 4px solid var(--gold);
-    border-radius: 0 var(--radius) var(--radius) 0; padding: 1.6rem;
-  }
-  .mission-card .q { font-family: var(--serif); font-style: italic; font-size: 1.15rem; color: var(--navy); line-height: 1.55; }
-  .mission-card .who { font-size: 0.8rem; color: var(--faint); margin-top: 0.8rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; }
-  .avail-pill {
-    display: inline-flex; align-items: center; gap: 0.5rem; margin-top: 1.4rem;
-    font-size: 13px; font-weight: 500; color: #1e5c3a;
-    background: #e9f5ee; border: 1px solid #cde6d8; padding: 7px 14px; border-radius: 999px;
-  }
-  .avail-pill .dot { width: 8px; height: 8px; border-radius: 50%; background: #2e9e5b; animation: pulse 2s infinite; }
-  @keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: 0.4; } }
-
-  /* ============ RESEARCH ============ */
-  .pillars { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.2rem; }
-  .pillar {
-    background: var(--card); border: 1px solid var(--line); border-radius: var(--radius);
-    padding: 1.7rem; transition: transform 0.18s, box-shadow 0.18s, border-color 0.18s;
-    position: relative; overflow: hidden;
-  }
-  .pillar::before {
-    content: ""; position: absolute; top: 0; left: 0; right: 0; height: 3px;
-    background: linear-gradient(90deg, var(--gold), var(--navy-3));
-    opacity: 0; transition: opacity 0.18s;
-  }
-  .pillar:hover { transform: translateY(-3px); box-shadow: var(--shadow); border-color: #d8d0c0; }
-  .pillar:hover::before { opacity: 1; }
-  .pillar-icon {
-    width: 46px; height: 46px; border-radius: 12px; display: flex; align-items: center; justify-content: center;
-    background: linear-gradient(135deg, var(--navy), var(--navy-3)); color: var(--gold-soft);
-    font-size: 1.35rem; margin-bottom: 1rem;
-  }
-  .pillar h3 { font-family: var(--serif); font-size: 1.2rem; font-weight: 600; color: var(--navy); margin-bottom: 0.4rem; }
-  .pillar p { font-size: 14px; color: var(--muted); line-height: 1.65; }
-
-  /* ============ PUBLICATIONS ============ */
-  .pub-filter { display: flex; gap: 0.6rem; margin-bottom: 1.8rem; flex-wrap: wrap; }
-  .filter-btn {
-    font-size: 13px; font-weight: 600; padding: 7px 18px; border-radius: 999px;
-    border: 1.5px solid var(--line); background: #fff; color: var(--muted); cursor: pointer;
-    transition: all 0.15s;
-  }
-  .filter-btn:hover { border-color: var(--navy); color: var(--navy); }
-  .filter-btn.active { background: var(--navy); border-color: var(--navy); color: #fff; }
-  .pub-item {
-    padding: 1.3rem 0 1.3rem 1.2rem; border-bottom: 1px solid var(--line);
-    position: relative;
-  }
-  .pub-item:last-child { border-bottom: none; }
-  .pub-item.ur::before {
-    content: ""; position: absolute; left: 0; top: 1.3rem; bottom: 1.3rem;
-    width: 3px; border-radius: 2px; background: var(--gold);
-  }
-  .pub-badges { display: flex; gap: 0.5rem; align-items: center; margin-bottom: 0.35rem; flex-wrap: wrap; }
-  .pub-badge {
-    font-size: 0.65rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
-    padding: 3px 10px; border-radius: 999px;
-  }
-  .pub-badge.ur { background: var(--gold-soft); color: #8a6d1f; }
-  .pub-badge.journal { background: #e4ebf5; color: var(--navy); }
-  .pub-badge.conference { background: #eef0f3; color: #4a5a6e; }
-  .pub-year { font-size: 0.75rem; font-weight: 600; color: var(--faint); font-family: var(--mono); }
-  .pub-title { font-size: 1.02rem; font-weight: 600; color: var(--ink); line-height: 1.45; }
-  .pub-title a { color: var(--ink); }
-  .pub-title a:hover { color: var(--navy-3); }
-  .pub-authors { font-size: 13.5px; color: var(--muted); margin-top: 0.25rem; }
-  .pub-venue { font-size: 13.5px; color: var(--muted); font-style: italic; margin-top: 0.1rem; }
-  .pub-status { font-size: 12.5px; font-weight: 600; color: #8a6d1f; font-style: normal; }
-  /* ============ LAB BAND ============ */
-  .lab-band {
-    background: linear-gradient(135deg, var(--navy) 0%, var(--navy-2) 100%);
-    border-radius: calc(var(--radius) + 6px);
-    color: #fff; padding: 3rem; position: relative; overflow: hidden;
-  }
-  .lab-band::after {
-    content: ""; position: absolute; right: -70px; top: -70px; width: 280px; height: 280px;
-    border-radius: 50%; background: radial-gradient(circle, rgba(200,162,75,0.22), transparent 70%);
-  }
-  .lab-band .eyebrow { color: var(--gold); }
-  .lab-band .eyebrow::before { background: var(--gold); }
-  .lab-name { font-family: var(--serif); font-size: 2rem; font-weight: 600; margin-bottom: 0.3rem; }
-  .lab-name .acronym { color: var(--gold); }
-  .lab-tagline { font-size: 0.95rem; color: rgba(255,255,255,0.65); font-style: italic; font-family: var(--serif); margin-bottom: 1rem; }
-  .lab-desc { color: rgba(255,255,255,0.82); max-width: 620px; font-size: 15px; margin-bottom: 1.4rem; }
-  .lab-pillars { display: flex; gap: 0.6rem; flex-wrap: wrap; margin-bottom: 1.8rem; }
-  .lab-pillars span {
-    font-size: 12.5px; font-weight: 600; padding: 6px 14px; border-radius: 999px;
-    border: 1px solid rgba(255,255,255,0.3); color: rgba(255,255,255,0.9);
-  }
-
-  /* ============ TEACHING ============ */
-  .teach-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.2rem; }
-  .teach-card {
-    background: var(--bg-soft); border: 1px solid var(--line); border-radius: var(--radius);
-    padding: 1.5rem;
-  }
-  .teach-card h3 { font-family: var(--serif); font-size: 1.12rem; color: var(--navy); font-weight: 600; }
-  .teach-card .org { font-size: 13px; color: var(--muted); font-weight: 500; margin-top: 0.15rem; }
-  .teach-card .period { font-size: 12px; color: var(--faint); font-family: var(--mono); margin-top: 0.3rem; display: block; }
-  .teach-card p { font-size: 13.5px; color: var(--muted); margin-top: 0.6rem; }
-
-  /* ============ NEWS ============ */
-  .news-list { position: relative; }
-  .news-item {
-    display: grid; grid-template-columns: 96px 1fr; gap: 1.4rem;
-    padding: 0.9rem 0; border-bottom: 1px solid var(--line); align-items: baseline;
-  }
-  .news-item:last-child { border-bottom: none; }
-  .news-date { font-size: 12.5px; color: var(--faint); font-family: var(--mono); font-weight: 600; white-space: nowrap; }
-  .news-text { font-size: 14.5px; color: var(--muted); }
-  .news-text strong { color: var(--ink); font-weight: 600; }
-  .news-tag {
-    display: inline-block; font-size: 0.62rem; font-weight: 700; letter-spacing: 0.08em;
-    text-transform: uppercase; padding: 2px 9px; border-radius: 999px; margin-right: 0.6rem;
-    vertical-align: 1px;
-  }
-  .news-tag.paper { background: #e4ebf5; color: var(--navy); }
-  .news-tag.milestone { background: var(--gold-soft); color: #8a6d1f; }
-  .news-tag.position { background: #e3f2e9; color: #1e5c3a; }
-  .news-tag.service { background: #eef0f3; color: #4a5a6e; }
-  .news-tag.award { background: #fdf0e3; color: #9a5b13; }
-
-  /* ============ CV ============ */
-  .cv-grid { display: grid; grid-template-columns: 1.25fr 1fr; gap: 3rem; }
-  .timeline-item { padding: 1.1rem 0; border-bottom: 1px solid var(--line); }
-  .timeline-item:last-child { border-bottom: none; }
-  .timeline-period { font-size: 12px; color: var(--faint); font-family: var(--mono); font-weight: 600; margin-bottom: 0.2rem; }
-  .timeline-role { font-size: 15px; font-weight: 600; color: var(--ink); }
-  .timeline-org { font-size: 13.5px; color: var(--navy-3); font-weight: 500; }
-  .timeline-desc { font-size: 13.5px; color: var(--muted); margin-top: 0.3rem; }
-  .timeline-gpa { font-size: 12.5px; color: #1e5c3a; font-weight: 600; margin-top: 0.25rem; }
-  .service-row {
-    display: flex; justify-content: space-between; gap: 1rem; align-items: baseline;
-    padding: 0.8rem 0; border-bottom: 1px solid var(--line); font-size: 14px;
-  }
-  .service-row:last-child { border-bottom: none; }
-  .service-row .r { font-weight: 600; color: var(--ink); }
-  .service-row .o { color: var(--muted); font-size: 13px; }
-  .service-row .y { font-family: var(--mono); font-size: 12px; color: var(--faint); white-space: nowrap; }
-  .skills-wrap { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.6rem; }
-  .skill-chip {
-    font-size: 12.5px; font-weight: 500; padding: 5px 13px; border-radius: 999px;
-    background: var(--bg-soft); border: 1px solid var(--line); color: var(--muted);
-  }
-  .cv-download { margin-top: 2.5rem; text-align: center; }
-  .btn-navy { background: var(--navy); color: #fff; }
-  .btn-navy:hover { background: var(--navy-3); transform: translateY(-1px); box-shadow: var(--shadow); }
-
-  /* ============ CONTACT ============ */
-  .contact-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem; }
-  .contact-card {
-    background: var(--card); border: 1px solid var(--line); border-radius: var(--radius);
-    padding: 1.6rem; text-align: center; transition: transform 0.15s, box-shadow 0.15s;
-  }
-  .contact-card:hover { transform: translateY(-3px); box-shadow: var(--shadow); }
-  .contact-card .ic {
-    width: 48px; height: 48px; margin: 0 auto 0.9rem; border-radius: 50%;
-    background: linear-gradient(135deg, var(--navy), var(--navy-3)); color: var(--gold-soft);
-    display: flex; align-items: center; justify-content: center; font-size: 1.3rem;
-  }
-  .contact-card .lbl { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--faint); margin-bottom: 0.35rem; }
-  .contact-card .val { font-size: 14.5px; color: var(--ink); font-weight: 500; word-break: break-word; }
-
-  footer {
-    border-top: 1px solid var(--line); margin-top: 2rem;
-    padding: 2.2rem 1.5rem; text-align: center;
-    font-size: 12.5px; color: var(--faint);
-  }
-  footer .fnav { display: flex; gap: 1.4rem; justify-content: center; margin-bottom: 0.8rem; flex-wrap: wrap; }
-  footer .fnav a { color: var(--muted); font-weight: 500; font-size: 13px; }
-
-  /* ============ RESPONSIVE ============ */
-  @media (max-width: 760px) {
-    .nav-links {
-      display: none; position: absolute; top: 64px; left: 0; right: 0;
-      background: #fff; flex-direction: column; align-items: stretch;
-      padding: 1rem 1.5rem 1.4rem; border-bottom: 1px solid var(--line); gap: 0;
-    }
-    .nav-links.open { display: flex; }
-    .nav-links a { padding: 0.7rem 0; border-bottom: 1px solid var(--line); }
-    .nav-links a:last-child { border-bottom: none; }
-    .nav-toggle { display: block; }
-    .hero-grid { grid-template-columns: 1fr; gap: 2rem; }
-    .hero-photo-frame { justify-self: start; width: 170px; height: 210px; }
-    .hero-name { font-size: 2.2rem; }
-    .about-grid, .pillars, .teach-grid, .cv-grid, .contact-grid { grid-template-columns: 1fr; }
-    .lab-band { padding: 2rem 1.5rem; }
-    section { padding: 3rem 0; }
-    .news-item { grid-template-columns: 1fr; gap: 0.2rem; }
-  }
-</style>
 </head>
 <body>
 
-<nav>
+<nav class="topnav">
   <div class="nav-inner">
-    <a href="#top" class="nav-name" id="nav-name">M. K. Mahbub</a>
+    <a href="index.html" class="nav-brand">M. K. Mahbub</a>
     <button class="nav-toggle" id="nav-toggle" aria-label="Menu"><i class="ti ti-menu-2"></i></button>
     <ul class="nav-links" id="nav-links">
-      <li><a href="#about">About</a></li>
-      <li><a href="#research">Research</a></li>
-      <li><a href="#publications">Publications</a></li>
-      <li><a href="#lab">Lab</a></li>
-      <li><a href="#teaching">Teaching</a></li>
-      <li><a href="#news">News</a></li>
-      <li><a href="#contact">Contact</a></li>
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="research.html">Research</a></li>
+      <li><a href="publications.html">Publications</a></li>
+      <li><a href="teaching.html">Teaching</a></li>
+      <li><a href="lab.html">Lab</a></li>
+      <li><a href="news.html">News</a></li>
+      <li><a href="contact.html">Contact</a></li>
       <li><a href="#" class="nav-cv" id="nav-cv">CV</a></li>
     </ul>
   </div>
 </nav>
 
-<div class="hero-band" id="top">
+<header class="hero">
   <div class="hero-inner">
     <div class="hero-grid">
       <div>
-        <div class="hero-eyebrow" id="hero-eyebrow"></div>
+        <div class="hero-eyebrow">Assistant Professor &middot; Computer Science &amp; Engineering</div>
         <h1 class="hero-name" id="hero-name"></h1>
         <div class="hero-role" id="hero-role"></div>
         <div class="hero-affil" id="hero-affil"></div>
-        <div class="hero-mission" id="hero-mission"></div>
+        <p class="hero-mission" id="hero-mission"></p>
         <div class="hero-ctas" id="hero-ctas"></div>
         <div class="hero-social" id="hero-social"></div>
       </div>
@@ -384,14 +51,14 @@
       </div>
     </div>
   </div>
-</div>
+</header>
 
 <main>
   <!-- ABOUT -->
-  <section id="about">
+  <section>
     <div class="eyebrow">About</div>
     <h2 class="sec-title">Building AI clinicians can trust</h2>
-    <div class="about-grid" style="margin-top:1.5rem">
+    <div class="about-grid">
       <div class="about-text" id="about-text"></div>
       <div>
         <div class="mission-card">
@@ -403,112 +70,63 @@
     </div>
   </section>
 
-  <!-- RESEARCH -->
-  <section id="research">
+  <!-- RESEARCH PREVIEW -->
+  <section>
     <div class="eyebrow">Research</div>
     <h2 class="sec-title">Research areas</h2>
-    <p class="sec-sub">My work sits at the intersection of deep learning, computer vision, and clinical healthcare — organized around four pillars of the CARMA AI Lab.</p>
-    <div class="pillars" id="pillars"></div>
+    <p class="sec-sub">Four pillars, one question: what does it take for a clinician to justifiably trust a model's output on their patient? <a href="research.html">Explore each area in depth &rarr;</a></p>
+    <div class="card-grid-4" id="research-preview"></div>
   </section>
 
-  <!-- PUBLICATIONS -->
-  <section id="publications">
+  <!-- SELECTED PUBLICATIONS -->
+  <section>
     <div class="eyebrow">Publications</div>
-    <h2 class="sec-title">Selected publications</h2>
-    <p class="sec-sub">Full list below — filter by type, or see everything on <a id="pubs-scholar-link" href="#" target="_blank" rel="noopener">Google Scholar</a>.</p>
-    <div class="pub-filter" id="pub-filter"></div>
-    <div id="pub-list"></div>
+    <h2 class="sec-title">Latest work</h2>
+    <p class="sec-sub">Currently under review. <a href="publications.html">See all 14 publications &rarr;</a></p>
+    <div id="pub-preview"></div>
   </section>
 
-  <!-- LAB -->
-  <section id="lab">
-    <div class="lab-band">
-      <div class="eyebrow">Research Lab</div>
-      <div class="lab-name"><span class="acronym">CARMA</span> AI Lab</div>
-      <div class="lab-tagline">Clinical AI for Reliable Medical Analytics</div>
-      <p class="lab-desc">The CARMA AI Lab develops reliable AI for high-stakes medical decisions. We audit models the way clinicians audit diagnoses: stress-testing them under distribution shift, explaining their reasoning, and quantifying when they should not be trusted.</p>
-      <div class="lab-pillars">
-        <span>Evaluation &amp; Auditing</span>
-        <span>Generalization</span>
-        <span>Interpretability</span>
-        <span>Safety &amp; Uncertainty</span>
-      </div>
-      <a class="btn btn-gold" id="lab-link" href="#" target="_blank" rel="noopener"><i class="ti ti-arrow-up-right"></i> Visit the lab website</a>
-    </div>
-  </section>
-
-  <!-- TEACHING -->
-  <section id="teaching">
-    <div class="eyebrow">Teaching</div>
-    <h2 class="sec-title">Teaching</h2>
-    <p class="sec-sub">Courses taught and teaching appointments.</p>
-    <div class="teach-grid" id="teach-grid"></div>
-  </section>
-
-  <!-- NEWS -->
-  <section id="news">
+  <!-- NEWS PREVIEW -->
+  <section>
     <div class="eyebrow">News</div>
-    <h2 class="sec-title">Latest updates</h2>
-    <div class="news-list" id="news-list" style="margin-top:1.5rem"></div>
+    <h2 class="sec-title">Recent updates</h2>
+    <div class="news-list" id="news-preview"></div>
+    <p style="margin-top:1.2rem"><a href="news.html" class="text-link">View all news &rarr;</a></p>
   </section>
 
-  <!-- CV -->
-  <section id="cv">
-    <div class="eyebrow">Curriculum Vitae</div>
-    <h2 class="sec-title">Experience &amp; education</h2>
-    <div class="cv-grid" style="margin-top:1.5rem">
+  <!-- CTA BAND -->
+  <section>
+    <div class="cta-band">
       <div>
-        <h3 style="font-family:var(--serif);color:var(--navy);font-size:1.25rem;margin-bottom:0.5rem">Appointments</h3>
-        <div id="exp-list"></div>
-        <h3 style="font-family:var(--serif);color:var(--navy);font-size:1.25rem;margin:2rem 0 0.5rem">Academic service</h3>
-        <div id="service-list"></div>
+        <div class="eyebrow light">CARMA AI Lab</div>
+        <h2>Clinical AI for Reliable Medical Analytics</h2>
+        <p>We audit models the way clinicians audit diagnoses — stress-testing them under distribution shift, explaining their reasoning, and quantifying when they should not be trusted.</p>
       </div>
-      <div>
-        <h3 style="font-family:var(--serif);color:var(--navy);font-size:1.25rem;margin-bottom:0.5rem">Education</h3>
-        <div id="edu-list"></div>
-        <h3 style="font-family:var(--serif);color:var(--navy);font-size:1.25rem;margin:2rem 0 0.5rem">Technical skills</h3>
-        <div class="skills-wrap" id="skills-wrap"></div>
+      <div class="cta-band-actions">
+        <a class="btn btn-gold" id="cta-lab" href="#"><i class="ti ti-flask"></i>Visit the lab</a>
+        <a class="btn btn-outline-light" href="contact.html"><i class="ti ti-mail"></i>Collaborate</a>
       </div>
     </div>
-    <div class="cv-download">
-      <a class="btn btn-navy" id="cv-download-btn" href="#" target="_blank" rel="noopener"><i class="ti ti-download"></i> Download full CV (PDF)</a>
-    </div>
-  </section>
-
-  <!-- CONTACT -->
-  <section id="contact">
-    <div class="eyebrow">Contact</div>
-    <h2 class="sec-title">Get in touch</h2>
-    <p class="sec-sub">The fastest way to reach me is email. I welcome research collaboration inquiries.</p>
-    <div class="contact-grid" id="contact-grid" style="margin-top:1.5rem"></div>
   </section>
 </main>
 
-<footer>
-  <div class="fnav">
-    <a href="#about">About</a><a href="#research">Research</a><a href="#publications">Publications</a>
-    <a href="#lab">Lab</a><a href="#teaching">Teaching</a><a href="#contact">Contact</a>
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-nav">
+      <a href="index.html">Home</a><a href="research.html">Research</a><a href="publications.html">Publications</a>
+      <a href="teaching.html">Teaching</a><a href="lab.html">Lab</a><a href="news.html">News</a><a href="contact.html">Contact</a>
+    </div>
+    <div id="footer-text"></div>
+    <div class="footer-meta">Built with plain HTML, CSS &amp; JavaScript &middot; Hosted on GitHub Pages</div>
   </div>
-  <div id="footer-text"></div>
-  <div style="margin-top:0.4rem">Built with plain HTML, CSS &amp; JavaScript &middot; Hosted on GitHub Pages</div>
 </footer>
 
 <script>
-// ============================================================
-// Render engine — reads SITE_DATA and builds the page.
-// Edit content in site-data.js; you never need to edit this file.
-// ============================================================
-
 const D = SITE_DATA;
 const $ = id => document.getElementById(id);
 const esc = s => String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
 
-// ---- Nav ----
-$('nav-name').textContent = 'M. K. Mahbub';
 $('nav-cv').href = D.links.cv;
-
-// ---- Hero ----
-$('hero-eyebrow').textContent = 'Assistant Professor \u00B7 Computer Science & Engineering';
 $('hero-name').textContent = D.name;
 $('hero-role').textContent = D.title + ', ' + D.department;
 $('hero-affil').textContent = D.institution;
@@ -517,159 +135,52 @@ $('hero-img').src = D.photo;
 $('hero-ctas').innerHTML =
   '<a class="btn btn-gold" href="' + D.links.cv + '" target="_blank" rel="noopener"><i class="ti ti-download"></i>Download CV</a>' +
   '<a class="btn btn-outline" href="' + D.links.scholar + '" target="_blank" rel="noopener"><i class="ti ti-school"></i>Google Scholar</a>' +
-  '<a class="btn btn-outline" href="' + D.links.lab + '" target="_blank" rel="noopener"><i class="ti ti-flask"></i>CARMA Lab</a>';
+  '<a class="btn btn-outline" href="research.html"><i class="ti ti-flask"></i>Research</a>';
 
 const socialDefs = [
-  { key: 'scholar',      icon: 'ti-school',        label: 'Google Scholar' },
-  { key: 'github',       icon: 'ti-brand-github',  label: 'GitHub' },
-  { key: 'linkedin',     icon: 'ti-brand-linkedin',label: 'LinkedIn' },
-  { key: 'twitter',      icon: 'ti-brand-x',       label: 'X (Twitter)' },
-  { key: 'orcid',        icon: 'ti-fingerprint',   label: 'ORCID' },
-  { key: 'researchgate', icon: 'ti-books',         label: 'ResearchGate' }
+  { key: 'scholar', icon: 'ti-school', label: 'Google Scholar' },
+  { key: 'github', icon: 'ti-brand-github', label: 'GitHub' },
+  { key: 'linkedin', icon: 'ti-brand-linkedin', label: 'LinkedIn' },
+  { key: 'twitter', icon: 'ti-brand-x', label: 'X (Twitter)' },
+  { key: 'orcid', icon: 'ti-fingerprint', label: 'ORCID' },
+  { key: 'researchgate', icon: 'ti-books', label: 'ResearchGate' }
 ];
-$('hero-social').innerHTML = socialDefs
-  .filter(s => D.links[s.key])
-  .map(s => '<a href="' + D.links[s.key] + '" target="_blank" rel="noopener" title="' + esc(s.label) + '" aria-label="' + esc(s.label) + '"><i class="ti ' + s.icon + '"></i></a>')
-  .join('') +
+$('hero-social').innerHTML = socialDefs.filter(s => D.links[s.key])
+  .map(s => '<a href="' + D.links[s.key] + '" target="_blank" rel="noopener" title="' + esc(s.label) + '" aria-label="' + esc(s.label) + '"><i class="ti ' + s.icon + '"></i></a>').join('') +
   '<a href="mailto:' + esc(D.email) + '" title="Email" aria-label="Email"><i class="ti ti-mail"></i></a>';
 
-// ---- About ----
 $('about-text').innerHTML = D.bio.map(p => '<p>' + esc(p) + '</p>').join('');
 $('mission-quote').textContent = '\u201C' + D.mission + '\u201D';
 $('avail-text').textContent = D.availability;
 
-// ---- Research pillars ----
-$('pillars').innerHTML = D.interests.map(r =>
-  '<div class="pillar"><div class="pillar-icon"><i class="ti ' + esc(r.icon) + '"></i></div>' +
-  '<h3>' + esc(r.label) + '</h3><p>' + esc(r.desc) + '</p></div>'
+$('research-preview').innerHTML = D.researchDetail.map(r =>
+  '<a class="pillar-card" href="research.html#' + r.id + '">' +
+  '<div class="pillar-icon"><i class="ti ' + esc(r.icon) + '"></i></div>' +
+  '<h3>' + esc(r.label) + '</h3><p class="tagline">' + esc(r.tagline) + '</p>' +
+  '<span class="card-link">Explore &rarr;</span></a>'
 ).join('');
 
-// ---- Publications ----
-const pubTypes = ['all', 'under-review', 'journal', 'conference'];
-const pubLabels = { all: 'All', 'under-review': 'Under Review', journal: 'Journals', conference: 'Conferences' };
-const badgeClass = { 'under-review': 'ur', journal: 'journal', conference: 'conference' };
-const badgeLabel = { 'under-review': 'Under Review', journal: 'Journal', conference: 'Conference' };
-let activeFilter = 'all';
-let livePubs = D.publications;
-
-function pubHTML(p) {
-  const badges = '<span class="pub-badge ' + (badgeClass[p.type] || '') + '">' + (badgeLabel[p.type] || esc(p.type)) + '</span>' +
-    '<span class="pub-year">' + (p.year || '') + '</span>';
-  const title = p.link
-    ? '<a href="' + p.link + '" target="_blank" rel="noopener">' + esc(p.title) + '</a>'
-    : esc(p.title);
-  const venueBits = [p.venue, p.volume, p.pages].filter(Boolean).map(esc).join(', ');
-  const status = p.status ? ' <span class="pub-status">&middot; ' + esc(p.status) + '</span>' : '';
-  return '<div class="pub-item' + (p.type === 'under-review' ? ' ur' : '') + '">' +
-    '<div class="pub-badges">' + badges + '</div>' +
+function pubItem(p) {
+  const title = p.link ? '<a href="' + p.link + '" target="_blank" rel="noopener">' + esc(p.title) + '</a>' : esc(p.title);
+  const venue = [p.venue, p.volume, p.pages].filter(Boolean).map(esc).join(', ');
+  return '<div class="pub-item ur"><div class="pub-badges"><span class="pub-badge ur">Under Review</span>' +
+    '<span class="pub-year">' + (p.year || '') + '</span></div>' +
     '<div class="pub-title">' + title + '</div>' +
     '<div class="pub-authors">' + esc(p.authors) + '</div>' +
-    '<div class="pub-venue">' + venueBits + status + '</div></div>';
+    '<div class="pub-venue">' + venue + (p.status ? ' <span class="pub-status">&middot; ' + esc(p.status) + '</span>' : '') + '</div></div>';
 }
+$('pub-preview').innerHTML = D.publications.filter(p => p.type === 'under-review').map(pubItem).join('');
 
-function renderPubs(filter) {
-  const pubs = filter === 'all' ? livePubs : livePubs.filter(p => p.type === filter);
-  $('pub-list').innerHTML = pubs.length
-    ? pubs.map(pubHTML).join('')
-    : '<p style="color:var(--faint)">No publications in this category yet.</p>';
-}
-
-$('pub-filter').innerHTML = pubTypes
-  .map(t => '<button class="filter-btn' + (t === activeFilter ? ' active' : '') + '" data-type="' + t + '">' + pubLabels[t] + '</button>')
-  .join('');
-$('pub-filter').addEventListener('click', e => {
-  const btn = e.target.closest('.filter-btn');
-  if (!btn) return;
-  activeFilter = btn.dataset.type;
-  document.querySelectorAll('.filter-btn').forEach(b => b.classList.toggle('active', b.dataset.type === activeFilter));
-  renderPubs(activeFilter);
-});
-renderPubs(activeFilter);
-$('pubs-scholar-link').href = D.links.scholar;
-window.addEventListener('scholarLoaded', e => {
-  if (e.detail && e.detail.publications && e.detail.publications.length) {
-    livePubs = e.detail.publications;
-    renderPubs(activeFilter);
-  }
-});
-
-// ---- Lab ----
-$('lab-link').href = D.links.lab;
-
-// ---- Teaching ----
-$('teach-grid').innerHTML = D.teaching.map(t =>
-  '<div class="teach-card"><h3>' + esc(t.course) + '</h3>' +
-  '<div class="org">' + esc(t.org) + '</div>' +
-  '<span class="period">' + esc(t.period) + '</span>' +
-  '<p>' + esc(t.desc) + '</p></div>'
-).join('');
-
-// ---- News ----
 const tagClass = { paper: 'paper', milestone: 'milestone', position: 'position', service: 'service', award: 'award' };
-$('news-list').innerHTML = D.news.map(n =>
+$('news-preview').innerHTML = D.news.slice(0, 4).map(n =>
   '<div class="news-item"><span class="news-date">' + esc(n.date) + '</span>' +
   '<span class="news-text"><span class="news-tag ' + (tagClass[n.tag] || 'service') + '">' + esc(n.tag) + '</span>' + esc(n.text) + '</span></div>'
 ).join('');
 
-// ---- Experience ----
-$('exp-list').innerHTML = D.experience.map(e =>
-  '<div class="timeline-item"><div class="timeline-period">' + esc(e.period) + '</div>' +
-  '<div class="timeline-role">' + esc(e.role) + '</div>' +
-  '<div class="timeline-org">' + esc(e.org) + '</div>' +
-  '<div class="timeline-desc">' + esc(e.desc) + '</div></div>'
-).join('');
-
-// ---- Education ----
-$('edu-list').innerHTML = D.education.map(e =>
-  '<div class="timeline-item"><div class="timeline-period">' + esc(e.period) + '</div>' +
-  '<div class="timeline-role">' + esc(e.degree) + '</div>' +
-  '<div class="timeline-org">' + esc(e.institution) + '</div>' +
-  '<div class="timeline-gpa">CGPA ' + esc(e.gpa) + ' / 4.00</div></div>'
-).join('');
-
-// ---- Service ----
-$('service-list').innerHTML = D.service.map(s =>
-  '<div class="service-row"><div><div class="r">' + esc(s.role) + '</div><div class="o">' + esc(s.org) + '</div></div>' +
-  '<div class="y">' + esc(s.years) + '</div></div>'
-).join('');
-
-// ---- Skills ----
-$('skills-wrap').innerHTML = D.skills
-  .map(g => g.items.map(i => '<span class="skill-chip">' + esc(i) + '</span>').join(''))
-  .join('');
-
-// ---- Contact ----
-$('contact-grid').innerHTML =
-  '<div class="contact-card"><div class="ic"><i class="ti ti-mail"></i></div><div class="lbl">Email</div>' +
-    '<div class="val"><a href="mailto:' + esc(D.email) + '">' + esc(D.email) + '</a></div></div>' +
-  '<div class="contact-card"><div class="ic"><i class="ti ti-phone"></i></div><div class="lbl">Phone</div>' +
-    '<div class="val">' + esc(D.phone) + '</div></div>' +
-  '<div class="contact-card"><div class="ic"><i class="ti ti-map-pin"></i></div><div class="lbl">Address</div>' +
-    '<div class="val">' + esc(D.location) + '</div></div>';
-$('cv-download-btn').href = D.links.cv;
-
-// ---- Footer ----
+$('cta-lab').href = D.lab.site;
 $('footer-text').textContent = '\u00A9 ' + new Date().getFullYear() + ' ' + D.name + ' \u00B7 ' + D.institution;
 
-// ---- Mobile nav ----
 $('nav-toggle').addEventListener('click', () => $('nav-links').classList.toggle('open'));
-document.querySelectorAll('.nav-links a').forEach(a =>
-  a.addEventListener('click', () => $('nav-links').classList.remove('open'))
-);
-
-// ---- Active nav highlight ----
-const secIds = ['about', 'research', 'publications', 'lab', 'teaching', 'news', 'contact'];
-const navAnchors = [...document.querySelectorAll('.nav-links a[href^="#"]')];
-function highlightNav() {
-  let current = '';
-  for (const id of secIds) {
-    const el = document.getElementById(id);
-    if (el && el.getBoundingClientRect().top <= 120) current = id;
-  }
-  navAnchors.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + current));
-}
-window.addEventListener('scroll', highlightNav, { passive: true });
-highlightNav();
 </script>
 </body>
 </html>

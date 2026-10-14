@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="News and updates from Md. Kawsher Mahbub: papers, positions, milestones, and service.">
+<title>News — Md. Kawsher Mahbub</title>
+<link rel="stylesheet" href="styles.css">
+<script src="site-data.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@2.44.0/tabler-icons.min.css">
+</head>
+<body>
+
+<nav class="topnav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-brand">M. K. Mahbub</a>
+    <button class="nav-toggle" id="nav-toggle" aria-label="Menu"><i class="ti ti-menu-2"></i></button>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="research.html">Research</a></li>
+      <li><a href="publications.html">Publications</a></li>
+      <li><a href="teaching.html">Teaching</a></li>
+      <li><a href="lab.html">Lab</a></li>
+      <li><a href="news.html" class="active">News</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="#" class="nav-cv" id="nav-cv">CV</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="page-hero">
+  <div class="page-hero-inner">
+    <div class="eyebrow">News</div>
+    <h1>News &amp; updates</h1>
+    <p class="page-lead">Papers, positions, milestones, and service — newest first.</p>
+  </div>
+</header>
+
+<main>
+  <section class="tight">
+    <div class="news-list" id="news-list"></div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-nav">
+      <a href="index.html">Home</a><a href="research.html">Research</a><a href="publications.html">Publications</a>
+      <a href="teaching.html">Teaching</a><a href="lab.html">Lab</a><a href="news.html">News</a><a href="contact.html">Contact</a>
+    </div>
+    <div id="footer-text"></div>
+    <div class="footer-meta">Built with plain HTML, CSS &amp; JavaScript &middot; Hosted on GitHub Pages</div>
+  </div>
+</footer>
+
+<script>
+const D = SITE_DATA;
+const $ = id => document.getElementById(id);
+const esc = s => String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+
+$('nav-cv').href = D.links.cv;
+const tagClass = { paper: 'paper', milestone: 'milestone', position: 'position', service: 'service', award: 'award' };
+$('news-list').innerHTML = D.news.map(n =>
+  '<div class="news-item"><span class="news-date">' + esc(n.date) + '</span>' +
+  '<span class="news-text"><span class="news-tag ' + (tagClass[n.tag] || 'service') + '">' + esc(n.tag) + '</span>' + esc(n.text) + '</span></div>'
+).join('');
+
+$('footer-text').textContent = '\u00A9 ' + new Date().getFullYear() + ' ' + D.name + ' \u00B7 ' + D.institution;
+$('nav-toggle').addEventListener('click', () => $('nav-links').classList.toggle('open'));
+</script>
+</body>
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Full publication list of Md. Kawsher Mahbub: journals, conferences, and manuscripts under review in medical AI, uncertainty quantification, and explainable AI.">
+<title>Publications — Md. Kawsher Mahbub</title>
+<link rel="stylesheet" href="styles.css">
+<script src="site-data.js"></script>
+<script src="scholar-fetch.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@2.44.0/tabler-icons.min.css">
+</head>
+<body>
+
+<nav class="topnav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-brand">M. K. Mahbub</a>
+    <button class="nav-toggle" id="nav-toggle" aria-label="Menu"><i class="ti ti-menu-2"></i></button>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="research.html">Research</a></li>
+      <li><a href="publications.html" class="active">Publications</a></li>
+      <li><a href="teaching.html">Teaching</a></li>
+      <li><a href="lab.html">Lab</a></li>
+      <li><a href="news.html">News</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="#" class="nav-cv" id="nav-cv">CV</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="page-hero">
+  <div class="page-hero-inner">
+    <div class="eyebrow">Publications</div>
+    <h1>Publications</h1>
+    <p class="page-lead">Journals, conferences, and manuscripts under review. For citation counts and the complete record, see <a id="scholar-link" href="#" target="_blank" rel="noopener">Google Scholar</a>.</p>
+  </div>
+</header>
+
+<main>
+  <section class="tight">
+    <div class="pub-filter" id="pub-filter"></div>
+    <div id="pub-list"></div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-nav">
+      <a href="index.html">Home</a><a href="research.html">Research</a><a href="publications.html">Publications</a>
+      <a href="teaching.html">Teaching</a><a href="lab.html">Lab</a><a href="news.html">News</a><a href="contact.html">Contact</a>
+    </div>
+    <div id="footer-text"></div>
+    <div class="footer-meta">Built with plain HTML, CSS &amp; JavaScript &middot; Hosted on GitHub Pages</div>
+  </div>
+</footer>
+
+<script>
+const D = SITE_DATA;
+const $ = id => document.getElementById(id);
+const esc = s => String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+
+$('nav-cv').href = D.links.cv;
+$('scholar-link').href = D.links.scholar;
+
+const pubTypes = ['all', 'under-review', 'journal', 'conference'];
+const pubLabels = { all: 'All', 'under-review': 'Under Review', journal: 'Journals', conference: 'Conferences' };
+const badgeClass = { 'under-review': 'ur', journal: 'journal', conference: 'conference' };
+const badgeLabel = { 'under-review': 'Under Review', journal: 'Journal', conference: 'Conference' };
+let activeFilter = 'all';
+let livePubs = D.publications;
+
+function pubHTML(p) {
+  const title = p.link ? '<a href="' + p.link + '" target="_blank" rel="noopener">' + esc(p.title) + '</a>' : esc(p.title);
+  const venue = [p.venue, p.volume, p.pages].filter(Boolean).map(esc).join(', ');
+  return '<div class="pub-item' + (p.type === 'under-review' ? ' ur' : '') + '">' +
+    '<div class="pub-badges"><span class="pub-badge ' + (badgeClass[p.type] || '') + '">' + (badgeLabel[p.type] || esc(p.type)) + '</span>' +
+    '<span class="pub-year">' + (p.year || '') + '</span></div>' +
+    '<div class="pub-title">' + title + '</div>' +
+    '<div class="pub-authors">' + esc(p.authors) + '</div>' +
+    '<div class="pub-venue">' + venue + (p.status ? ' <span class="pub-status">&middot; ' + esc(p.status) + '</span>' : '') + '</div></div>';
+}
+
+function renderPubs(filter) {
+  const pubs = filter === 'all' ? livePubs : livePubs.filter(p => p.type === filter);
+  $('pub-list').innerHTML = pubs.length ? pubs.map(pubHTML).join('')
+    : '<p class="muted">No publications in this category yet.</p>';
+}
+
+$('pub-filter').innerHTML = pubTypes
+  .map(t => '<button class="filter-btn' + (t === activeFilter ? ' active' : '') + '" data-type="' + t + '">' + pubLabels[t] + '</button>').join('');
+$('pub-filter').addEventListener('click', e => {
+  const btn = e.target.closest('.filter-btn');
+  if (!btn) return;
+  activeFilter = btn.dataset.type;
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.toggle('active', b.dataset.type === activeFilter));
+  renderPubs(activeFilter);
+});
+renderPubs(activeFilter);
+
+window.addEventListener('scholarLoaded', e => {
+  if (e.detail && e.detail.publications && e.detail.publications.length) {
+    livePubs = e.detail.publications;
+    renderPubs(activeFilter);
+  }
+});
+
+$('footer-text').textContent = '\u00A9 ' + new Date().getFullYear() + ' ' + D.name + ' \u00B7 ' + D.institution;
+$('nav-toggle').addEventListener('click', () => $('nav-links').classList.toggle('open'));
+</script>
+</body>
+</html>

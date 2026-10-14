@@ -207,10 +207,14 @@ const SITE_DATA = {
 
   // ---- Teaching ----
   teaching: [
-    { course: "Algorithms", org: "NPI University of Bangladesh", period: "2026 – Present", desc: "Undergraduate core course: design and analysis of algorithms." },
-    { course: "Core Programming Courses", org: "NPI University of Bangladesh", period: "2026 – Present", desc: "Programming fundamentals in C, C++, and Java." },
-    { course: "Graduate Teaching Assistant", org: "Kent State University", period: "2023 – 2025", desc: "Assisted graduate-level computer science courses." },
-    { course: "Undergraduate CS Courses", org: "BUBT, Dhaka", period: "2021 – 2023", desc: "Lecturer for undergraduate computer science courses." }
+    { course: "Algorithms", org: "NPI University of Bangladesh", period: "2026 – Present", level: "Undergraduate core",
+      desc: "Design and analysis of algorithms: asymptotic analysis, sorting and searching, graph algorithms, dynamic programming, greedy methods, and NP-completeness. Emphasis on proving correctness and reasoning about efficiency, not just coding solutions." },
+    { course: "Core Programming Courses", org: "NPI University of Bangladesh", period: "2026 – Present", level: "Undergraduate",
+      desc: "Programming fundamentals in C, C++, and Java: control flow, data structures, object-oriented design, and disciplined debugging. The foundation every later course builds on." },
+    { course: "Graduate Teaching Assistant", org: "Kent State University, OH, USA", period: "2023 – 2025", level: "Graduate",
+      desc: "Assisted graduate-level computer science courses — running recitations, grading, holding office hours — while conducting research in medical image analysis and trustworthy machine learning." },
+    { course: "Undergraduate CS Courses & Research Mentoring", org: "Bangladesh University of Business and Technology, Dhaka", period: "2021 – 2023", level: "Undergraduate",
+      desc: "Lecturer for undergraduate computer science courses and advisor to the IEEE CS BUBT Student Branch Chapter. Mentored undergraduate research projects in medical imaging and computer vision, several of which grew into peer-reviewed publications." }
   ],
 
   // ---- Service ----
@@ -221,6 +225,91 @@ const SITE_DATA = {
     { role: "Reviewer", org: "CMC – Computers, Materials & Continua (Tech Science Press)", years: "Ongoing" },
     { role: "Reviewer", org: "International Journal of Intelligent Transportation Systems Research (Springer)", years: "Ongoing" }
   ],
+
+  // ---- Research detail (one rich section per pillar) ----
+  researchDetail: [
+    {
+      id: "auditing",
+      icon: "ti-clipboard-check",
+      label: "Evaluation & Auditing",
+      tagline: "Benchmark accuracy is not enough.",
+      overview: "A model can top a leaderboard and still fail patients. My auditing work treats evaluation as a forensic discipline: stress-testing classifiers the way clinicians audit diagnoses, hunting for shortcut learning, miscalibration, and silent failure modes before a model ever reaches the bedside.",
+      questions: [
+        "How do we detect shortcut learning in chest X-ray classifiers — models that are right for the wrong reasons?",
+        "What does a forensic evaluation protocol look like for ensemble classifiers under real clinical distribution shift?",
+        "When a model collapses on external data (our locked model fell from 0.9999 to 0.6876 AUC moving across sites), how do we characterize and report that failure honestly?"
+      ],
+      methods: ["Calibration analysis", "Shortcut detectors", "Grad-CAM auditing", "Paired bootstrap testing", "Failure-mode analysis"],
+      pubs: [
+        "Beyond Benchmark Accuracy: Forensic Explainability Auditing for Ensemble Chest X-ray Classifiers"
+      ]
+    },
+    {
+      id: "generalization",
+      icon: "ti-arrows-transfer-up",
+      label: "Generalization",
+      tagline: "Will it work at the next hospital?",
+      overview: "Medical models are trained at one site and deployed at many. I work on predicting out-of-distribution performance without ever seeing target data — so a hospital can know, before deployment, whether a model will hold up on its own patients, scanners, and protocols.",
+      questions: [
+        "Can we predict a model's accuracy on unseen hospitals using only source-domain information?",
+        "Which signals — semantic, temporal, or statistical — actually forecast degradation under shift?",
+        "How do we turn a generalization forecast into a deployment decision?"
+      ],
+      methods: ["OOD performance prediction", "Semantic augmentation", "Distribution-shift characterization", "Cross-site validation"],
+      pubs: [
+        "STAMP: Predicting Out-of-Distribution Generalization without Target Data"
+      ]
+    },
+    {
+      id: "interpretability",
+      icon: "ti-zoom-question",
+      label: "Interpretability",
+      tagline: "Show the clinician what you saw.",
+      overview: "Explanations are only useful if they change decisions for the better. My interpretability work focuses on human-centered explanations for clinical models: feature-level reasoning clinicians can inspect, and explanation methods audited for faithfulness rather than taken on faith.",
+      questions: [
+        "Which explanations actually help a clinician catch a model's mistake?",
+        "How do we verify that a saliency map reflects the model's reasoning and not an artifact of the method?",
+        "Can interpretable feature engineering rival black-box performance on tabular clinical data?"
+      ],
+      methods: ["Explainable ensembles", "Feature engineering", "Saliency auditing", "Human-centered evaluation"],
+      pubs: [
+        "Explainable AI assisted heart disease diagnosis through effective feature engineering and stacked ensemble learning",
+        "Beyond Benchmark Accuracy: Forensic Explainability Auditing for Ensemble Chest X-ray Classifiers"
+      ]
+    },
+    {
+      id: "uncertainty",
+      icon: "ti-shield-check",
+      label: "Safety & Uncertainty",
+      tagline: "Know when to say 'I don't know.'",
+      overview: "The most dangerous model is a confident wrong one. I develop post-hoc uncertainty quantification for frozen, black-box vision models — no retraining, no architecture changes. By measuring spatial consistency in a model's own attention, we can flag the cases it should abstain from or refer to a clinician.",
+      questions: [
+        "How do we quantify uncertainty for a model we cannot open or retrain?",
+        "Can spatial consistency in attention maps serve as a reliable uncertainty signal?",
+        "Where should the referral threshold sit so that retained predictions are trustworthy?"
+      ],
+      methods: ["Post-hoc UQ", "Spatial consistency", "Referral learning", "Temperature calibration", "Selective prediction"],
+      pubs: [
+        "SpatialUQ: Post-Hoc Uncertainty Quantification from Spatial Consistency in Black-Box Vision Models"
+      ]
+    }
+  ],
+
+  // ---- Lab ----
+  lab: {
+    name: "CARMA AI Lab",
+    acronym: "CARMA",
+    tagline: "Clinical AI for Reliable Medical Analytics",
+    mission: "Reliable AI for high-stakes decisions.",
+    about: [
+      "The CARMA AI Lab develops reliable AI for high-stakes medical decisions. We audit models the way clinicians audit diagnoses: stress-testing them under distribution shift, explaining their reasoning, and quantifying when they should not be trusted.",
+      "Our work spans four pillars — evaluation and auditing, out-of-distribution generalization, interpretability, and safety and uncertainty — unified by a single question: what does it take for a clinician to justifiably trust a model's output on their patient?"
+    ],
+    pillars: ["Evaluation & Auditing", "Generalization", "Interpretability", "Safety & Uncertainty"],
+    joinTitle: "Work with us",
+    joinText: "We collaborate with clinicians, hospitals, and ML researchers on auditing, generalization, and uncertainty problems in medical AI. If you have a model that needs stress-testing — or a clinical question that needs honest answers — get in touch.",
+    site: "https://kawsher.github.io/carma-ai-lab/"
+  },
 
   // ---- Skills ----
   skills: [
