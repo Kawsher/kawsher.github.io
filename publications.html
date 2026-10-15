@@ -10,51 +10,62 @@
 <script src="scholar-fetch.js"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@2.44.0/tabler-icons.min.css">
 </head>
 <body>
 
 <nav class="topnav">
   <div class="nav-inner">
-    <a href="index.html" class="nav-brand">M. K. Mahbub</a>
     <button class="nav-toggle" id="nav-toggle" aria-label="Menu"><i class="ti ti-menu-2"></i></button>
     <ul class="nav-links" id="nav-links">
-      <li><a href="index.html">Home</a></li>
+      <li><a href="index.html">About</a></li>
       <li><a href="research.html">Research</a></li>
       <li><a href="publications.html" class="active">Publications</a></li>
       <li><a href="teaching.html">Teaching</a></li>
       <li><a href="lab.html">Lab</a></li>
       <li><a href="news.html">News</a></li>
       <li><a href="contact.html">Contact</a></li>
-      <li><a href="#" class="nav-cv" id="nav-cv">CV</a></li>
+      <li><a href="assets/CV_Md_Kawsher_Mahbub.pdf" target="_blank" rel="noopener">CV</a></li>
     </ul>
   </div>
 </nav>
 
-<header class="page-hero">
-  <div class="page-hero-inner">
+<div class="layout">
+  <aside class="sidebar">
+    <img class="avatar" src="assets/Picture.JPG" alt="Md. Kawsher Mahbub" onerror="this.style.display='none'">
+    <h2 class="side-name">Md. Kawsher Mahbub</h2>
+    <div class="side-affil"><i class="ti ti-building"></i><span>NPI University of Bangladesh</span></div>
+    <p class="side-role">Assistant Professor, Computer Science &amp; Engineering</p>
+    <p class="side-blurb">I build reliable AI for high-stakes clinical decisions: uncertainty quantification, explainable AI, and out-of-distribution generalization for medical imaging.</p>
+    <div class="side-icons">
+      <a href="mailto:kawsher.cse@gmail.com" title="Email" aria-label="Email"><i class="ti ti-mail"></i></a>
+      <a href="https://scholar.google.com/citations?user=fQ_TTFsAAAAJ" target="_blank" rel="noopener" title="Google Scholar" aria-label="Google Scholar"><i class="ti ti-school"></i></a>
+      <a href="https://github.com/Kawsher" target="_blank" rel="noopener" title="GitHub" aria-label="GitHub"><i class="ti ti-brand-github"></i></a>
+      <a href="https://www.linkedin.com/in/kawsher-mahbub/" target="_blank" rel="noopener" title="LinkedIn" aria-label="LinkedIn"><i class="ti ti-brand-linkedin"></i></a>
+      <a href="https://x.com/kawsher_mahbub" target="_blank" rel="noopener" title="X (Twitter)" aria-label="X (Twitter)"><i class="ti ti-brand-x"></i></a>
+      <a href="https://orcid.org/0000-0002-4200-542X" target="_blank" rel="noopener" title="ORCID" aria-label="ORCID"><i class="ti ti-fingerprint"></i></a>
+      <a href="assets/CV_Md_Kawsher_Mahbub.pdf" target="_blank" rel="noopener" title="CV" aria-label="CV"><i class="ti ti-file-text"></i></a>
+    </div>
+    <div class="side-note"><strong>Currently</strong><br>Leading the CARMA AI Lab · Head of the ICT Cell · Open to research collaboration</div>
+  </aside>
+
+  <main class="content">
     <div class="eyebrow">Publications</div>
     <h1>Publications</h1>
-    <p class="page-lead">Journals, conferences, and manuscripts under review. For citation counts and the complete record, see <a id="scholar-link" href="#" target="_blank" rel="noopener">Google Scholar</a>.</p>
-  </div>
-</header>
-
-<main>
-  <section class="tight">
+    <p class="lead">Journals, conferences, and manuscripts under review. For citation counts and the complete record, see <a id="scholar-link" href="#" target="_blank" rel="noopener">Google Scholar</a>.</p>
     <div class="pub-filter" id="pub-filter"></div>
     <div id="pub-list"></div>
-  </section>
-</main>
+  </main>
+</div>
 
 <footer class="site-footer">
   <div class="footer-inner">
     <div class="footer-nav">
-      <a href="index.html">Home</a><a href="research.html">Research</a><a href="publications.html">Publications</a>
+      <a href="index.html">About</a><a href="research.html">Research</a><a href="publications.html">Publications</a>
       <a href="teaching.html">Teaching</a><a href="lab.html">Lab</a><a href="news.html">News</a><a href="contact.html">Contact</a>
     </div>
     <div id="footer-text"></div>
-    <div class="footer-meta">Built with plain HTML, CSS &amp; JavaScript &middot; Hosted on GitHub Pages</div>
   </div>
 </footer>
 
@@ -63,7 +74,6 @@ const D = SITE_DATA;
 const $ = id => document.getElementById(id);
 const esc = s => String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
 
-$('nav-cv').href = D.links.cv;
 $('scholar-link').href = D.links.scholar;
 
 const pubTypes = ['all', 'under-review', 'journal', 'conference'];

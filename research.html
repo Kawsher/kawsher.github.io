@@ -9,63 +9,62 @@
 <script src="site-data.js"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@2.44.0/tabler-icons.min.css">
 </head>
 <body>
 
 <nav class="topnav">
   <div class="nav-inner">
-    <a href="index.html" class="nav-brand">M. K. Mahbub</a>
     <button class="nav-toggle" id="nav-toggle" aria-label="Menu"><i class="ti ti-menu-2"></i></button>
     <ul class="nav-links" id="nav-links">
-      <li><a href="index.html">Home</a></li>
+      <li><a href="index.html">About</a></li>
       <li><a href="research.html" class="active">Research</a></li>
       <li><a href="publications.html">Publications</a></li>
       <li><a href="teaching.html">Teaching</a></li>
       <li><a href="lab.html">Lab</a></li>
       <li><a href="news.html">News</a></li>
       <li><a href="contact.html">Contact</a></li>
-      <li><a href="#" class="nav-cv" id="nav-cv">CV</a></li>
+      <li><a href="assets/CV_Md_Kawsher_Mahbub.pdf" target="_blank" rel="noopener">CV</a></li>
     </ul>
   </div>
 </nav>
 
-<header class="page-hero">
-  <div class="page-hero-inner">
+<div class="layout">
+  <aside class="sidebar">
+    <img class="avatar" src="assets/Picture.JPG" alt="Md. Kawsher Mahbub" onerror="this.style.display='none'">
+    <h2 class="side-name">Md. Kawsher Mahbub</h2>
+    <div class="side-affil"><i class="ti ti-building"></i><span>NPI University of Bangladesh</span></div>
+    <p class="side-role">Assistant Professor, Computer Science &amp; Engineering</p>
+    <p class="side-blurb">I build reliable AI for high-stakes clinical decisions: uncertainty quantification, explainable AI, and out-of-distribution generalization for medical imaging.</p>
+    <div class="side-icons">
+      <a href="mailto:kawsher.cse@gmail.com" title="Email" aria-label="Email"><i class="ti ti-mail"></i></a>
+      <a href="https://scholar.google.com/citations?user=fQ_TTFsAAAAJ" target="_blank" rel="noopener" title="Google Scholar" aria-label="Google Scholar"><i class="ti ti-school"></i></a>
+      <a href="https://github.com/Kawsher" target="_blank" rel="noopener" title="GitHub" aria-label="GitHub"><i class="ti ti-brand-github"></i></a>
+      <a href="https://www.linkedin.com/in/kawsher-mahbub/" target="_blank" rel="noopener" title="LinkedIn" aria-label="LinkedIn"><i class="ti ti-brand-linkedin"></i></a>
+      <a href="https://x.com/kawsher_mahbub" target="_blank" rel="noopener" title="X (Twitter)" aria-label="X (Twitter)"><i class="ti ti-brand-x"></i></a>
+      <a href="https://orcid.org/0000-0002-4200-542X" target="_blank" rel="noopener" title="ORCID" aria-label="ORCID"><i class="ti ti-fingerprint"></i></a>
+      <a href="assets/CV_Md_Kawsher_Mahbub.pdf" target="_blank" rel="noopener" title="CV" aria-label="CV"><i class="ti ti-file-text"></i></a>
+    </div>
+    <div class="side-note"><strong>Currently</strong><br>Leading the CARMA AI Lab · Head of the ICT Cell · Open to research collaboration</div>
+  </aside>
+
+  <main class="content">
     <div class="eyebrow">Research</div>
     <h1>Reliable AI for high-stakes decisions</h1>
-    <p class="page-lead">My work sits at the intersection of deep learning, computer vision, and clinical healthcare. It is organized around four pillars — each a full research program with its own questions, methods, and publications.</p>
-  </div>
-</header>
-
-<main>
-  <nav class="pillar-toc" id="pillar-toc" aria-label="Research areas"></nav>
-  <div id="pillars"></div>
-
-  <section>
-    <div class="cta-band">
-      <div>
-        <div class="eyebrow light">Publications</div>
-        <h2>Read the papers</h2>
-        <p>The full publication list — journals, conferences, and manuscripts under review — with links to Google Scholar.</p>
-      </div>
-      <div class="cta-band-actions">
-        <a class="btn btn-primary" href="publications.html"><i class="ti ti-book"></i>All publications</a>
-        <a class="btn btn-outline-light" id="cta-scholar" href="#"><i class="ti ti-school"></i>Google Scholar</a>
-      </div>
-    </div>
-  </section>
-</main>
+    <p class="lead">My work sits at the intersection of deep learning, computer vision, and clinical healthcare — organized around four pillars, each a full research program with its own questions, methods, and publications.</p>
+    <div id="areas"></div>
+    <div class="callout"><strong>Publications:</strong> the full list — journals, conferences, and manuscripts under review — lives on the <a href="publications.html">publications page</a>.</div>
+  </main>
+</div>
 
 <footer class="site-footer">
   <div class="footer-inner">
     <div class="footer-nav">
-      <a href="index.html">Home</a><a href="research.html">Research</a><a href="publications.html">Publications</a>
+      <a href="index.html">About</a><a href="research.html">Research</a><a href="publications.html">Publications</a>
       <a href="teaching.html">Teaching</a><a href="lab.html">Lab</a><a href="news.html">News</a><a href="contact.html">Contact</a>
     </div>
     <div id="footer-text"></div>
-    <div class="footer-meta">Built with plain HTML, CSS &amp; JavaScript &middot; Hosted on GitHub Pages</div>
   </div>
 </footer>
 
@@ -74,43 +73,23 @@ const D = SITE_DATA;
 const $ = id => document.getElementById(id);
 const esc = s => String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
 
-$('nav-cv').href = D.links.cv;
-$('cta-scholar').href = D.links.scholar;
-
-$('pillar-toc').innerHTML = D.researchDetail.map((r, i) =>
-  '<a class="toc-card" href="#' + r.id + '"><span class="toc-num">' + (i + 1) + '</span>' +
-  '<span class="toc-label">' + esc(r.label) + '</span></a>'
-).join('');
-
-function findPub(title) {
-  return D.publications.find(p => p.title === title);
-}
-function pubMini(title) {
+function findPub(title) { return D.publications.find(p => p.title === title); }
+function repPub(title) {
   const p = findPub(title);
   if (!p) return '';
-  const venue = [p.venue, p.volume, p.pages].filter(Boolean).map(esc).join(', ');
-  return '<div class="rep-pub"><div class="pub-title-sm">' + esc(p.title) + '</div>' +
-    '<div class="pub-authors">' + esc(p.authors) + '</div>' +
-    '<div class="pub-venue">' + venue + (p.status ? ' &middot; <span class="pub-status">' + esc(p.status) + '</span>' : '') + '</div></div>';
+  return '<div class="rep-pub"><strong>' + esc(p.title) + '</strong>' + esc(p.authors) +
+    ' — <em>' + esc([p.venue, p.volume, p.pages].filter(Boolean).join(', ')) + '</em>' +
+    (p.status ? ' · ' + esc(p.status) : '') + '</div>';
 }
 
-$('pillars').innerHTML = D.researchDetail.map((r, i) =>
-  '<section class="pillar-section" id="' + r.id + '">' +
-    '<div class="pillar-head">' +
-      '<div class="pillar-icon lg"><i class="ti ' + esc(r.icon) + '"></i></div>' +
-      '<div><div class="pillar-kicker">Area ' + (i + 1) + '</div>' +
-      '<h2>' + esc(r.label) + '</h2>' +
-      '<p class="pillar-tagline">\u201C' + esc(r.tagline) + '\u201D</p></div>' +
-    '</div>' +
-    '<p class="pillar-overview">' + esc(r.overview) + '</p>' +
-    '<div class="pillar-cols">' +
-      '<div><h3>Key questions</h3><ul class="q-list">' +
-        r.questions.map(q => '<li>' + esc(q) + '</li>').join('') + '</ul></div>' +
-      '<div><h3>Methods &amp; tools</h3><div class="chip-row">' +
-        r.methods.map(m => '<span class="chip">' + esc(m) + '</span>').join('') + '</div>' +
-      '<h3 style="margin-top:1.4rem">Representative publications</h3>' +
-        r.pubs.map(pubMini).join('') + '</div>' +
-    '</div>' +
+$('areas').innerHTML = D.researchDetail.map((r, i) =>
+  '<section class="area" id="' + r.id + '">' +
+    '<div class="area-head"><span class="area-num">' + (i + 1) + '</span><h3>' + esc(r.label) + '</h3></div>' +
+    '<p class="tagline">\u201C' + esc(r.tagline) + '\u201D</p>' +
+    '<p>' + esc(r.overview) + '</p>' +
+    '<h4>Key questions</h4><ul class="q-list">' + r.questions.map(q => '<li>' + esc(q) + '</li>').join('') + '</ul>' +
+    '<h4>Methods</h4><div class="method-tags">' + r.methods.map(m => '<span>' + esc(m) + '</span>').join('') + '</div>' +
+    '<h4>Representative publications</h4>' + r.pubs.map(repPub).join('') +
   '</section>'
 ).join('');
 

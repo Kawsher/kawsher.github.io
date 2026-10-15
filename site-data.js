@@ -21,6 +21,18 @@ const SITE_DATA = {
   availability: "I am always happy to discuss research collaborations.",
   photo: "assets/Picture.JPG",
 
+  // ---- Narrative sections (home page) ----
+  path: [
+    "I received my B.Sc. in Computer Science and Engineering from the Bangladesh University of Business and Technology (BUBT) in 2021, and stayed on as a lecturer. There I mentored undergraduate research projects in medical imaging and computer vision — several of those student projects grew into peer-reviewed publications — and served as advisor to the IEEE CS BUBT student branch chapter.",
+    "I then earned my M.S. in Computer Science from Kent State University (2025), where I worked as a graduate teaching assistant while researching trustworthy machine learning for medical image analysis.",
+    "In 2026 I returned to Bangladesh to join the faculty of NPI University of Bangladesh as an Assistant Professor, where I also head the ICT Cell and founded the CARMA AI Lab."
+  ],
+  currentWork: [
+    "My lab studies how to make clinical AI reliable enough to matter at the bedside. We audit models the way clinicians audit diagnoses: hunting for shortcut learning and miscalibration (forensic evaluation), predicting how a model will behave at a new hospital before it is ever deployed (out-of-distribution generalization), explaining model decisions in terms clinicians can inspect (interpretability), and quantifying uncertainty so that models know when to abstain and refer (safety).",
+    "Two active threads drive this work: STAMP, which predicts out-of-distribution performance without target data, and SpatialUQ, which quantifies uncertainty for frozen black-box vision models from spatial consistency. Both are currently under review."
+  ],
+  collaboratorNote: "Prospective collaborators: I am always happy to discuss research collaborations — especially on auditing, generalization, and uncertainty in medical AI. Email me with a short note about the problem you want to work on.",
+
   // ---- Social links ----
   links: {
     scholar: "https://scholar.google.com/citations?user=fQ_TTFsAAAAJ",

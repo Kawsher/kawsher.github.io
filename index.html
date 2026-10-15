@@ -7,117 +7,72 @@
 <title>Md. Kawsher Mahbub — Assistant Professor, CSE</title>
 <link rel="stylesheet" href="styles.css">
 <script src="site-data.js"></script>
-<script src="scholar-fetch.js"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@2.44.0/tabler-icons.min.css">
 </head>
 <body>
 
 <nav class="topnav">
   <div class="nav-inner">
-    <a href="index.html" class="nav-brand">M. K. Mahbub</a>
     <button class="nav-toggle" id="nav-toggle" aria-label="Menu"><i class="ti ti-menu-2"></i></button>
     <ul class="nav-links" id="nav-links">
-      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="index.html" class="active">About</a></li>
       <li><a href="research.html">Research</a></li>
       <li><a href="publications.html">Publications</a></li>
       <li><a href="teaching.html">Teaching</a></li>
       <li><a href="lab.html">Lab</a></li>
       <li><a href="news.html">News</a></li>
       <li><a href="contact.html">Contact</a></li>
-      <li><a href="#" class="nav-cv" id="nav-cv">CV</a></li>
+      <li><a href="assets/CV_Md_Kawsher_Mahbub.pdf" target="_blank" rel="noopener">CV</a></li>
     </ul>
   </div>
 </nav>
 
-<header class="hero">
-  <div class="hero-inner">
-    <div class="hero-grid">
-      <div>
-        <div class="hero-eyebrow">Assistant Professor &middot; Computer Science &amp; Engineering</div>
-        <h1 class="hero-name" id="hero-name"></h1>
-        <div class="hero-role" id="hero-role"></div>
-        <div class="hero-affil" id="hero-affil"></div>
-        <p class="hero-mission" id="hero-mission"></p>
-        <div class="hero-ctas" id="hero-ctas"></div>
-        <div class="hero-social" id="hero-social"></div>
-      </div>
-      <div class="hero-photo-frame">
-        <div class="ph" id="hero-photo-wrap">
-          <img id="hero-img" alt="Md. Kawsher Mahbub" onerror="this.style.display='none';document.getElementById('hero-photo-wrap').textContent='MK'">
-        </div>
-      </div>
+<div class="layout">
+  <aside class="sidebar">
+    <img class="avatar" src="assets/Picture.JPG" alt="Md. Kawsher Mahbub" onerror="this.style.display='none'">
+    <h2 class="side-name">Md. Kawsher Mahbub</h2>
+    <div class="side-affil"><i class="ti ti-building"></i><span>NPI University of Bangladesh</span></div>
+    <p class="side-role">Assistant Professor, Computer Science &amp; Engineering</p>
+    <p class="side-blurb">I build reliable AI for high-stakes clinical decisions: uncertainty quantification, explainable AI, and out-of-distribution generalization for medical imaging.</p>
+    <div class="side-icons">
+      <a href="mailto:kawsher.cse@gmail.com" title="Email" aria-label="Email"><i class="ti ti-mail"></i></a>
+      <a href="https://scholar.google.com/citations?user=fQ_TTFsAAAAJ" target="_blank" rel="noopener" title="Google Scholar" aria-label="Google Scholar"><i class="ti ti-school"></i></a>
+      <a href="https://github.com/Kawsher" target="_blank" rel="noopener" title="GitHub" aria-label="GitHub"><i class="ti ti-brand-github"></i></a>
+      <a href="https://www.linkedin.com/in/kawsher-mahbub/" target="_blank" rel="noopener" title="LinkedIn" aria-label="LinkedIn"><i class="ti ti-brand-linkedin"></i></a>
+      <a href="https://x.com/kawsher_mahbub" target="_blank" rel="noopener" title="X (Twitter)" aria-label="X (Twitter)"><i class="ti ti-brand-x"></i></a>
+      <a href="https://orcid.org/0000-0002-4200-542X" target="_blank" rel="noopener" title="ORCID" aria-label="ORCID"><i class="ti ti-fingerprint"></i></a>
+      <a href="assets/CV_Md_Kawsher_Mahbub.pdf" target="_blank" rel="noopener" title="CV" aria-label="CV"><i class="ti ti-file-text"></i></a>
     </div>
-  </div>
-</header>
+    <div class="side-note"><strong>Currently</strong><br>Leading the CARMA AI Lab · Head of the ICT Cell · Open to research collaboration</div>
+  </aside>
 
-<main>
-  <!-- ABOUT -->
-  <section>
-    <div class="eyebrow">About</div>
-    <h2 class="sec-title">Building AI clinicians can trust</h2>
-    <div class="about-grid">
-      <div class="about-text" id="about-text"></div>
-      <div>
-        <div class="mission-card">
-          <div class="q" id="mission-quote"></div>
-          <div class="who">Research mission</div>
-        </div>
-        <span class="avail-pill"><span class="dot"></span><span id="avail-text"></span></span>
-      </div>
-    </div>
-  </section>
+  <main class="content">
+    <h1>About Me</h1>
+    <div id="about-text"></div>
 
-  <!-- RESEARCH PREVIEW -->
-  <section>
-    <div class="eyebrow">Research</div>
-    <h2 class="sec-title">Research areas</h2>
-    <p class="sec-sub">Four pillars, one question: what does it take for a clinician to justifiably trust a model's output on their patient? <a href="research.html">Explore each area in depth &rarr;</a></p>
-    <div class="card-grid-4" id="research-preview"></div>
-  </section>
+    <h2 class="sec">My Path</h2>
+    <div id="path-text"></div>
 
-  <!-- SELECTED PUBLICATIONS -->
-  <section>
-    <div class="eyebrow">Publications</div>
-    <h2 class="sec-title">Latest work</h2>
-    <p class="sec-sub">Currently under review. <a href="publications.html">See all 14 publications &rarr;</a></p>
-    <div id="pub-preview"></div>
-  </section>
+    <h2 class="sec">Current Work</h2>
+    <div id="work-text"></div>
 
-  <!-- NEWS PREVIEW -->
-  <section>
-    <div class="eyebrow">News</div>
-    <h2 class="sec-title">Recent updates</h2>
-    <div class="news-list" id="news-preview"></div>
-    <p style="margin-top:1.2rem"><a href="news.html" class="text-link">View all news &rarr;</a></p>
-  </section>
+    <h2 class="sec">Research Interests</h2>
+    <ul class="interest-list" id="interest-list"></ul>
 
-  <!-- CTA BAND -->
-  <section>
-    <div class="cta-band">
-      <div>
-        <div class="eyebrow light">CARMA AI Lab</div>
-        <h2>Clinical AI for Reliable Medical Analytics</h2>
-        <p>We audit models the way clinicians audit diagnoses — stress-testing them under distribution shift, explaining their reasoning, and quantifying when they should not be trusted.</p>
-      </div>
-      <div class="cta-band-actions">
-        <a class="btn btn-primary" id="cta-lab" href="#"><i class="ti ti-flask"></i>Visit the lab</a>
-        <a class="btn btn-outline-light" href="contact.html"><i class="ti ti-mail"></i>Collaborate</a>
-      </div>
-    </div>
-  </section>
-</main>
+    <div class="callout" id="collab-note"></div>
+  </main>
+</div>
 
 <footer class="site-footer">
   <div class="footer-inner">
     <div class="footer-nav">
-      <a href="index.html">Home</a><a href="research.html">Research</a><a href="publications.html">Publications</a>
+      <a href="index.html">About</a><a href="research.html">Research</a><a href="publications.html">Publications</a>
       <a href="teaching.html">Teaching</a><a href="lab.html">Lab</a><a href="news.html">News</a><a href="contact.html">Contact</a>
     </div>
     <div id="footer-text"></div>
-    <div class="footer-meta">Built with plain HTML, CSS &amp; JavaScript &middot; Hosted on GitHub Pages</div>
   </div>
 </footer>
 
@@ -126,60 +81,13 @@ const D = SITE_DATA;
 const $ = id => document.getElementById(id);
 const esc = s => String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
 
-$('nav-cv').href = D.links.cv;
-$('hero-name').textContent = D.name;
-$('hero-role').textContent = D.title + ', ' + D.department;
-$('hero-affil').textContent = D.institution;
-$('hero-mission').textContent = '\u201C' + D.mission + '\u201D';
-$('hero-img').src = D.photo;
-$('hero-ctas').innerHTML =
-  '<a class="btn btn-primary" href="' + D.links.cv + '" target="_blank" rel="noopener"><i class="ti ti-download"></i>Download CV</a>' +
-  '<a class="btn btn-outline" href="' + D.links.scholar + '" target="_blank" rel="noopener"><i class="ti ti-school"></i>Google Scholar</a>' +
-  '<a class="btn btn-outline" href="research.html"><i class="ti ti-flask"></i>Research</a>';
-
-const socialDefs = [
-  { key: 'scholar', icon: 'ti-school', label: 'Google Scholar' },
-  { key: 'github', icon: 'ti-brand-github', label: 'GitHub' },
-  { key: 'linkedin', icon: 'ti-brand-linkedin', label: 'LinkedIn' },
-  { key: 'twitter', icon: 'ti-brand-x', label: 'X (Twitter)' },
-  { key: 'orcid', icon: 'ti-fingerprint', label: 'ORCID' },
-  { key: 'researchgate', icon: 'ti-books', label: 'ResearchGate' }
-];
-$('hero-social').innerHTML = socialDefs.filter(s => D.links[s.key])
-  .map(s => '<a href="' + D.links[s.key] + '" target="_blank" rel="noopener" title="' + esc(s.label) + '" aria-label="' + esc(s.label) + '"><i class="ti ' + s.icon + '"></i></a>').join('') +
-  '<a href="mailto:' + esc(D.email) + '" title="Email" aria-label="Email"><i class="ti ti-mail"></i></a>';
-
 $('about-text').innerHTML = D.bio.map(p => '<p>' + esc(p) + '</p>').join('');
-$('mission-quote').textContent = '\u201C' + D.mission + '\u201D';
-$('avail-text').textContent = D.availability;
-
-$('research-preview').innerHTML = D.researchDetail.map(r =>
-  '<a class="pillar-card" href="research.html#' + r.id + '">' +
-  '<div class="pillar-icon"><i class="ti ' + esc(r.icon) + '"></i></div>' +
-  '<h3>' + esc(r.label) + '</h3><p class="tagline">' + esc(r.tagline) + '</p>' +
-  '<span class="card-link">Explore &rarr;</span></a>'
-).join('');
-
-function pubItem(p) {
-  const title = p.link ? '<a href="' + p.link + '" target="_blank" rel="noopener">' + esc(p.title) + '</a>' : esc(p.title);
-  const venue = [p.venue, p.volume, p.pages].filter(Boolean).map(esc).join(', ');
-  return '<div class="pub-item ur"><div class="pub-badges"><span class="pub-badge ur">Under Review</span>' +
-    '<span class="pub-year">' + (p.year || '') + '</span></div>' +
-    '<div class="pub-title">' + title + '</div>' +
-    '<div class="pub-authors">' + esc(p.authors) + '</div>' +
-    '<div class="pub-venue">' + venue + (p.status ? ' <span class="pub-status">&middot; ' + esc(p.status) + '</span>' : '') + '</div></div>';
-}
-$('pub-preview').innerHTML = D.publications.filter(p => p.type === 'under-review').map(pubItem).join('');
-
-const tagClass = { paper: 'paper', milestone: 'milestone', position: 'position', service: 'service', award: 'award' };
-$('news-preview').innerHTML = D.news.slice(0, 4).map(n =>
-  '<div class="news-item"><span class="news-date">' + esc(n.date) + '</span>' +
-  '<span class="news-text"><span class="news-tag ' + (tagClass[n.tag] || 'service') + '">' + esc(n.tag) + '</span>' + esc(n.text) + '</span></div>'
-).join('');
-
-$('cta-lab').href = D.lab.site;
+$('path-text').innerHTML = D.path.map(p => '<p>' + esc(p) + '</p>').join('');
+$('work-text').innerHTML = D.currentWork.map(p => '<p>' + esc(p) + '</p>').join('');
+$('interest-list').innerHTML = D.interests.map(r =>
+  '<li><strong>' + esc(r.label) + '.</strong> <span>' + esc(r.desc) + '</span></li>').join('');
+$('collab-note').innerHTML = '<strong>Prospective collaborators:</strong> ' + esc(D.collaboratorNote.replace(/^Prospective collaborators:\s*/, ''));
 $('footer-text').textContent = '\u00A9 ' + new Date().getFullYear() + ' ' + D.name + ' \u00B7 ' + D.institution;
-
 $('nav-toggle').addEventListener('click', () => $('nav-links').classList.toggle('open'));
 </script>
 </body>
