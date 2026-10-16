@@ -278,11 +278,17 @@ a:hover { text-decoration: underline; }
 /* ============ RESPONSIVE ============ */
 @media (max-width: 860px) {
   .layout { grid-template-columns: 1fr; gap: 0; }
-  .sidebar { position: static; padding: 2.2rem 0 0; display: grid; grid-template-columns: 96px 1fr; gap: 1.2rem; align-items: center; }
-  .avatar { width: 96px; height: 96px; }
-  .side-name { margin-top: 0; font-size: 1.25rem; }
-  .side-blurb, .side-note { display: none; }
-  .side-icons { margin-top: 0.6rem; }
+  .sidebar {
+    position: static; padding: 2rem 0 0;
+    display: grid; grid-template-columns: 96px 1fr; gap: 0.3rem 1.2rem; align-items: start;
+  }
+  .sidebar .avatar { width: 96px; height: 96px; grid-row: 1 / span 4; }
+  .sidebar .side-name { grid-column: 2; margin-top: 0; font-size: 1.25rem; }
+  .sidebar .side-affil { grid-column: 2; }
+  .sidebar .side-role { grid-column: 2; }
+  .sidebar .side-icons { grid-column: 2; margin-top: 0.6rem; }
+  .sidebar .side-blurb, .sidebar .side-note { display: none; }
+  .sidebar .side-phd { grid-column: 1 / -1; margin-top: 0.9rem; }
   .content { padding-top: 1.6rem; }
   .nav-inner { justify-content: flex-start; }
   .nav-links {

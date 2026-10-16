@@ -11,7 +11,7 @@ const SITE_DATA = {
   department: "Department of Computer Science and Engineering",
   institution: "NPI University of Bangladesh",
   location: "495 East Basta, Singair, Manikganj-1800, Bangladesh",
-  email: "kawsher.cse@gmail.com",
+  email: "kawsher@npiub.edu.bd",
   phone: "+8801719145411",
   mission: "Reliable AI for high-stakes decisions.",
   bio: [
@@ -72,12 +72,12 @@ const SITE_DATA = {
   news: [
     { date: "Oct 2026", tag: "milestone", text: "Founded the CARMA AI Lab — Clinical AI for Reliable Medical Analytics." },
     { date: "Oct 2026", tag: "paper", text: "SpatialUQ: post-hoc uncertainty quantification from spatial consistency — submitted to AISTATS 2027." },
-    { date: "2026", tag: "paper", text: "STAMP: predicting out-of-distribution generalization without target data — submitted to ICLR 2027." },
+    { date: "Sep 2026", tag: "paper", text: "STAMP: predicting out-of-distribution generalization without target data — submitted to ICLR 2027." },
     { date: "2026", tag: "paper", text: "'Foundation Models in Healthcare' survey under review at ACM Computing Surveys." },
     { date: "Mar 2026", tag: "position", text: "Joined NPI University of Bangladesh as Assistant Professor, Dept. of CSE." },
     { date: "May 2025", tag: "milestone", text: "Completed M.S. in Computer Science at Kent State University (CGPA 3.80)." },
     { date: "Jan 2025", tag: "paper", text: "Paper published — Expert Systems with Applications (explainable heart disease diagnosis via stacked ensembles)." },
-    { date: "Oct 2024", tag: "service", text: "Program Committee Member, IEEE CBMS 2024 (37th edition)." }
+    { date: "Oct 2024", tag: "service", text: "Program Committee Member, IEEE CBMS (2023 – 2026)." }
   ],
 
   // ---- Publications — newest first ----
@@ -109,7 +109,7 @@ const SITE_DATA = {
     },
     {
       type: "under-review",
-      authors: "M. K. Mahbub, M. S. Hossain, M. A. M. Miah, M. N. Morshed, M. N. Arpa, K. C. Santosh, and M. Biswas",
+      authors: "M. K. Mahbub, M. S. Hossain, M. A. M. Miah, M. N. Morshed, M. N. Arpa, K. C. Mondal, and M. Biswas",
       title: "Beyond Benchmark Accuracy: Forensic Explainability Auditing for Ensemble Chest X-ray Classifiers",
       venue: "Expert Systems with Applications",
       year: 2026,
@@ -130,7 +130,7 @@ const SITE_DATA = {
       venue: "Expert Systems with Applications",
       year: 2025,
       volume: "265, 125928",
-      link: ""
+      link: "https://doi.org/10.1016/j.eswa.2024.125928"
     },
     {
       type: "journal",
@@ -152,7 +152,7 @@ const SITE_DATA = {
       venue: "Frontiers in Genetics",
       year: 2022,
       volume: "13, 980338",
-      link: ""
+      link: "https://doi.org/10.3389/fgene.2022.980338"
     },
     {
       type: "conference",
@@ -161,7 +161,7 @@ const SITE_DATA = {
       venue: "Proc. IEEE 35th International Symposium on Computer-Based Medical Systems (CBMS)",
       year: 2022,
       pages: "119-124",
-      link: ""
+      link: "https://doi.org/10.1109/cbms55023.2022.00028"
     },
     {
       type: "conference",
@@ -170,7 +170,7 @@ const SITE_DATA = {
       venue: "Proc. Trends in Computational and Cognitive Engineering (TCCE 2021), Springer",
       year: 2022,
       pages: "473-485",
-      link: ""
+      link: "https://doi.org/10.1007/978-981-16-7597-3_39"
     },
     {
       type: "conference",
@@ -179,7 +179,7 @@ const SITE_DATA = {
       venue: "Proc. 5th International Conference on Electrical Engineering and Information & Communication Technology (ICEEICT), IEEE",
       year: 2021,
       pages: "1-6",
-      link: ""
+      link: "https://doi.org/10.1109/iceeict53905.2021.9667862"
     },
     {
       type: "conference",
@@ -188,7 +188,7 @@ const SITE_DATA = {
       venue: "Proc. International Conference on Applied Intelligence and Informatics (AII 2021), Springer",
       year: 2021,
       pages: "358-370",
-      link: ""
+      link: "https://doi.org/10.1007/978-3-030-82269-9_28"
     },
     {
       type: "conference",
@@ -197,7 +197,7 @@ const SITE_DATA = {
       venue: "Proc. Recent Trends in Image Processing and Pattern Recognition (RTIP2R), Springer",
       year: 2021,
       pages: "42-52",
-      link: ""
+      link: "https://doi.org/10.1007/978-3-031-07005-1_5"
     },
     {
       type: "conference",
@@ -206,7 +206,7 @@ const SITE_DATA = {
       venue: "Proc. International Conference on Science & Contemporary Technologies (ICSCT), IEEE",
       year: 2021,
       pages: "1-6",
-      link: ""
+      link: "https://doi.org/10.1109/icsct53883.2021.9642681"
     },
     {
       type: "conference",
@@ -215,13 +215,13 @@ const SITE_DATA = {
       venue: "Proc. International Conference on Information and Communication Technology for Competitive Strategies (ICTCS 2020), Springer",
       year: 2021,
       pages: "223-230",
-      link: ""
+      link: "https://doi.org/10.1007/978-981-16-0739-4_22"
     }
   ],
 
   // ---- Experience ----
   experience: [
-    { role: "Founder & Principal Investigator", org: "CARMA AI Lab — Clinical AI for Reliable Medical Analytics", period: "Oct 2026 – Present", desc: "Leading research on reliable clinical AI across four pillars: evaluation and auditing, OOD generalization, interpretability, and safety and uncertainty." },
+    { role: "Founder & Director", org: "CARMA AI Lab — Clinical AI for Reliable Medical Analytics", period: "Oct 2026 – Present", desc: "Leading research on reliable clinical AI across four pillars: evaluation and auditing, OOD generalization, interpretability, and safety and uncertainty." },
     { role: "Assistant Professor", org: "NPI University of Bangladesh, Dept. of CSE", period: "Mar 2026 – Present", desc: "Teaching algorithms and AI. Head of the ICT Cell since April 2026." },
     { role: "Graduate Teaching Assistant", org: "Kent State University, OH, USA", period: "Aug 2023 – Dec 2025", desc: "Assisted graduate CS courses; conducted research in medical image analysis and trustworthy machine learning." },
     { role: "Lecturer", org: "Bangladesh University of Business and Technology (BUBT), Dhaka", period: "Dec 2021 – Jul 2023", desc: "Taught undergraduate CS courses; Advisor, IEEE CS BUBT Student Branch Chapter." }
