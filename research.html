@@ -4,6 +4,17 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Research areas of Md. Kawsher Mahbub: evaluation and auditing, OOD generalization, interpretability, and safety and uncertainty for clinical AI.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Md. Kawsher Mahbub">
+<meta property="og:title" content="Research — Md. Kawsher Mahbub">
+<meta property="og:description" content="Research areas of Md. Kawsher Mahbub: evaluation and auditing, OOD generalization, interpretability, and safety and uncertainty for clinical AI.">
+<meta property="og:image" content="https://kawsher.github.io/assets/kawsher-mahbub.jpg">
+<meta property="og:url" content="https://kawsher.github.io/research.html">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Research — Md. Kawsher Mahbub">
+<meta name="twitter:description" content="Research areas of Md. Kawsher Mahbub: evaluation and auditing, OOD generalization, interpretability, and safety and uncertainty for clinical AI.">
+<meta name="twitter:image" content="https://kawsher.github.io/assets/kawsher-mahbub.jpg">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
 <title>Research — Md. Kawsher Mahbub</title>
 <link rel="stylesheet" href="styles.css">
 <script src="site-data.js"></script>
@@ -31,8 +42,8 @@
 </nav>
 
 <div class="layout">
-  <aside class="sidebar">
-    <img class="avatar" src="assets/Picture.JPG" alt="Md. Kawsher Mahbub" onerror="this.style.display='none'">
+  <aside class="sidebar slim">
+    <img class="avatar" src="assets/kawsher-mahbub.jpg" alt="Md. Kawsher Mahbub" onerror="this.style.display='none'">
     <h2 class="side-name">Md. Kawsher Mahbub</h2>
     <div class="side-affil"><i class="ti ti-building"></i><span>NPI University of Bangladesh</span></div>
     <p class="side-role">Assistant Professor, Computer Science &amp; Engineering</p>
@@ -42,11 +53,9 @@
       <a href="https://scholar.google.com/citations?user=fQ_TTFsAAAAJ" target="_blank" rel="noopener" title="Google Scholar" aria-label="Google Scholar"><i class="ti ti-school"></i></a>
       <a href="https://github.com/Kawsher" target="_blank" rel="noopener" title="GitHub" aria-label="GitHub"><i class="ti ti-brand-github"></i></a>
       <a href="https://www.linkedin.com/in/kawsher-mahbub/" target="_blank" rel="noopener" title="LinkedIn" aria-label="LinkedIn"><i class="ti ti-brand-linkedin"></i></a>
-      <a href="https://x.com/kawsher_mahbub" target="_blank" rel="noopener" title="X (Twitter)" aria-label="X (Twitter)"><i class="ti ti-brand-x"></i></a>
       <a href="https://orcid.org/0000-0002-4200-542X" target="_blank" rel="noopener" title="ORCID" aria-label="ORCID"><i class="ti ti-fingerprint"></i></a>
-      <a href="assets/CV_Md_Kawsher_Mahbub.pdf" target="_blank" rel="noopener" title="CV" aria-label="CV"><i class="ti ti-file-text"></i></a>
     </div>
-    <div class="side-note"><strong>Currently</strong><br>Leading the CARMA AI Lab · Head of the ICT Cell · Open to research collaboration</div>
+    <div class="side-note"><strong>Currently</strong><br>Founder of the CARMA AI Lab · Head of the ICT Cell · Open to research collaboration</div>
     <div class="side-phd">
       <i class="ti ti-school"></i>
       <div><strong>Looking for a PhD position</strong><span>Fall 2027 &middot; medical imaging &amp; trustworthy AI &mdash; <a href="contact.html">contact me</a></span></div>
@@ -56,8 +65,11 @@
   <main class="content">
     <div class="eyebrow">Research</div>
     <h1>Reliable AI for high-stakes decisions</h1>
-    <p class="lead">My work sits at the intersection of deep learning, computer vision, and clinical healthcare — organized around four pillars, each a full research program with its own questions, methods, and publications.</p>
-    <div id="areas"></div>
+    <p class="lead">My work sits at the intersection of deep learning, computer vision, and clinical healthcare — organized around four threads, each with its own questions, methods, and publications.</p>
+    <div id="areas"><section class="area" id="auditing"><div class="area-head"><span class="area-num">1</span><h3>Evaluation &amp; Auditing</h3></div><p class="tagline">“Benchmark accuracy is not enough.”</p><p>A model can top a leaderboard and still fail patients. My auditing work treats evaluation as a forensic discipline: stress-testing classifiers the way clinicians audit diagnoses, hunting for shortcut learning, miscalibration, and silent failure modes before a model ever reaches the bedside.</p><h4>Key questions</h4><ul class="q-list"><li>How do we detect shortcut learning in chest X-ray classifiers — models that are right for the wrong reasons?</li><li>What does a forensic evaluation protocol look like for ensemble classifiers under real clinical distribution shift?</li><li>When a model collapses on external data (our locked model fell from 0.9999 to 0.6876 AUC moving across sites), how do we characterize and report that failure honestly?</li></ul><h4>Methods</h4><div class="method-tags"><span>Calibration analysis</span><span>Shortcut detectors</span><span>Grad-CAM auditing</span><span>Paired bootstrap testing</span><span>Failure-mode analysis</span></div><h4>Representative publications</h4><div class="rep-pub"><strong>Beyond Benchmark Accuracy: Forensic Explainability Auditing for Ensemble Chest X-ray Classifiers</strong>M. K. Mahbub, M. S. Hossain, M. A. M. Miah, M. N. Morshed, M. N. Arpa, K. C. Santosh, and M. Biswas — <em>Expert Systems with Applications</em> · Under Revision</div></section><section class="area" id="generalization"><div class="area-head"><span class="area-num">2</span><h3>Generalization</h3></div><p class="tagline">“Will it work at the next hospital?”</p><p>Medical models are trained at one site and deployed at many. I work on predicting out-of-distribution performance without ever seeing target data — so a hospital can know, before deployment, whether a model will hold up on its own patients, scanners, and protocols.</p><h4>Key questions</h4><ul class="q-list"><li>Can we predict a model's accuracy on unseen hospitals using only source-domain information?</li><li>Which signals — semantic, temporal, or statistical — actually forecast degradation under shift?</li><li>How do we turn a generalization forecast into a deployment decision?</li></ul><h4>Methods</h4><div class="method-tags"><span>OOD performance prediction</span><span>Semantic augmentation</span><span>Distribution-shift characterization</span><span>Cross-site validation</span></div><h4>Representative publications</h4><div class="rep-pub"><strong>STAMP: Predicting Out-of-Distribution Generalization without Target Data</strong>M. K. Mahbub and M. Biswas — <em>Submitted to ICLR 2027</em> · Under Review</div></section><section class="area" id="interpretability"><div class="area-head"><span class="area-num">3</span><h3>Interpretability</h3></div><p class="tagline">“Show the clinician what you saw.”</p><p>Explanations are only useful if they change decisions for the better. My interpretability work focuses on human-centered explanations for clinical models: feature-level reasoning clinicians can inspect, and explanation methods audited for faithfulness rather than taken on faith.</p><h4>Key questions</h4><ul class="q-list"><li>Which explanations actually help a clinician catch a model's mistake?</li><li>How do we verify that a saliency map reflects the model's reasoning and not an artifact of the method?</li><li>Can interpretable feature engineering rival black-box performance on tabular clinical data?</li></ul><h4>Methods</h4><div class="method-tags"><span>Explainable ensembles</span><span>Feature engineering</span><span>Saliency auditing</span><span>Human-centered evaluation</span></div><h4>Representative publications</h4><div class="rep-pub"><strong>Explainable AI assisted heart disease diagnosis through effective feature engineering and stacked ensemble learning</strong>Ghose, P., Oliullah, K., Mahbub, M. K., Biswas, M., Uddin, K. N., &amp; Jamil, H. M. — <em>Expert Systems with Applications, 265, 125928</em></div><div class="rep-pub"><strong>Beyond Benchmark Accuracy: Forensic Explainability Auditing for Ensemble Chest X-ray Classifiers</strong>M. K. Mahbub, M. S. Hossain, M. A. M. Miah, M. N. Morshed, M. N. Arpa, K. C. Santosh, and M. Biswas — <em>Expert Systems with Applications</em> · Under Revision</div></section><section class="area" id="uncertainty"><div class="area-head"><span class="area-num">4</span><h3>Safety &amp; Uncertainty</h3></div><p class="tagline">“Know when to say 'I don't know.'”</p><p>The most dangerous model is a confident wrong one. I develop post-hoc uncertainty quantification for frozen, black-box vision models — no retraining, no architecture changes. By measuring spatial consistency in a model's own attention, we can flag the cases it should abstain from or refer to a clinician.</p><h4>Key questions</h4><ul class="q-list"><li>How do we quantify uncertainty for a model we cannot open or retrain?</li><li>Can spatial consistency in attention maps serve as a reliable uncertainty signal?</li><li>Where should the referral threshold sit so that retained predictions are trustworthy?</li></ul><h4>Methods</h4><div class="method-tags"><span>Post-hoc UQ</span><span>Spatial consistency</span><span>Referral learning</span><span>Temperature calibration</span><span>Selective prediction</span></div><h4>Representative publications</h4><div class="rep-pub"><strong>SpatialUQ: Post-Hoc Uncertainty Quantification from Spatial Consistency in Black-Box Vision Models</strong>M. K. Mahbub, M. Biswas, M. N. Morshed, and W. Yu — <em>Submitted to AISTATS 2027</em> · Under Review</div></section></div>
+    <h2 class="sec">Open Code</h2>
+    <p>Reproducibility matters for trustworthy ML. Selected repositories behind the work above:</p>
+    <div id="repo-list"><a class="repo-card" href="https://github.com/Kawsher/SpatialUQ" target="_blank" rel="noopener"><div class="repo-name"><i class="ti ti-brand-github"></i>SpatialUQ</div><p class="repo-desc">Code for the SpatialUQ paper — post-hoc uncertainty quantification from spatial consistency in black-box vision models.</p><span class="repo-lang">Jupyter Notebook</span></a><a class="repo-card" href="https://github.com/Kawsher/ESED-Pulmonary-Disease-Diagnosis" target="_blank" rel="noopener"><div class="repo-name"><i class="ti ti-brand-github"></i>ESED-Pulmonary-Disease-Diagnosis</div><p class="repo-desc">Forensic audit of a pulmonary disease diagnosis pipeline — shortcut learning, miscalibration, and out-of-distribution evaluation.</p><span class="repo-lang">Jupyter Notebook</span></a><a class="repo-card" href="https://github.com/Kawsher/Autism-Detection-XAI" target="_blank" rel="noopener"><div class="repo-name"><i class="ti ti-brand-github"></i>Autism-Detection-XAI</div><p class="repo-desc">Transfer learning for autism spectrum disorder detection with explainability.</p><span class="repo-lang">Jupyter Notebook</span></a><a class="repo-card" href="https://github.com/Kawsher/Covid-19_Detection" target="_blank" rel="noopener"><div class="repo-name"><i class="ti ti-brand-github"></i>Covid-19_Detection</div><p class="repo-desc">Early COVID-19, pneumonia, and tuberculosis detection experiments from chest X-rays.</p><span class="repo-lang">Jupyter Notebook</span></a></div>
     <div class="callout"><strong>Publications:</strong> the full list — journals, conferences, and manuscripts under review — lives on the <a href="publications.html">publications page</a>.</div>
   </main>
 </div>
@@ -68,7 +80,8 @@
       <a href="index.html">About</a><a href="research.html">Research</a><a href="publications.html">Publications</a>
       <a href="teaching.html">Teaching</a><a href="lab.html">Lab</a><a href="news.html">News</a><a href="contact.html">Contact</a>
     </div>
-    <div id="footer-text"></div>
+    <div id="footer-text">© 2026 Md. Kawsher Mahbub · NPI University of Bangladesh</div>
+    <div class="footer-updated">Last updated: October 2026</div>
   </div>
 </footer>
 
@@ -95,6 +108,13 @@ $('areas').innerHTML = D.researchDetail.map((r, i) =>
     '<h4>Methods</h4><div class="method-tags">' + r.methods.map(m => '<span>' + esc(m) + '</span>').join('') + '</div>' +
     '<h4>Representative publications</h4>' + r.pubs.map(repPub).join('') +
   '</section>'
+).join('');
+
+$('repo-list').innerHTML = D.repos.map(r =>
+  '<a class="repo-card" href="' + r.url + '" target="_blank" rel="noopener">' +
+  '<div class="repo-name"><i class="ti ti-brand-github"></i>' + esc(r.name) + '</div>' +
+  '<p class="repo-desc">' + esc(r.desc) + '</p>' +
+  '<span class="repo-lang">' + esc(r.lang) + '</span></a>'
 ).join('');
 
 $('footer-text').textContent = '\u00A9 ' + new Date().getFullYear() + ' ' + D.name + ' \u00B7 ' + D.institution;
