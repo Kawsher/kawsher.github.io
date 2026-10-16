@@ -58,17 +58,6 @@
 
     <h2 class="sec">Profiles</h2>
     <div class="profile-row" id="profile-row"></div>
-
-    <h2 class="sec">Appointments</h2>
-    <div id="exp-list"></div>
-
-    <h2 class="sec">Education</h2>
-    <div id="edu-list"></div>
-
-    <h2 class="sec">Academic service</h2>
-    <div id="service-list"></div>
-
-    <p style="margin-top:2rem"><a class="btn btn-outline" id="cv-btn" href="#" target="_blank" rel="noopener"><i class="ti ti-download"></i>Download full CV (PDF)</a></p>
   </main>
 </div>
 
@@ -103,26 +92,6 @@ const profiles = [
 $('profile-row').innerHTML = profiles.filter(p => D.links[p.key])
   .map(p => '<a class="profile-chip" href="' + D.links[p.key] + '" target="_blank" rel="noopener"><i class="ti ' + p.icon + '"></i>' + esc(p.label) + '</a>').join('');
 
-$('exp-list').innerHTML = D.experience.map(e =>
-  '<div class="timeline-item"><div class="timeline-period">' + esc(e.period) + '</div>' +
-  '<div class="timeline-role">' + esc(e.role) + '</div>' +
-  '<div class="timeline-org">' + esc(e.org) + '</div>' +
-  '<div class="timeline-desc">' + esc(e.desc) + '</div></div>'
-).join('');
-
-$('edu-list').innerHTML = D.education.map(e =>
-  '<div class="timeline-item"><div class="timeline-period">' + esc(e.period) + '</div>' +
-  '<div class="timeline-role">' + esc(e.degree) + '</div>' +
-  '<div class="timeline-org">' + esc(e.institution) + '</div>' +
-  '<div class="timeline-gpa">CGPA ' + esc(e.gpa) + ' / 4.00</div></div>'
-).join('');
-
-$('service-list').innerHTML = D.service.map(s =>
-  '<div class="service-row"><div><div class="r">' + esc(s.role) + '</div><div class="o">' + esc(s.org) + '</div></div>' +
-  '<div class="y">' + esc(s.years) + '</div></div>'
-).join('');
-
-$('cv-btn').href = D.links.cv;
 $('footer-text').textContent = '\u00A9 ' + new Date().getFullYear() + ' ' + D.name + ' \u00B7 ' + D.institution;
 $('nav-toggle').addEventListener('click', () => $('nav-links').classList.toggle('open'));
 </script>

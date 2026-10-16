@@ -15,8 +15,8 @@ const SITE_DATA = {
   phone: "+8801719145411",
   mission: "Reliable AI for high-stakes decisions.",
   bio: [
-    "I am an Assistant Professor of Computer Science and Engineering at NPI University of Bangladesh, where I founded and lead the CARMA AI Lab. My research builds trustworthy AI for clinical decision-making: uncertainty quantification, explainable AI, out-of-distribution generalization, and forensic auditing of medical imaging models.",
-    "I received my M.S. in Computer Science from Kent State University (2025) and my B.Sc. from the Bangladesh University of Business and Technology (2021). My work is driven by a simple observation from the clinic: a model that is accurate on a benchmark can still fail a patient when the hospital, the scanner, or the population changes. I build methods that catch those failures before they reach the bedside."
+    "I am an Assistant Professor of Computer Science and Engineering at NPI University of Bangladesh, where I founded and lead the CARMA AI Lab. My research builds trustworthy AI for clinical decision-making.",
+    "My work is driven by a simple observation from the clinic: a model that is accurate on a benchmark can still fail a patient when the hospital, the scanner, or the population changes. I build methods that catch those failures before they reach the bedside."
   ],
   availability: "I am always happy to discuss research collaborations.",
   photo: "assets/Picture.JPG",
@@ -27,10 +27,11 @@ const SITE_DATA = {
     "I then earned my M.S. in Computer Science from Kent State University (2025), where I worked as a graduate teaching assistant while researching trustworthy machine learning for medical image analysis.",
     "In 2026 I returned to Bangladesh to join the faculty of NPI University of Bangladesh as an Assistant Professor, where I also head the ICT Cell and founded the CARMA AI Lab."
   ],
-  currentWork: [
-    "My lab studies how to make clinical AI reliable enough to matter at the bedside. We audit models the way clinicians audit diagnoses: hunting for shortcut learning and miscalibration (forensic evaluation), predicting how a model will behave at a new hospital before it is ever deployed (out-of-distribution generalization), explaining model decisions in terms clinicians can inspect (interpretability), and quantifying uncertainty so that models know when to abstain and refer (safety).",
-    "Two active threads drive this work: STAMP, which predicts out-of-distribution performance without target data, and SpatialUQ, which quantifies uncertainty for frozen black-box vision models from spatial consistency. Both are currently under review."
+  researchIntro: [
+    "My research starts with medical imaging. I build deep learning systems for chest X-ray, MRI, and CT analysis — designed not for leaderboards, but for the clinic, where data shifts across hospitals, scanners, and patient populations. Everything else I work on serves that goal: making sure these models are reliable when it matters.",
+    "That reliability question breaks into four threads I pursue in parallel:"
   ],
+  researchThreads: "Two active threads drive this work right now: STAMP, which predicts out-of-distribution performance without target data, and SpatialUQ, which quantifies uncertainty for frozen black-box vision models from spatial consistency. Both are currently under review.",
   collaboratorNote: "Prospective collaborators: I am always happy to discuss research collaborations — especially on auditing, generalization, and uncertainty in medical AI. Email me with a short note about the problem you want to work on.",
 
   // ---- Social links ----
