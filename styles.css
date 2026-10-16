@@ -31,11 +31,17 @@ html { scroll-behavior: smooth; scroll-padding-top: 90px; }
 
 body {
   font-family: var(--sans);
-  font-size: 15.5px;
+  font-size: 17px;
   line-height: 1.75;
   color: var(--body);
   background: var(--bg);
   -webkit-font-smoothing: antialiased;
+}
+
+a:focus-visible, button:focus-visible, summary:focus-visible {
+  outline: 2px solid var(--teal);
+  outline-offset: 2px;
+  border-radius: 4px;
 }
 
 a { color: var(--teal-dark); text-decoration: none; }
@@ -292,4 +298,113 @@ a:hover { text-decoration: underline; }
   .news-item { grid-template-columns: 1fr; gap: 0.15rem; }
   .pi-block { grid-template-columns: 1fr; }
   .pi-block img { width: 110px; }
+}
+
+/* ============ SLIM SIDEBAR (inner pages) ============ */
+.sidebar.slim .avatar { width: 84px; height: 84px; }
+.sidebar.slim .side-name { font-size: 1.05rem; }
+.sidebar.slim .side-blurb,
+.sidebar.slim .side-note { display: none; }
+.sidebar.slim .side-role { font-size: 12.5px; }
+.sidebar.slim .side-phd { padding: 0.7rem 0.85rem; }
+.sidebar.slim .side-phd strong { font-size: 12.5px; }
+.sidebar.slim .side-phd span { font-size: 11.5px; }
+
+/* ============ SELECTED PUBLICATIONS (home) ============ */
+.sel-pub {
+  background: var(--bg-alt);
+  border: 1px solid var(--card-line);
+  border-radius: var(--radius);
+  padding: 1.3rem 1.4rem;
+  margin-bottom: 1.1rem;
+  box-shadow: var(--shadow-sm);
+}
+.sel-pub-title { font-family: var(--serif); font-size: 1.12rem; font-weight: 600; color: var(--ink); margin: 0.35rem 0 0.25rem; line-height: 1.4; }
+.pub-venue-inline { font-size: 13px; color: var(--muted); font-weight: 600; }
+.sel-pub-takeaway { font-size: 15px; margin: 0.6rem 0 0.8rem; color: var(--body); }
+.pub-links { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 0.4rem; }
+.pub-link {
+  font-size: 12.5px; font-weight: 600; color: var(--teal-dark);
+  border: 1px solid var(--teal-line); background: #fff;
+  padding: 3px 12px; border-radius: 999px;
+}
+.pub-link:hover { background: var(--teal-soft); text-decoration: none; }
+.bibtex { margin-top: 0.6rem; font-size: 13px; }
+.bibtex summary { cursor: pointer; color: var(--teal-dark); font-weight: 600; font-size: 13px; }
+.bibtex pre {
+  margin-top: 0.5rem; padding: 0.9rem 1rem; background: var(--ink); color: #dbe7f3;
+  border-radius: 8px; font-size: 12.5px; line-height: 1.6; overflow-x: auto;
+  font-family: var(--mono); white-space: pre-wrap; word-break: break-word;
+}
+
+/* ============ PUB CARDS (publications page) ============ */
+.pub-item {
+  background: var(--bg-alt);
+  border: 1px solid var(--card-line);
+  border-radius: var(--radius);
+  padding: 1.1rem 1.25rem;
+  margin-bottom: 0.9rem;
+}
+.pub-item.ur { border-left: 3px solid var(--teal); }
+.pub-item.ur::before { display: none; }
+
+/* ============ REPO CARDS ============ */
+#repo-list { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 1rem 0 0.5rem; }
+.repo-card {
+  display: block; background: var(--bg-alt); border: 1px solid var(--card-line);
+  border-radius: var(--radius); padding: 1.1rem 1.2rem; box-shadow: var(--shadow-sm);
+}
+.repo-card:hover { text-decoration: none; border-color: var(--teal-line); }
+.repo-name { font-weight: 700; font-size: 15px; color: var(--ink); display: flex; align-items: center; gap: 0.45rem; }
+.repo-name i { color: var(--teal-dark); }
+.repo-desc { font-size: 13.5px; color: var(--body); margin: 0.45rem 0 0.6rem; line-height: 1.6; }
+.repo-lang { font-size: 11.5px; color: var(--muted); font-family: var(--mono); }
+
+/* ============ AWARDS ============ */
+.award-row {
+  display: flex; justify-content: space-between; gap: 1rem; align-items: baseline;
+  padding: 0.7rem 0; border-bottom: 1px solid var(--line);
+}
+.award-row:last-child { border-bottom: none; }
+.award-row .r { font-weight: 600; color: var(--ink); font-size: 15.5px; }
+.award-row .o { font-size: 13.5px; color: var(--muted); }
+.award-row .y { font-size: 13px; color: var(--faint); font-family: var(--mono); white-space: nowrap; }
+
+/* ============ FOOTER ============ */
+.footer-updated { font-size: 12.5px; color: var(--faint); margin-top: 0.4rem; }
+
+/* ============ DARK MODE ============ */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg:       #0f141b;
+    --bg-alt:   #161d27;
+    --ink:      #e8eef5;
+    --body:     #b9c4d4;
+    --muted:    #8b98ac;
+    --faint:    #5d6b80;
+    --teal:     #2dd4bf;
+    --teal-dark:#5eead4;
+    --teal-soft:#123b38;
+    --teal-line:#1f5b56;
+    --navy:     #9db8dd;
+    --line:     #232d3b;
+    --card-line:#2a3646;
+    --shadow-sm: 0 3px 10px rgba(0, 0, 0, 0.35);
+  }
+  .topnav { background: rgba(15, 20, 27, 0.97); }
+  .pub-link { background: var(--bg-alt); }
+  .bibtex pre { background: #0a0e13; }
+  .pub-badge.journal { background: #1c2a3f; }
+  .pub-badge.conference { background: #232d3b; }
+  .news-tag.paper { background: #1c2a3f; }
+  .news-tag.position { background: #14301f; color: #7fd6a4; }
+  .news-tag.service { background: #232d3b; }
+  .news-tag.award { background: #3a2a14; color: #e8b96a; }
+  .filter-btn.active { background: var(--ink); border-color: var(--ink); color: #0f141b; }
+  .btn-outline { background: var(--bg-alt); }
+  img.avatar { filter: none; }
+}
+
+@media (max-width: 640px) {
+  #repo-list { grid-template-columns: 1fr; }
 }

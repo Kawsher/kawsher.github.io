@@ -19,7 +19,9 @@ const SITE_DATA = {
     "My work is driven by a simple observation from the clinic: a model that is accurate on a benchmark can still fail a patient when the hospital, the scanner, or the population changes. I build methods that catch those failures before they reach the bedside."
   ],
   availability: "I am always happy to discuss research collaborations.",
-  photo: "assets/Picture.JPG",
+  photo: "assets/kawsher-mahbub.jpg",
+  shortBio: "Md. Kawsher Mahbub is an Assistant Professor of Computer Science and Engineering at NPI University of Bangladesh, where he founded and leads the CARMA AI Lab. His research builds trustworthy AI for clinical decision-making, with a focus on medical imaging, uncertainty quantification, and out-of-distribution generalization. He received his M.S. in Computer Science from Kent State University (2025) and his B.Sc. from the Bangladesh University of Business and Technology (2021).",
+  updatedDate: "October 2026",
 
   // ---- Narrative sections (home page) ----
   path: [
@@ -86,7 +88,11 @@ const SITE_DATA = {
       title: "STAMP: Predicting Out-of-Distribution Generalization without Target Data",
       venue: "Submitted to ICLR 2027",
       year: 2026,
-      status: "Under Review"
+      status: "Under Review",
+      arxiv: "2609.32672",
+      selected: true,
+      takeaway: "Estimates how a trained model will perform at a new hospital using only source-domain images — no target data or labels needed.",
+      bibtex: "@misc{mahbub2026stamp,\n  title={STAMP: Predicting Out-of-Distribution Generalization without Target Data},\n  author={Mahbub, Md Kawsher and Biswas, Milon},\n  year={2026},\n  eprint={2609.32672},\n  archivePrefix={arXiv},\n  primaryClass={cs.LG}\n}"
     },
     {
       type: "under-review",
@@ -94,13 +100,18 @@ const SITE_DATA = {
       title: "SpatialUQ: Post-Hoc Uncertainty Quantification from Spatial Consistency in Black-Box Vision Models",
       venue: "Submitted to AISTATS 2027",
       year: 2026,
-      status: "Under Review"
+      status: "Under Review",
+      arxiv: "2610.09498",
+      code: "https://github.com/Kawsher/SpatialUQ",
+      selected: true,
+      takeaway: "Flags unreliable predictions of frozen black-box vision models from spatial consistency — six forward passes, no retraining, no internals.",
+      bibtex: "@misc{mahbub2026spatialuq,\n  title={SpatialUQ: Post-Hoc Uncertainty Quantification from Spatial Consistency in Black-Box Vision Models},\n  author={Mahbub, Md Kawsher and Biswas, Milon and Morshed, Mirza Niaz and Yu, Wei},\n  year={2026},\n  eprint={2610.09498},\n  archivePrefix={arXiv},\n  primaryClass={cs.CV}\n}"
     },
     {
       type: "under-review",
       authors: "M. K. Mahbub, M. S. Hossain, M. A. M. Miah, M. N. Morshed, M. N. Arpa, K. C. Santosh, and M. Biswas",
       title: "Beyond Benchmark Accuracy: Forensic Explainability Auditing for Ensemble Chest X-ray Classifiers",
-      venue: "",
+      venue: "Expert Systems with Applications",
       year: 2026,
       status: "Under Revision"
     },
@@ -128,7 +139,11 @@ const SITE_DATA = {
       venue: "Information Sciences",
       year: 2022,
       volume: "592, 389-401",
-      link: ""
+      doi: "10.1016/j.ins.2022.01.062",
+      link: "https://doi.org/10.1016/j.ins.2022.01.062",
+      selected: true,
+      takeaway: "Deep-feature pipeline detecting COVID-19, pneumonia, and tuberculosis from chest X-rays — my most-cited paper.",
+      bibtex: "@article{mahbub2022deep,\n  title={Deep features to detect pulmonary abnormalities in chest X-rays due to infectious diseases: COVID-19, pneumonia, and tuberculosis},\n  author={Mahbub, Md Kawsher and Biswas, Milon and Gaur, Loveleen and Alenezi, Fayadh and Santosh, K. C.},\n  journal={Information Sciences},\n  volume={592},\n  pages={389--401},\n  year={2022},\n  publisher={Elsevier},\n  doi={10.1016/j.ins.2022.01.062}\n}"
     },
     {
       type: "journal",
@@ -323,6 +338,24 @@ const SITE_DATA = {
     joinText: "We collaborate with clinicians, hospitals, and ML researchers on auditing, generalization, and uncertainty problems in medical AI. If you have a model that needs stress-testing — or a clinical question that needs honest answers — get in touch.",
     site: "https://kawsher.github.io/carma-ai-lab/"
   },
+
+  // ---- Awards & honors (verified from CV) ----
+  awards: [
+    { title: "First Place and People's Choice Award, International Cook-Off 2024", org: "Kent State University", year: "2024" },
+    { title: "Merit-based Scholarship (5 times)", org: "Bangladesh University of Business and Technology (BUBT)", year: "" }
+  ],
+
+  // ---- Pinned code repositories ----
+  repos: [
+    { name: "SpatialUQ", url: "https://github.com/Kawsher/SpatialUQ", lang: "Jupyter Notebook",
+      desc: "Code for the SpatialUQ paper — post-hoc uncertainty quantification from spatial consistency in black-box vision models." },
+    { name: "ESED-Pulmonary-Disease-Diagnosis", url: "https://github.com/Kawsher/ESED-Pulmonary-Disease-Diagnosis", lang: "Jupyter Notebook",
+      desc: "Forensic audit of a pulmonary disease diagnosis pipeline — shortcut learning, miscalibration, and out-of-distribution evaluation." },
+    { name: "Autism-Detection-XAI", url: "https://github.com/Kawsher/Autism-Detection-XAI", lang: "Jupyter Notebook",
+      desc: "Transfer learning for autism spectrum disorder detection with explainability." },
+    { name: "Covid-19_Detection", url: "https://github.com/Kawsher/Covid-19_Detection", lang: "Jupyter Notebook",
+      desc: "Early COVID-19, pneumonia, and tuberculosis detection experiments from chest X-rays." }
+  ],
 
   // ---- Skills ----
   skills: [
