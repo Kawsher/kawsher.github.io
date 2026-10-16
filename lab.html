@@ -49,7 +49,7 @@
     <p class="side-role">Assistant Professor, Computer Science &amp; Engineering</p>
     <p class="side-blurb">I build reliable AI for high-stakes clinical decisions: uncertainty quantification, explainable AI, and out-of-distribution generalization for medical imaging.</p>
     <div class="side-icons">
-      <a href="mailto:kawsher.cse@gmail.com" title="Email" aria-label="Email"><i class="ti ti-mail"></i></a>
+      <a href="mailto:kawsher@npiub.edu.bd" title="Email" aria-label="Email"><i class="ti ti-mail"></i></a>
       <a href="https://scholar.google.com/citations?user=fQ_TTFsAAAAJ" target="_blank" rel="noopener" title="Google Scholar" aria-label="Google Scholar"><i class="ti ti-school"></i></a>
       <a href="https://github.com/Kawsher" target="_blank" rel="noopener" title="GitHub" aria-label="GitHub"><i class="ti ti-brand-github"></i></a>
       <a href="https://www.linkedin.com/in/kawsher-mahbub/" target="_blank" rel="noopener" title="LinkedIn" aria-label="LinkedIn"><i class="ti ti-brand-linkedin"></i></a>
@@ -74,7 +74,7 @@
       <img id="pi-img" src="assets/Picture.JPG" alt="Md. Kawsher Mahbub" onerror="this.style.display='none'">
       <div>
         <h3 id="pi-name">Md. Kawsher Mahbub</h3>
-        <div class="pi-role" id="pi-role">Assistant Professor · NPI University of Bangladesh · Founder &amp; PI, CARMA AI Lab</div>
+        <div class="pi-role" id="pi-role">Assistant Professor · NPI University of Bangladesh · Founder &amp; Director, CARMA AI Lab</div>
         <p id="pi-bio">I am an Assistant Professor of Computer Science and Engineering at NPI University of Bangladesh, where I founded and lead the CARMA AI Lab. My research builds trustworthy AI for clinical decision-making.</p>
       </div>
     </div>
@@ -83,7 +83,7 @@
       <h3 id="join-title">Work with us</h3>
       <p id="join-text">We collaborate with clinicians, hospitals, and ML researchers on auditing, generalization, and uncertainty problems in medical AI. If you have a model that needs stress-testing — or a clinical question that needs honest answers — get in touch.</p>
       <div class="btn-row">
-        <a class="btn btn-primary" id="join-email" href="mailto:kawsher.cse@gmail.com?subject=CARMA%20AI%20Lab%20collaboration"><i class="ti ti-mail"></i>Get in touch</a>
+        <a class="btn btn-primary" id="join-email" href="mailto:kawsher@npiub.edu.bd?subject=CARMA%20AI%20Lab%20collaboration"><i class="ti ti-mail"></i>Get in touch</a>
         <a class="btn btn-ghost-light" id="lab-site" href="https://kawsher.github.io/carma-ai-lab/" target="_blank" rel="noopener"><i class="ti ti-arrow-up-right"></i>Lab website</a>
       </div>
     </div>
@@ -109,7 +109,7 @@ const esc = s => String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>
 $('lab-about').innerHTML = D.lab.about.map(p => '<p>' + esc(p) + '</p>').join('');
 $('lab-pillars').innerHTML = D.lab.pillars.map(p => '<span>' + esc(p) + '</span>').join('');
 $('pi-name').textContent = D.name;
-$('pi-role').textContent = D.title + ' \u00B7 ' + D.institution + ' \u00B7 Founder & PI, CARMA AI Lab';
+$('pi-role').textContent = D.title + ' \u00B7 ' + D.institution + ' \u00B7 Founder & Director, CARMA AI Lab';
 $('pi-bio').textContent = D.bio[0];
 $('join-title').textContent = D.lab.joinTitle;
 $('join-text').textContent = D.lab.joinText;
