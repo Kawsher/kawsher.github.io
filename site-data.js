@@ -19,7 +19,7 @@ const SITE_DATA = {
     "My work is driven by a simple observation from the clinic: a model that is accurate on a benchmark can still fail a patient when the hospital, the scanner, or the population changes. I build methods that catch those failures before they reach the bedside."
   ],
   availability: "I am always happy to discuss research collaborations.",
-  photo: "assets/kawsher-mahbub.jpg",
+  photo: "assets/Picture.JPG",
   shortBio: "Md. Kawsher Mahbub is an Assistant Professor of Computer Science and Engineering at NPI University of Bangladesh, where he founded and leads the CARMA AI Lab. His research builds trustworthy AI for clinical decision-making, with a focus on medical imaging, uncertainty quantification, and out-of-distribution generalization. He received his M.S. in Computer Science from Kent State University (2025) and his B.Sc. from the Bangladesh University of Business and Technology (2021).",
   updatedDate: "October 2026",
 
