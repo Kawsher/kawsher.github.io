@@ -94,6 +94,14 @@ a:hover { text-decoration: underline; }
   font-size: 12.5px; color: var(--faint); line-height: 1.6;
 }
 .side-note strong { color: var(--muted); font-weight: 600; }
+.side-phd {
+  margin-top: 1.1rem; padding: 0.95rem 1.05rem;
+  background: var(--teal-soft); border: 1px solid var(--teal-line); border-radius: var(--radius);
+  display: flex; gap: 0.7rem; align-items: flex-start;
+}
+.side-phd > i { color: var(--teal-dark); font-size: 1.35rem; line-height: 1.3; }
+.side-phd strong { display: block; font-size: 13.5px; color: var(--ink); font-weight: 700; }
+.side-phd span { display: block; font-size: 12.5px; color: var(--body); line-height: 1.55; margin-top: 0.15rem; }
 
 /* ---- Content column ---- */
 .content { padding: 3.2rem 0 4rem; max-width: 690px; min-width: 0; }
@@ -225,6 +233,8 @@ a:hover { text-decoration: underline; }
 .btn-primary:hover { background: var(--teal-dark); }
 .btn-outline { border: 1px solid var(--card-line); color: var(--ink); background: #fff; }
 .btn-outline:hover { border-color: var(--teal); color: var(--teal-dark); }
+.btn-ghost-light { border: 1px solid rgba(255,255,255,0.45); color: #fff; background: transparent; }
+.btn-ghost-light:hover { border-color: #fff; background: rgba(255,255,255,0.1); color: #fff; text-decoration: none; }
 .btn-row { display: flex; gap: 0.7rem; flex-wrap: wrap; }
 
 /* ---- Contact / CV ---- */
