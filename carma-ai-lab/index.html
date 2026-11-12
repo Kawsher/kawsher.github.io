@@ -6,15 +6,22 @@
 <title>CARMA Lab — Clinical AI for Reliable Medical Analytics</title>
 <meta name="description" content="CARMA Lab develops reliable AI for medical analytics: rigorous evaluation and auditing, generalization under distribution shift, interpretability, and uncertainty quantification.">
 <link rel="icon" type="image/svg+xml" href="assets/img/logo-dark.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
+<a class="skip-link" href="#about">Skip to content</a>
 
 <header class="site-header">
-  <nav class="nav">
-    <a class="brand" href="#top">
-      <img src="assets/img/logo-light.svg" alt="CARMA Lab logo" class="brand-mark">
-      <span class="brand-text">CARMA <span class="brand-lab">LAB</span></span>
+  <nav class="nav" aria-label="Lab sections">
+    <a class="brand" href="#top" aria-label="CARMA Lab, back to top">
+      <picture>
+        <source srcset="assets/img/logo-light.svg" media="(prefers-color-scheme: dark)">
+        <img src="assets/img/logo-dark.svg" alt="" class="brand-mark" width="28" height="28">
+      </picture>
+      <span class="brand-text">CARMA <span class="brand-lab">Lab</span></span>
     </a>
     <div class="nav-links">
       <a href="#about">About</a>
@@ -29,10 +36,13 @@
 <main id="top">
 
   <section class="hero">
-    <img src="assets/img/logo-light.svg" alt="CARMA Lab logo" class="hero-mark">
-    <h1 class="hero-title">CARMA <span>LAB</span></h1>
     <p class="hero-expansion">Clinical AI for Reliable Medical Analytics</p>
-    <p class="hero-tagline">Reliable AI for high-stakes decisions.</p>
+    <h1 class="hero-title">CARMA Lab builds medical AI that knows when it might be wrong.</h1>
+    <p class="hero-tagline">We audit, stress-test, and explain clinical models before they reach a patient, across four research pillars.</p>
+    <div class="hero-actions">
+      <a class="btn" href="#research">See the research</a>
+      <a class="text-link" href="mailto:kawsher@npiub.edu.bd?subject=CARMA%20Lab%20collaboration">Propose a collaboration</a>
+    </div>
   </section>
 
   <section id="about" class="section">
@@ -43,34 +53,46 @@
 
   <section id="research" class="section">
     <h2>Research</h2>
-    <div class="cards">
-      <div class="card">
+    <ol class="pillars">
+      <li class="pillar">
+        <span class="pillar-num">01</span>
         <h3>Evaluation &amp; Auditing</h3>
-        <p>We probe models for failure before deployment does, stress-testing classifiers the way regulators should.</p>
-        <p class="card-work">Representative work: Forensic explainability auditing of ensemble chest X-ray classifiers.</p>
-      </div>
-      <div class="card">
+        <div class="pillar-body">
+          <p>We probe models for failure before deployment does, stress-testing classifiers the way regulators should.</p>
+          <p class="pillar-work"><span>Representative work</span>Forensic explainability auditing of ensemble chest X-ray classifiers.</p>
+        </div>
+      </li>
+      <li class="pillar">
+        <span class="pillar-num">02</span>
         <h3>Generalization</h3>
-        <p>Benchmark accuracy is not hospital accuracy. We study out-of-distribution generalization across sites, scanners, and populations.</p>
-        <p class="card-work">Representative work: STAMP, predicting OOD generalization without target data.</p>
-      </div>
-      <div class="card">
+        <div class="pillar-body">
+          <p>Benchmark accuracy is not hospital accuracy. We study out-of-distribution generalization across sites, scanners, and populations.</p>
+          <p class="pillar-work"><span>Representative work</span>STAMP, predicting OOD generalization without target data.</p>
+        </div>
+      </li>
+      <li class="pillar">
+        <span class="pillar-num">03</span>
         <h3>Interpretability</h3>
-        <p>Clinicians should see why a model decided what it did. We build explanation methods grounded in clinical practice.</p>
-        <p class="card-work">Representative work: Explainable AI for chest radiographs and heart disease diagnosis.</p>
-      </div>
-      <div class="card">
+        <div class="pillar-body">
+          <p>Clinicians should see why a model decided what it did. We build explanation methods grounded in clinical practice.</p>
+          <p class="pillar-work"><span>Representative work</span>Explainable AI for chest radiographs and heart disease diagnosis.</p>
+        </div>
+      </li>
+      <li class="pillar">
+        <span class="pillar-num">04</span>
         <h3>Safety &amp; Uncertainty</h3>
-        <p>A model that knows when it is uncertain is safer than one that is merely accurate.</p>
-        <p class="card-work">Representative work: SpatialUQ, post-hoc uncertainty quantification from spatial consistency in black-box vision models.</p>
-      </div>
-    </div>
+        <div class="pillar-body">
+          <p>A model that knows when it is uncertain is safer than one that is merely accurate.</p>
+          <p class="pillar-work"><span>Representative work</span>SpatialUQ, post-hoc uncertainty quantification from spatial consistency in black-box vision models.</p>
+        </div>
+      </li>
+    </ol>
   </section>
 
   <section id="publications" class="section">
     <h2>Publications</h2>
 
-    <h3>Under Review</h3>
+    <h3>Under review</h3>
     <ul class="pubs">
       <li><strong>M. K. Mahbub</strong> and M. Biswas. STAMP: Predicting Out-of-Distribution Generalization without Target Data. Submitted to ICLR 2027.</li>
       <li><strong>M. K. Mahbub</strong>, M. Biswas, M. N. Morshed, and W. Yu. SpatialUQ: Post-Hoc Uncertainty Quantification from Spatial Consistency in Black-Box Vision Models. Submitted to AISTATS 2027.</li>
@@ -78,14 +100,14 @@
       <li><strong>M. K. Mahbub</strong>, S. Hossain, M. A. M. Miah, M. N. Arpa, and M. Biswas. Foundation Models in Healthcare: A Survey of Generalization, Uncertainty, and Trustworthiness. Under review at ACM Computing Surveys.</li>
     </ul>
 
-    <h3>Journal Papers</h3>
+    <h3>Journal papers</h3>
     <ul class="pubs">
       <li>Ghose, P., Oliullah, K., <strong>Mahbub, M. K.</strong>, Biswas, M., Uddin, K. N., &amp; Jamil, H. M. (2025). Explainable AI assisted heart disease diagnosis through effective feature engineering and stacked ensemble learning. <em>Expert Systems with Applications</em>, 265, 125928.</li>
       <li><strong>Mahbub, M. K.</strong>, Biswas, M., Gaur, L., Alenezi, F., &amp; Santosh, K. C. (2022). Deep features to detect pulmonary abnormalities in chest X-rays due to infectious diseases: COVID-19, pneumonia, and tuberculosis. <em>Information Sciences</em>, 592, 389&ndash;401.</li>
       <li>Ghose, P., Alavi, M., Tabassum, M., Ashraf Uddin, M., Biswas, M., <strong>Mahbub, M. K.</strong>, &amp; Zhao, Z. (2022). Detecting COVID-19 infection status from chest X-ray and CT scan via single transfer learning-driven approach. <em>Frontiers in Genetics</em>, 13, 980338.</li>
     </ul>
 
-    <h3>Conference Papers</h3>
+    <h3>Conference papers</h3>
     <ul class="pubs">
       <li><strong>Mahbub, M. K.</strong>, Zamil, M. Z. H., Miah, M. A. M., Ghose, P., Biswas, M., &amp; Santosh, K. C. (2022). Mobapp4infectiousdisease: Classify COVID-19, pneumonia, and tuberculosis. <em>Proc. IEEE 35th International Symposium on Computer-Based Medical Systems (CBMS)</em>, 119&ndash;124.</li>
       <li><strong>Mahbub, M. K.</strong>, Biswas, M., Miah, M. A. M., &amp; Kaiser, M. S. (2022). Deep neural networks for brain tumor detection from MRI images. <em>Proc. Trends in Computational and Cognitive Engineering (TCCE 2021)</em>, 473&ndash;485. Springer.</li>
@@ -105,12 +127,11 @@
       <p class="person-aff">Assistant Professor, Department of Computer Science and Engineering, NPI University of Bangladesh</p>
       <p class="person-links">
         <a href="https://scholar.google.com/citations?user=fQ_TTFsAAAAJ">Google Scholar</a>
-        <a href="https://kawsher.github.io">Personal Website</a>
+        <a href="https://kawsher.github.io">Personal website</a>
         <a href="mailto:kawsher@npiub.edu.bd">Email</a>
       </p>
     </div>
     <p class="collab-note">The lab is growing. We collaborate with researchers at Towson University, Texas A&amp;M University, BUBT, and NPI University of Bangladesh — and we welcome new collaborators and student researchers.</p>
-    </div>
   </section>
 
   <section id="contact" class="section">
@@ -127,6 +148,5 @@
   <p>&copy; 2026 CARMA Lab &middot; Clinical AI for Reliable Medical Analytics</p>
 </footer>
 
-<!-- deploy 2026-10-16 -->
 </body>
 </html>

@@ -20,7 +20,7 @@
 <script src="site-data.js"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@500&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@2.44.0/tabler-icons.min.css">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"Person","name":"Md. Kawsher Mahbub",
@@ -36,10 +36,11 @@
 </script>
 </head>
 <body>
+<a class="skip-link" href="#main">Skip to content</a>
 
-<nav class="topnav">
+<nav class="topnav" aria-label="Main">
   <div class="nav-inner">
-    <button class="nav-toggle" id="nav-toggle" aria-label="Menu"><i class="ti ti-menu-2"></i></button>
+    <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="nav-links"><span class="bars" aria-hidden="true"></span><span class="label">Menu</span></button>
     <ul class="nav-links" id="nav-links">
       <li><a href="index.html" class="active">About</a></li>
       <li><a href="research.html">Research</a></li>
@@ -55,8 +56,8 @@
 
 <div class="layout">
   <aside class="sidebar">
-    <img class="avatar" src="assets/Picture.JPG" alt="Md. Kawsher Mahbub" onerror="this.style.display='none'">
-    <h2 class="side-name">Md. Kawsher Mahbub</h2>
+    <img class="avatar" src="assets/avatar.jpg" width="168" height="168" alt="Portrait of Md. Kawsher Mahbub">
+    <p class="side-name">Md. Kawsher Mahbub</p>
     <div class="side-affil"><i class="ti ti-building"></i><span>NPI University of Bangladesh</span></div>
     <p class="side-role">Assistant Professor, Computer Science &amp; Engineering</p>
     <p class="side-blurb">I build reliable AI for high-stakes clinical decisions: uncertainty quantification, explainable AI, and out-of-distribution generalization for medical imaging.</p>
@@ -69,16 +70,17 @@
     </div>
     <div class="side-note"><strong>Currently</strong><br>Founder of the CARMA AI Lab · Head of the ICT Cell · Open to research collaboration</div>
     <div class="side-phd">
-      <i class="ti ti-school"></i>
+      <i class="ti ti-flag"></i>
       <div><strong>Looking for a PhD position</strong><span>Fall 2027 &middot; medical imaging &amp; trustworthy AI &mdash; <a href="contact.html">contact me</a></span></div>
     </div>
   </aside>
 
-  <main class="content">
-    <h1>About Me</h1>
+  <main class="content" id="main">
+    <div class="eyebrow">About</div>
+    <h1>I build reliable AI for high-stakes clinical decisions.</h1>
     <div id="about-text"><p>I am an Assistant Professor of Computer Science and Engineering at NPI University of Bangladesh, where I founded and lead the CARMA AI Lab. My research builds trustworthy AI for clinical decision-making.</p><p>My work is driven by a simple observation from the clinic: a model that is accurate on a benchmark can still fail a patient when the hospital, the scanner, or the population changes. I build methods that catch those failures before they reach the bedside.</p></div>
 
-    <h2 class="sec">My Path</h2>
+    <h2 class="sec">My path</h2>
     <div id="path-text"><p>I received my B.Sc. in Computer Science and Engineering from the Bangladesh University of Business and Technology (BUBT) in 2021, and stayed on as a lecturer. There I mentored undergraduate research projects in medical imaging and computer vision — several of those student projects grew into peer-reviewed publications — and served as advisor to the IEEE CS BUBT student branch chapter.</p><p>I then earned my M.S. in Computer Science from Kent State University (2025), where I worked as a graduate teaching assistant while researching trustworthy machine learning for medical image analysis.</p><p>In 2026 I returned to Bangladesh to join the faculty of NPI University of Bangladesh as an Assistant Professor, where I also head the ICT Cell and founded the CARMA AI Lab.</p></div>
 
     <h2 class="sec">Research</h2>
@@ -86,7 +88,7 @@
     <ul class="interest-list" id="interest-list"><li><strong>Evaluation &amp; Auditing.</strong> <span>Forensic auditing of ensemble classifiers: calibration, shortcut detection, and failure analysis when models meet real clinical data.</span></li><li><strong>Generalization.</strong> <span>Predicting out-of-distribution performance without target data. How do medical vision models behave across hospitals, scanners, and populations?</span></li><li><strong>Interpretability.</strong> <span>Human-centered explanations for clinical decision support: what the model looked at, and why a clinician should (or should not) trust it.</span></li><li><strong>Safety &amp; Uncertainty.</strong> <span>Post-hoc uncertainty quantification for frozen black-box vision models. Knowing when to predict, when to abstain, and when to refer.</span></li></ul>
     <div id="threads-text"><p>Two active threads drive this work right now: STAMP, which predicts out-of-distribution performance without target data, and SpatialUQ, which quantifies uncertainty for frozen black-box vision models from spatial consistency. Both are currently under review.</p></div>
 
-    <h2 class="sec">Selected Publications</h2>
+    <h2 class="sec">Selected publications</h2>
     <div id="selected-pubs"><article class="sel-pub"><div class="pub-badges"><span class="pub-badge ur">Under Review</span><span class="pub-venue-inline">Submitted to ICLR 2027</span></div><h3 class="sel-pub-title">STAMP: Predicting Out-of-Distribution Generalization without Target Data</h3><div class="pub-authors">M. K. Mahbub and M. Biswas</div><p class="sel-pub-takeaway">Estimates how a trained model will perform at a new hospital using only source-domain images — no target data or labels needed.</p><div class="pub-links"><a class="pub-link" href="https://arxiv.org/abs/2609.32672" target="_blank" rel="noopener">arXiv</a><a class="pub-link" href="https://arxiv.org/pdf/2609.32672" target="_blank" rel="noopener">PDF</a></div><details class="bibtex"><summary>BibTeX</summary><pre>@misc{mahbub2026stamp,
   title={STAMP: Predicting Out-of-Distribution Generalization without Target Data},
   author={Mahbub, Md Kawsher and Biswas, Milon},
@@ -113,7 +115,7 @@
 }</pre></details></article></div>
     <p><a href="publications.html">Full publication list &rarr;</a></p>
 
-    <h2 class="sec">Recent News</h2>
+    <h2 class="sec">Recent news</h2>
     <div id="news-preview"><div class="news-item"><span class="news-date">Oct 2026</span><span class="news-text"><span class="news-tag milestone">milestone</span>Founded the CARMA AI Lab — Clinical AI for Reliable Medical Analytics.</span></div><div class="news-item"><span class="news-date">Oct 2026</span><span class="news-text"><span class="news-tag paper">paper</span>SpatialUQ: post-hoc uncertainty quantification from spatial consistency — submitted to AISTATS 2027.</span></div><div class="news-item"><span class="news-date">Sep 2026</span><span class="news-text"><span class="news-tag paper">paper</span>STAMP: predicting out-of-distribution generalization without target data — submitted to ICLR 2027.</span></div><div class="news-item"><span class="news-date">2026</span><span class="news-text"><span class="news-tag paper">paper</span>'Foundation Models in Healthcare' survey under review at ACM Computing Surveys.</span></div></div>
     <p><a href="news.html">All news &rarr;</a></p>
 
@@ -126,10 +128,10 @@
     <h2 class="sec">Academic service</h2>
     <div id="service-list"><div class="service-row"><div><div class="r">Program Committee Member</div><div class="o">IEEE CBMS International Symposium on Computer-Based Medical Systems</div></div><div class="y">2023 – 2026</div></div><div class="service-row"><div><div class="r">Program Committee Member</div><div class="o">ICANN 2026 — 35th International Conference on Artificial Neural Networks</div></div><div class="y">2026</div></div><div class="service-row"><div><div class="r">Reviewer</div><div class="o">Expert Systems (Wiley)</div></div><div class="y">Ongoing</div></div><div class="service-row"><div><div class="r">Reviewer</div><div class="o">CMC – Computers, Materials &amp; Continua (Tech Science Press)</div></div><div class="y">Ongoing</div></div><div class="service-row"><div><div class="r">Reviewer</div><div class="o">International Journal of Intelligent Transportation Systems Research (Springer)</div></div><div class="y">Ongoing</div></div></div>
 
-    <h2 class="sec">Awards &amp; Honors</h2>
+    <h2 class="sec">Awards &amp; honors</h2>
     <div id="awards-list"><div class="award-row"><div><div class="r">First Place and People's Choice Award, International Cook-Off 2024</div><div class="o">Kent State University</div></div><div class="y">2024</div></div><div class="award-row"><div><div class="r">Merit-based Scholarship (5 times)</div><div class="o">Bangladesh University of Business and Technology (BUBT)</div></div></div></div>
 
-    <p style="margin-top:1.6rem"><a class="btn btn-outline" id="cv-btn" href="assets/CV_Md_Kawsher_Mahbub.pdf" target="_blank" rel="noopener"><i class="ti ti-download"></i>Download full CV (PDF)</a></p>
+    <p class="cv-row"><a class="btn btn-outline" id="cv-btn" href="assets/CV_Md_Kawsher_Mahbub.pdf" target="_blank" rel="noopener"><i class="ti ti-download"></i>Download full CV (PDF)</a></p>
 
     <div class="callout" id="collab-note"><strong>Prospective collaborators:</strong> I am always happy to discuss research collaborations — especially on auditing, generalization, and uncertainty in medical AI. Email me with a short note about the problem you want to work on.</div>
   </main>
@@ -205,7 +207,7 @@ $('service-list').innerHTML = D.service.map(s =>
 $('cv-btn').href = D.links.cv;
 $('collab-note').innerHTML = '<strong>Prospective collaborators:</strong> ' + esc(D.collaboratorNote.replace(/^Prospective collaborators:\s*/, ''));
 $('footer-text').textContent = '\u00A9 ' + new Date().getFullYear() + ' ' + D.name + ' \u00B7 ' + D.institution;
-$('nav-toggle').addEventListener('click', () => $('nav-links').classList.toggle('open'));
 </script>
+<script src="site.js" defer></script>
 </body>
 </html>

@@ -20,14 +20,15 @@
 <script src="site-data.js"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@500&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@2.44.0/tabler-icons.min.css">
 </head>
 <body>
+<a class="skip-link" href="#main">Skip to content</a>
 
-<nav class="topnav">
+<nav class="topnav" aria-label="Main">
   <div class="nav-inner">
-    <button class="nav-toggle" id="nav-toggle" aria-label="Menu"><i class="ti ti-menu-2"></i></button>
+    <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="nav-links"><span class="bars" aria-hidden="true"></span><span class="label">Menu</span></button>
     <ul class="nav-links" id="nav-links">
       <li><a href="index.html">About</a></li>
       <li><a href="research.html">Research</a></li>
@@ -43,8 +44,8 @@
 
 <div class="layout">
   <aside class="sidebar slim">
-    <img class="avatar" src="assets/Picture.JPG" alt="Md. Kawsher Mahbub" onerror="this.style.display='none'">
-    <h2 class="side-name">Md. Kawsher Mahbub</h2>
+    <img class="avatar" src="assets/avatar.jpg" width="168" height="168" alt="Portrait of Md. Kawsher Mahbub">
+    <p class="side-name">Md. Kawsher Mahbub</p>
     <div class="side-affil"><i class="ti ti-building"></i><span>NPI University of Bangladesh</span></div>
     <p class="side-role">Assistant Professor, Computer Science &amp; Engineering</p>
     <p class="side-blurb">I build reliable AI for high-stakes clinical decisions: uncertainty quantification, explainable AI, and out-of-distribution generalization for medical imaging.</p>
@@ -57,12 +58,12 @@
     </div>
     <div class="side-note"><strong>Currently</strong><br>Founder of the CARMA AI Lab · Head of the ICT Cell · Open to research collaboration</div>
     <div class="side-phd">
-      <i class="ti ti-school"></i>
+      <i class="ti ti-flag"></i>
       <div><strong>Looking for a PhD position</strong><span>Fall 2027 &middot; medical imaging &amp; trustworthy AI &mdash; <a href="contact.html">contact me</a></span></div>
     </div>
   </aside>
 
-  <main class="content">
+  <main class="content" id="main">
     <div class="eyebrow">Contact</div>
     <h1>Get in touch</h1>
     <p class="lead">The fastest way to reach me is email. I welcome research collaboration inquiries.</p>
@@ -113,7 +114,7 @@ $('short-bio').innerHTML = '<p>' + esc(D.shortBio) + '</p>';
 $('headshot-btn').href = D.photo;
 
 $('footer-text').textContent = '\u00A9 ' + new Date().getFullYear() + ' ' + D.name + ' \u00B7 ' + D.institution;
-$('nav-toggle').addEventListener('click', () => $('nav-links').classList.toggle('open'));
 </script>
+<script src="site.js" defer></script>
 </body>
 </html>
